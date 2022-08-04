@@ -9,6 +9,15 @@ public class Item : ScriptableObject
     public ItemType itemType;
     public int attack = 0;
     public int Health = 0;
+
+
+    public virtual void Use()
+    {
+        // use item
+
+
+        Debug.Log("Using " + name);
+    }
 }
 
 

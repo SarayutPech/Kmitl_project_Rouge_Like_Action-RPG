@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Earring
   m_EditorClassIdentifier: 
   name: Earring
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2c523fa3ca4e1fc4b9a5713e504e6cce, type: 3}
   isDefaultItem: 0
   itemType: 1
   attack: 0
