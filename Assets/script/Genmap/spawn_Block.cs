@@ -8,7 +8,7 @@ public class spawn_Block : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(block, transform.position, transform.rotation);
-        Destroy(gameObject);
+        GameObject instance = (GameObject)Instantiate(block, transform.position, transform.rotation);
+        instance.transform.parent = transform;
     }
 }

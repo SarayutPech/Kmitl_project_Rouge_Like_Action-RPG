@@ -7,10 +7,11 @@ public class Spawn_room : MonoBehaviour
 
     public Transform[] startingPos;
     public GameObject[] room;
+    public GameObject bossroom;
 
     private int direction;
     public float moveX,moveY,minX,maxX,maxY;
-    private bool stop_Gen = false;
+    public bool stop_Gen = false;
 
 
     private float timeBtwRoom;
@@ -42,8 +43,8 @@ public class Spawn_room : MonoBehaviour
         {
             if (transform.position.x < maxX)
             {
-                Vector2 newPos = new Vector2(transform.position.x + moveX, transform.position.y);
-                transform.position = newPos;
+                Vector2 newPos = new Vector2(transform.position.x + moveX, transform.position.y); 
+                transform.position = newPos; // Move Agent to next position
 
                 check_Edge();
 
@@ -66,7 +67,7 @@ public class Spawn_room : MonoBehaviour
             if (transform.position.x > minX)
             {
                 Vector2 newPos = new Vector2(transform.position.x - moveX, transform.position.y);
-                transform.position = newPos;
+                transform.position = newPos; // Move Agent to next position
 
                 check_Edge();
 
@@ -82,7 +83,7 @@ public class Spawn_room : MonoBehaviour
         {
             if(transform.position.y < maxY){
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveY);
-                transform.position = newPos;
+                transform.position = newPos; // Move Agent to next position
 
                 check_Edge();
 
@@ -90,6 +91,12 @@ public class Spawn_room : MonoBehaviour
             }
             else
             {
+                Debug.Log("spawn last room");
+                Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveY);
+                transform.position = newPos;
+
+                Instantiate(bossroom, transform.position, Quaternion.identity); // Boss Room
+
                 stop_Gen = true;
             }
             
@@ -129,12 +136,12 @@ public class Spawn_room : MonoBehaviour
 
         else if (transform.position.y == 0)
         {
-            Debug.Log(1);
+            //Debug.Log(1);
             Instantiate(room[10], transform.position, Quaternion.identity); // Room LTR ( No B )
         }
         else if (transform.position.y == maxY)
         {
-            Debug.Log(2);
+            //Debug.Log(2);
             GameObject[] randRoom = new GameObject[2];
             randRoom[0] = room[11];
             randRoom[1] = room[8];
