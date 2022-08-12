@@ -282,6 +282,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &233729400
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +341,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -428,6 +433,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &260093010
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +486,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &299312293
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +539,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &420988045
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +592,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &473171187
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +645,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &613831581
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +698,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &623158225
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +751,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &638023138
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +804,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &640541116
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +857,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &641969313
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +910,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!4 &672868845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8593214960098578914, guid: 05390fdf42dab8a439dd2c4f01bb6016, type: 3}
@@ -1024,6 +1079,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1015193806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1132,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1199270465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1347,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1375534102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1400,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1563654097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1532,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8593214960098578914, guid: 05390fdf42dab8a439dd2c4f01bb6016, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593214960098578914, guid: 05390fdf42dab8a439dd2c4f01bb6016, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593214960098578914, guid: 05390fdf42dab8a439dd2c4f01bb6016, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3304491
       objectReference: {fileID: 0}
@@ -1546,6 +1629,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1731683129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1764,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1911604918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1817,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &1980168404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1870,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
 --- !u!1 &2050043387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,3 +1923,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spawn_room: {fileID: 1731683130}
+  room:
+  - {fileID: 1789109513549553060, guid: 9afe07c247ab38c4b9c3f85c59eae8d9, type: 3}
+  - {fileID: 1789109513549553060, guid: c706424881f02ff4dbd667a0a84ae602, type: 3}
+  - {fileID: 2260360056417929728, guid: f66385790b89d8248a8f275d52a5d57e, type: 3}
+  - {fileID: 3933217867069206555, guid: 0eb852016f778c4458dfc0d8997d809f, type: 3}
