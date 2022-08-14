@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 104
+  controlID: 50
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 105
+  controlID: 51
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 106
+  controlID: 52
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 556
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -523,9 +523,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 29.56194, y: 3.4836876, z: -0.042185035}
+    m_Target: {x: 28.728552, y: 19.05331, z: -0.3008627}
     speed: 2
-    m_Value: {x: 29.04291, y: 3.4173129, z: -0.047723506}
+    m_Value: {x: 29.205738, y: 19.026114, z: -0.2882778}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -576,9 +576,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.753913
+    m_Target: 29.2248
     speed: 2
-    m_Value: 12.307762
+    m_Value: 27.966316
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -636,7 +636,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1ed0cdff60d3cdff9c15d6ff8a99d6ff0032d7ff28c4d8ff94c8d8ffdebadfffe6badfff6cbddfffb4f1e0ff38f4e0ff4af4e0ff2cf8e0ff64fae0ff6cfae0ffbafae0ffaa14e5ffc015e5ff12abe5ff96b1efff9ab1efff34b4efffaab7efff6cb8efff06bbefff1efbffff2afbffff
+      m_ExpandedIDs: c843fdff5e4efdffe457fdff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -793,36 +793,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/script/Genmap/Room/Room_pattern
+    - Assets/script/Genmap/Room
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/script/Genmap/Room/Room_pattern
+  - Assets/script/Genmap/Room
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ASUS\Kmitl_project_Rouge_Like_Action-RPG
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 30}
-    m_SelectedIDs: e2870c00
-    m_LastClickedID: 821218
-    m_ExpandedIDs: 00000000ec7a0000207b0000227b0000267b0000bc8c0000e2870c0010ab0d0000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 96880000
+    m_LastClickedID: 34966
+    m_ExpandedIDs: 000000005e880000608800006288000092880000968800009888000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: environment
-      m_OriginalName: environment
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 895760
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -836,7 +836,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec7a0000ee7a0000f07a0000
+    m_ExpandedIDs: 000000005e8800006088000062880000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

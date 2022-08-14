@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3493585643027645399}
   - component: {fileID: -664784253760000244}
   m_Layer: 0
-  m_Name: RandomPattern
+  m_Name: RandomPattern 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,4 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ob:
+  - {fileID: 4810392071736658847, guid: 5d5609cc08176ab41ac918ddff4150ad, type: 3}
   - {fileID: 4810392071736658847, guid: 5bbca93c4f196234289ca9d10d43384c, type: 3}
+  - {fileID: 4810392071736658847, guid: acd10a1124f5a6345b826f46160fc224, type: 3}
+  - {fileID: 4810392071736658847, guid: 5bf9d84b0f34e804388f40d37ed886d4, type: 3}
+  - {fileID: 4810392071736658847, guid: f70c4c50f3c2eee44b9b20c1ba0e3f00, type: 3}
