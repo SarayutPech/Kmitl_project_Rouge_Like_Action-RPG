@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9212a12e0f8e79459115b1925869680, type: 3}
-  m_Name: Earring
+  m_Script: {fileID: 11500000, guid: 707e553f1b5cd8346955b51a4e150594, type: 3}
+  m_Name: Sword of Light
   m_EditorClassIdentifier: 
-  name: Earring
-  icon: {fileID: 21300000, guid: 2c523fa3ca4e1fc4b9a5713e504e6cce, type: 3}
+  name: Sword of Light
+  icon: {fileID: 21300000, guid: 90e99a7fde056a4418b9fe16084adb5c, type: 3}
   isDefaultItem: 0
-  itemType: 1
-  attack: 0
+  itemType: 0
+  attack: 5
   Health: 0
+  equipSlot: 0
+  attackModifier: 0
+  healthModifier: 0

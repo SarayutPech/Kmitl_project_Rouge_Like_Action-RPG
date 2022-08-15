@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 181966380}
   - component: {fileID: 181966379}
   - component: {fileID: 181966383}
+  - component: {fileID: 181966384}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -650,6 +651,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 980275167}
+  - {fileID: 1658535183}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -673,6 +675,21 @@ MonoBehaviour:
   inventoryCard: {fileID: 110738973}
   inventoryAccessory: {fileID: 1925732448}
   inventoryUI: {fileID: 980275166}
+--- !u!114 &181966384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181966378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cd5283b638ffd4a9b07cbde8fdfa0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentCard: {fileID: 0}
+  equipmentAccessory: {fileID: 0}
+  equipmentUI: {fileID: 0}
 --- !u!1 &216358252
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cea81baa1ed13418280e7a54935a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: {fileID: 11400000, guid: 8e7d06155f882b448b25f9404efe3636, type: 2}
+  items: {fileID: 11400000, guid: d3f74a7b7f12c2747aaf2fc405c43d57, type: 2}
 --- !u!50 &216358254
 Rigidbody2D:
   serializedVersion: 4
@@ -835,6 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249344604}
   - component: {fileID: 249344603}
+  - component: {fileID: 249344605}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -873,6 +891,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249344605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249344602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1051106f7f68a0449971dbc38a4b257b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &283349903 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1848846441638274447, guid: 1fcca4fca770de145b89165c91916cc0, type: 3}
@@ -937,7 +967,7 @@ GameObject:
   - component: {fileID: 323171498}
   - component: {fileID: 323171497}
   m_Layer: 0
-  m_Name: BoardSwordCard
+  m_Name: Sword
   m_TagString: WeaponCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cea81baa1ed13418280e7a54935a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: {fileID: 11400000, guid: 6aa8c0e9f623f9a4486efd0b8303a09a, type: 2}
+  items: {fileID: 11400000, guid: 0c082849f7b352e438d00231f1524148, type: 2}
 --- !u!61 &323171498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4456,6 +4486,82 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2400441209995871722, guid: 3cb9f5e4a2cebae40a12e646fc4a8ff8, type: 3}
   m_PrefabInstance: {fileID: 1985608390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1658535182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658535183}
+  - component: {fileID: 1658535185}
+  - component: {fileID: 1658535184}
+  m_Layer: 5
+  m_Name: Equipment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1658535183
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658535182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 181966382}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 353, y: 164.75172}
+  m_SizeDelta: {x: -748.7041, y: -435.9922}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1658535184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658535182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1658535185
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658535182}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1662976028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6866,7 +6972,7 @@ GameObject:
   - component: {fileID: 1950433526}
   - component: {fileID: 1950433525}
   m_Layer: 0
-  m_Name: KatanaCard
+  m_Name: Axe
   m_TagString: WeaponCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6900,7 +7006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cea81baa1ed13418280e7a54935a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: {fileID: 11400000, guid: 6109a579c7311dc48af9db13cd9e4fd2, type: 2}
+  items: {fileID: 11400000, guid: b1c1ec20a99bb6640b1abe6422c104c5, type: 2}
 --- !u!212 &1950433527
 SpriteRenderer:
   m_ObjectHideFlags: 0
