@@ -6,7 +6,7 @@ TagManager:
   tags:
   - WeaponCard
   - Accessory
-  - Tile_remover
+  - Tile_remove_able
   layers:
   - Default
   - TransparentFX

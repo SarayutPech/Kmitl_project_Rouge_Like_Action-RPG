@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4875590464984417887}
   m_Layer: 6
   m_Name: Square
-  m_TagString: Tile_remover
+  m_TagString: Tile_remove_able
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
