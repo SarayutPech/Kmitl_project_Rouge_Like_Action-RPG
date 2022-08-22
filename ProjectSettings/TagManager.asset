@@ -6,7 +6,9 @@ TagManager:
   tags:
   - WeaponCard
   - Accessory
-  - Tile_remover
+  - Tile_remove_able
+  - Enemy_Sentinel
+  - Enemy_Fly
   layers:
   - Default
   - TransparentFX
