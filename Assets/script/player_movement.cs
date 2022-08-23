@@ -4,94 +4,83 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    public float speed = 40f;
-    public float jumpforce = 5f;
-    private Rigidbody2D rb;
+    [SerializeField] private float speed = 40f;
+    [SerializeField] private float jumpforce = 5f;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
+
     public Animator animator;
 
-    private bool facingRight = true;
-    public ParticleSystem dust;
+    private Rigidbody2D rb;
+    private BoxCollider2D boxCollider;
 
-    public Transform feetpos;
-    public float checkRadius;
-    public LayerMask whatIsGround;
-    public bool isGrounded;
+    private float DirIn;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
     private void Update()
     {
+        DirIn = Input.GetAxisRaw("Horizontal");
         lockRotation();
+        animator.SetBool("jumping", !isGrounded());
+
+
+        if (Input.GetKey(KeyCode.Space))
+            jumping();
+
         running();
-        jumping();
     }
-
-    void Flip()
-    {
-        CreateDust();
-        transform.Rotate(0f, 180f, 0f);
-
-        facingRight = !facingRight;
-    }
-
-    void CreateDust()
-    {
-        dust.Play();
-    }
-
     void running()
     {
-        animator.SetFloat("run", 0);
-        var movement = Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * speed;
-        if (Input.GetAxisRaw("Horizontal") != 0 )
-        {
-            
-            animator.SetFloat("run", 1);
-            if (Input.GetAxisRaw("Horizontal") > 0 && !facingRight)
-            {
-                Flip();
-            }
+        
+        
+        //transform.position += new Vector3(DirIn, 0, 0) * Time.deltaTime * speed;
+        rb.velocity = new Vector2(DirIn * speed, rb.velocity.y);
+        //rb.AddForce(Vector2.right * DirIn * speed);
 
-            if (Input.GetAxisRaw("Horizontal") < 0 && facingRight)
-            {
-                Flip();
-            }
-        }
+        // fliping
+        if (DirIn != 0 )
+        {
+            animator.SetBool("running", true);
+            if (DirIn > 0.1)
+                transform.localScale = new Vector3(1.4f, 1.4f, 1);
+            else if (DirIn < 0.1)
+                transform.localScale = new Vector3(-1.4f,1.4f, 1);
+        }else
+        animator.SetBool("running", false);
     }
 
     void jumping()
     {
-        isGrounded = Physics2D.OverlapCircle(feetpos.position,checkRadius,whatIsGround);
-        
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        if (isGrounded() && !onWall())
+            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+        else if (!isGrounded() && onWall())
         {
-            isGrounded = false;
-            animator.SetTrigger("takeoff");
-            rb.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
-            //Debug.Log("Jump !");
+            animator.SetBool("jumping", false);
+            rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpforce);
         }
+    }
 
-        if(isGrounded == true)
-        {
-            animator.SetBool("isJumping", false);
-        }
-        else
-        {
-            animator.SetBool("isJumping", true);
-        }
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f ,groundLayer);
+        return raycastHit.collider != null;
+    }
 
+
+
+    private bool onWall()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(-transform.localScale.x, 0), 0.1f, wallLayer);
+        return raycastHit.collider != null;
     }
 
     void lockRotation()
     {
-        transform.eulerAngles = new Vector3(
-        0,
-        transform.eulerAngles.y,
-        0
-);
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
     }
 }
