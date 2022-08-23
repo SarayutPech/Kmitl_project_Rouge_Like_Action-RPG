@@ -13,11 +13,18 @@ public class EquipmentManager : MonoBehaviour
     }
     #endregion
 
-    Equipment[] currentEquipCard;
-    Equipment[] currentEquipAccessory;
+    public Equipment[] currentEquipCard;
+    public Equipment[] currentEquipAccessory;
+
 
     public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
     public OnEquipmentChanged onEquipmentChanged;
+    public delegate void OnEquipChanged();
+    public OnEquipChanged onEquipCallback;
+
+
+    EquipmentCardSlot equipCard;
+    EquipmentAccSlot equipAcc;
 
     Inventory inventory;
 
@@ -39,11 +46,20 @@ public class EquipmentManager : MonoBehaviour
             if (onEquipmentChanged != null)
             {
                 onEquipmentChanged.Invoke(newItem, oldItem);
+                
             }
-
+            //equipCard.EquipItem(newItem);
+            
             currentEquipCard[slotIndex] = newItem; // Equip Item
 
-        }else if(newItem.equipSlot == EquipmentSlot.Accessory)
+            if (onEquipCallback != null)
+            {
+                onEquipCallback.Invoke();
+            }
+            
+
+        }
+        else if(newItem.equipSlot == EquipmentSlot.Accessory)
         {
             int slotIndex = (int)CheckSlotIndex(currentEquipAccessory);
 
@@ -51,9 +67,16 @@ public class EquipmentManager : MonoBehaviour
             if (onEquipmentChanged != null)
             {
                 onEquipmentChanged.Invoke(newItem, oldItem);
+                onEquipCallback.Invoke();
             }
-
+            //equipAcc.EquipItem(newItem);
+            
             currentEquipAccessory[slotIndex] = newItem;
+
+            if (onEquipCallback != null)
+            {
+                onEquipCallback.Invoke();
+            }
         }
     }
 
@@ -70,6 +93,7 @@ public class EquipmentManager : MonoBehaviour
             if (onEquipmentChanged != null)
             {
                 onEquipmentChanged.Invoke(null, oldItem);
+                onEquipCallback.Invoke();
             }
         }
     }
@@ -78,12 +102,13 @@ public class EquipmentManager : MonoBehaviour
     {
         for(int i = 0; i < currentEquipCard.Length; i++) // Unequip all Card Weapon
         {
-            Unequip(currentEquipCard, i);
+            Unequip(currentEquipCard, i);      
         }
         for (int i = 0; i < currentEquipAccessory.Length; i++) // Unequip all Accessory
         {
             Unequip(currentEquipAccessory, i);
         }
+        onEquipCallback.Invoke();
     }
 
     private void Update()
