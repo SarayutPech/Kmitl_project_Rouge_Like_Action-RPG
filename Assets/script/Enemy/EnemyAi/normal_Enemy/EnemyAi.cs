@@ -14,13 +14,14 @@ public class EnemyAi : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     public float JumpNodeHeightRequirement = 0.8f;
-    public float jumpForce = 300f;
+    public float jumpforce = 5f;
     public float jumpCheckOffset = 0.1f;
 
     [Header("Custom Behevior")]
     public bool followEnable = true;
     public bool jumpEnable = true;
     public bool diractionLookEnable = true;
+    public bool canFly = false;
 
     private Path path;
     private int currentWaypoint = 0;
@@ -29,9 +30,10 @@ public class EnemyAi : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
-    public bool die = false;
+    [SerializeField] private bool die = false;
     public float timeToDestoryThis = 5;
-    public bool dieAnimaion = false;
+    private bool inAttackRange = false;
+    public bool LockRotate = true;
 
     private BoxCollider2D boxCollider;
 
@@ -40,28 +42,40 @@ public class EnemyAi : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
 
     }
-
+    private void Update()
+    {
+        if(LockRotate)
+            lockRotation();   
+    }
     private void FixedUpdate()
     {
         if (TargetInDistance() && followEnable)
             PathFollow();
         else
-            animator.SetBool("isRunning", false);
-        lockRotation();
-        if(dieAnimaion)
-            animator.SetTrigger("isDie");
-        if (die)
         {
-            timeToDestoryThis -= Time.deltaTime;
-            if(timeToDestoryThis <= 0)
-                Destroy(gameObject);
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isJumping", false);
         }
-            
 
+        if (die)
+            enemydie();
+
+    }
+    private void enemydie()
+    {
+        if (timeToDestoryThis >= 5)
+        {
+            animator.SetTrigger("isDie");
+            followEnable = false;
+        }
+        timeToDestoryThis -= Time.deltaTime;
+        if (timeToDestoryThis <= 0)
+            Destroy(gameObject);
     }
 
     private void UpdatePath()
@@ -81,7 +95,7 @@ public class EnemyAi : MonoBehaviour
         }
 
         
-
+        //On Ground Check
         //isGrounded = Physics2D.Raycast(transform.position, -Vector3.up, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
         LayerMask groundLayer = LayerMask.GetMask("Ground");
         RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
@@ -100,13 +114,17 @@ public class EnemyAi : MonoBehaviour
         {
             if(direction.y > JumpNodeHeightRequirement)
             {
-                rb.AddForce(Vector2.up * jumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             }
         }
 
         //Move
+        
         Vector2 pushX = new Vector2(force.x, 0);
-        rb.AddForce(pushX);
+        if (!canFly)
+            rb.AddForce(pushX);
+        else
+            rb.AddForce(force);
 
         //Next Waypoint
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -115,6 +133,7 @@ public class EnemyAi : MonoBehaviour
             currentWaypoint++;
         }
 
+        //Flip Sprite
         if (diractionLookEnable)
         {
             if (rb.velocity.x > 0.05f)
@@ -142,4 +161,11 @@ public class EnemyAi : MonoBehaviour
     {
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
     }
+
+    private void attack()
+    {
+        animator.SetTrigger("attack");
+    }
+
+    
 }
