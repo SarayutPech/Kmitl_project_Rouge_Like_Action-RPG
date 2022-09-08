@@ -94,6 +94,8 @@ public class EnemyAi : MonoBehaviour
             return;
         }
 
+        //Attack Coding Zone
+
         
         //On Ground Check
         //isGrounded = Physics2D.Raycast(transform.position, -Vector3.up, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
@@ -119,7 +121,6 @@ public class EnemyAi : MonoBehaviour
         }
 
         //Move
-        
         Vector2 pushX = new Vector2(force.x, 0);
         if (!canFly)
             rb.AddForce(pushX);
