@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4218061373546766486}
   - component: {fileID: 6900897445631050515}
   - component: {fileID: 3749901382101133040}
+  - component: {fileID: 6937655142358512233}
   m_Layer: 3
   m_Name: Bird
   m_TagString: Untagged
@@ -87,7 +88,6 @@ MonoBehaviour:
   diractionLookEnable: 1
   canFly: 1
   animator: {fileID: 7526202931026111161}
-  die: 0
   timeToDestoryThis: 5
   LockRotate: 1
 --- !u!114 &6900897445631050515
@@ -139,6 +139,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6937655142358512233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890065705595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89defe131247caf4d949f42cdf3ee2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAi: {fileID: 4218061373546766486}
+  stage: 
+  rand: 0
+  animator: {fileID: 7526202931026111161}
+  die: 0
+  thinkingTime_fixed: 2
+  thinkingTime_remaining: 0
 --- !u!1 &8049604890519221806
 GameObject:
   m_ObjectHideFlags: 0

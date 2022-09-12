@@ -30,43 +30,28 @@ public class EnemyAi : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
-    [SerializeField] private bool die = false;
     public float timeToDestoryThis = 5;
     private bool inAttackRange = false;
     public bool LockRotate = true;
 
+    
+
     private BoxCollider2D boxCollider;
 
     private void Start()
-    {
+    {   
+        //GetComponent
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        //find player position
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
+        //AI path setup
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
 
     }
-    private void Update()
-    {
-        if(LockRotate)
-            lockRotation();   
-    }
-    private void FixedUpdate()
-    {
-        if (TargetInDistance() && followEnable)
-            PathFollow();
-        else
-        {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isJumping", false);
-        }
 
-        if (die)
-            enemydie();
-
-    }
-    private void enemydie()
+    public void enemydie()
     {
         if (timeToDestoryThis >= 5)
         {
@@ -78,13 +63,13 @@ public class EnemyAi : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void UpdatePath()
+    public void UpdatePath()
     {
         if (followEnable && TargetInDistance() && seeker.IsDone())
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
-    private void PathFollow()
+    public void PathFollow(float speed)
     {
         if (path == null) {
             return;
@@ -96,14 +81,14 @@ public class EnemyAi : MonoBehaviour
 
         //Attack Coding Zone
 
-        
+
         //On Ground Check
         //isGrounded = Physics2D.Raycast(transform.position, -Vector3.up, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
         LayerMask groundLayer = LayerMask.GetMask("Ground");
         RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
-        
+
         //Animation set
-        if(isGrounded.collider != null )
+        if (isGrounded.collider != null )
             animator.SetBool("isRunning", true);
         animator.SetBool("isJumping", (isGrounded.collider == null));
 
@@ -144,12 +129,12 @@ public class EnemyAi : MonoBehaviour
         }
     }
 
-    private bool TargetInDistance()
+    public bool TargetInDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
     }
 
-    private void OnPathComplete(Path p)
+    public void OnPathComplete(Path p)
     {
         if (!p.error)
         {
@@ -163,10 +148,17 @@ public class EnemyAi : MonoBehaviour
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
     }
 
-    private void attack()
+    private void Update()
     {
-        animator.SetTrigger("attack");
-    }
+        if (LockRotate)
+            lockRotation();
 
-    
+        LayerMask groundLayer = LayerMask.GetMask("Ground");
+        RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+
+        if(isGrounded.collider != null)
+            animator.SetBool("isJumping", false);
+        else
+            animator.SetBool("isJumping", true);
+    }
 }
