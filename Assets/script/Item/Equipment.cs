@@ -11,15 +11,27 @@ public class Equipment : Item
     public int attackModifier;
     public int healthModifier;
 
+    //public bool isEquip = false; 
+
     public override void Use()
     {
         base.Use();
         // Equip item
+        
         EquipmentManager.instance.Equip(this);
-
+        //isEquip = true;
         // remove from inventory
         RemoveFromInventory();
+             
     }
+
+    public override void Attack()
+    {
+        base.Attack();
+    }
+
+
+
 
 }
 

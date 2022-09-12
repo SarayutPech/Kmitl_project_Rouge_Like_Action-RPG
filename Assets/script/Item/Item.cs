@@ -11,12 +11,18 @@ public class Item : ScriptableObject
     public int Health = 0;
 
 
+
     public virtual void Use()
     {
         // use item
 
 
         Debug.Log("Using " + name);
+    }
+
+    public virtual void Attack()
+    {
+        Debug.Log("Attack With " + name);
     }
 
     public void RemoveFromInventory()

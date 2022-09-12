@@ -33,7 +33,7 @@ public class player_movement : MonoBehaviour
             jumping();
 
         running();
-        Debug.Log("rb.velocity : " + rb.velocity);
+       // Debug.Log("rb.velocity : " + rb.velocity);
     }
     void running()
     {
