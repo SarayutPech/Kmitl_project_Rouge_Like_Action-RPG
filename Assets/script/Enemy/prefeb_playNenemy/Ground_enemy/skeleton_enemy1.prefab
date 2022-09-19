@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8049604890065705591}
   - component: {fileID: 8049604890065705590}
   - component: {fileID: 4703965817917165774}
+  - component: {fileID: 4061838470002615787}
   - component: {fileID: 7052682258489676413}
   m_Layer: 3
   m_Name: skeleton_enemy1
@@ -108,9 +109,31 @@ MonoBehaviour:
   diractionLookEnable: 1
   canFly: 0
   animator: {fileID: 0}
-  die: 0
   timeToDestoryThis: 5
   LockRotate: 1
+--- !u!114 &4061838470002615787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890065705595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b17659a667ace43821e91c4ee9dfd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAi: {fileID: 4703965817917165774}
+  stage: 
+  rand: 0
+  animator: {fileID: 0}
+  die: 0
+  thinkingTime_fixed: 5
+  thinkingTime_remaining: 0
+  canwarp: 0
+  warp_cd_fixed: 6
+  warp_cd_remain: 0
+  canHeal: 0
 --- !u!114 &7052682258489676413
 MonoBehaviour:
   m_ObjectHideFlags: 0

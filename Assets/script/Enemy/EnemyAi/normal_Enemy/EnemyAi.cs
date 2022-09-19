@@ -69,7 +69,7 @@ public class EnemyAi : MonoBehaviour
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
-    public void PathFollow(float speed)
+    public void PathFollow(float speed, float stop_chase_at = -1)
     {
         if (path == null) {
             return;
@@ -79,8 +79,12 @@ public class EnemyAi : MonoBehaviour
             return;
         }
 
-        //Attack Coding Zone
-
+        if (Vector2.Distance(transform.position, target.position) <= stop_chase_at && Vector2.Distance(transform.position, target.position) > -0.0001)
+        {
+            rb.velocity = new Vector2(rb.velocity.x / 2, rb.velocity.y / 2);
+            animator.SetBool("isRunning", false);
+            return;
+        }
 
         //On Ground Check
         //isGrounded = Physics2D.Raycast(transform.position, -Vector3.up, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPattern : MonoBehaviour
+public abstract class EnemyPattern : MonoBehaviour
 {
     public EnemyAi enemyAi;
     [Header("Stage")]
@@ -16,22 +16,14 @@ public class EnemyPattern : MonoBehaviour
     public bool die = false;
 
     [Header("Pattern Script")]
-    public EnemyPattern enemyPattern;
     [SerializeField] private float thinkingTime_fixed = 5;
-    [SerializeField] private float thinkingTime_remaining = 0;
-
-    private Rigidbody2D rb;
-    Transform target;
+    public float thinkingTime_remaining = 0;
 
     private void Start()
     {
         //Thinking times
         thinkingTime_remaining = thinkingTime_fixed;
-
-
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-
-        rb = GetComponent<Rigidbody2D>();
+        enemyAi = GetComponent<EnemyAi>();
     }
 
     private void FixedUpdate()
@@ -66,26 +58,5 @@ public class EnemyPattern : MonoBehaviour
         animator.SetBool("isRunning", false);
     }
 
-    public void todo()
-    {
-
-        if (thinkingTime_remaining <= 0)
-            rand = Random.Range(0, 10);
-
-        if (rand >= 0 && rand <= 3)
-        {
-            
-            stage = "";
-        }
-        else if (rand >= 4 && rand <= 6)
-        {
-            
-            stage = "";
-        }
-        else
-        {
-            enemyAi.PathFollow(enemyAi.speed);
-            stage = "normal stage";
-        }
-    }
+    public abstract void todo();
 }

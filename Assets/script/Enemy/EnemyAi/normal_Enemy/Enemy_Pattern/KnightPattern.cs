@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightPattern : MonoBehaviour
+public class KnightPattern : EnemyPattern
 {
-    public EnemyAi enemyAi;
-    [Header("Stage")]
-    public string stage;
-    public int rand = 0;
 
     [Header("Status")]
     public bool canwarp = false;
@@ -15,56 +11,15 @@ public class KnightPattern : MonoBehaviour
     public float warp_cd_remain = 0;
     public bool canHeal = false;
 
-    [Header("Animation")]
-    public Animator animator;
-    public bool die = false;
 
-    [Header("Pattern Script")]
-    [SerializeField] private float thinkingTime_fixed = 5;
-    [SerializeField] private float thinkingTime_remaining = 0;
 
     private Rigidbody2D rb;
     Transform target;
 
     private void Start()
     {
-        //Thinking times
-        thinkingTime_remaining = thinkingTime_fixed;
-
-        
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        
-        enemyStage();
-        if (enemyAi.TargetInDistance() && enemyAi.followEnable)
-        {
-            // What your enemy can do doo doo dooo do
-            todo();
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isJumping", false);
-        }
-
-        skill_cd_reset();
-
-        if (die)
-            enemyAi.enemydie();
-    }
-
-    public void enemyStage()
-    {
-
-        if (thinkingTime_remaining >= thinkingTime_fixed)
-            thinkingTime_remaining = 0;
-        else
-            thinkingTime_remaining += Time.deltaTime;
     }
 
     public void attack()
@@ -72,14 +27,9 @@ public class KnightPattern : MonoBehaviour
         
     }
 
-    public void idle()
+    public override void todo()
     {
-        animator.SetBool("isRunning", false);
-    }
-
-    public void todo()
-    {
-        
+        skill_cd_reset();
         if (thinkingTime_remaining <= 0)
             rand = Random.Range(0, 10);
 
