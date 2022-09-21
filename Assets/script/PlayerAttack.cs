@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     private int indexWeapon = 0;
 
     public Animator animator;
+    public Animator weaponAnimator;
 
     // private Equipment[] equipWeapon = new Equipment[5];
     Equipment equipWeapon;
@@ -50,7 +51,13 @@ public class PlayerAttack : MonoBehaviour
             indexWeapon += 1;
             //animator.SetBool("attacking", attacking);
             animator.SetTrigger("attack");
-            if (indexWeapon > 5)
+            // Play weapon Animation
+            //weaponAnimator.GetComponent<Animator>();           
+           //string currentWeaponAnimation = equipmentManager.currentEquipCard[indexWeapon - 1].animationWeapon.name;
+           // Debug.Log("animate : "+ currentWeaponAnimation);
+            //weaponAnimator.SetTrigger(currentWeaponAnimation);
+
+            if (indexWeapon >= 5)
             {
                 indexWeapon = 0;
             }
