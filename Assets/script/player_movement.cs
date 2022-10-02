@@ -8,6 +8,7 @@ public class player_movement : MonoBehaviour
     [SerializeField] private float jumpforce = 5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+    public float knockbackTime = 0;
 
     public Animator animator;
 
@@ -33,6 +34,9 @@ public class player_movement : MonoBehaviour
             jumping();
 
         running();
+
+        if(knockbackTime > 0)
+            knockbackTime -= Time.deltaTime;
         //Debug.Log("rb.velocity : " + rb.velocity);
     }
     void running()
@@ -40,7 +44,8 @@ public class player_movement : MonoBehaviour
         
         
         //transform.position += new Vector3(DirIn, 0, 0) * Time.deltaTime * speed;
-        rb.velocity = new Vector2(DirIn * speed, rb.velocity.y);
+        if(knockbackTime <= 0)
+            rb.velocity = new Vector2(DirIn * speed , rb.velocity.y);
         //rb.AddForce(Vector2.right * DirIn * speed);
 
         // fliping
@@ -76,9 +81,10 @@ public class player_movement : MonoBehaviour
 
     private bool onWall()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(-transform.localScale.x, 0), 0.1f, wallLayer);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size , 0, new Vector2(-transform.localScale.x, 0), 0.1f, wallLayer);
         return raycastHit.collider != null;
     }
+
 
     void lockRotation()
     {

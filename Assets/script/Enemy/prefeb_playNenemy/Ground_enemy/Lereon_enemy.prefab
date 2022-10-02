@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6165286168022744482}
   - component: {fileID: 5661275878427487515}
   - component: {fileID: 8110948535918019373}
+  - component: {fileID: 6818726546295305086}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -43,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 1988138266985242331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 25904e30789a2db4abcff4e70ded7b48, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d1618f857894da4cb4061809afc621c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -94,7 +95,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1817839707, guid: 6450bd3c538e2c14d884bb54ad99a4e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51411581a236658419d29263daad4ccb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,6 +106,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6818726546295305086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988138266985242331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06f10d83202206489ff66e957c16e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loreon: {fileID: 3365086916430048772}
+  knockbackY: 5
+  knockbackX: 5
+  knockbackForcenormalAttack: 0.1
+--- !u!1 &3313143789162350285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5409523520645615963}
+  m_Layer: 3
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5409523520645615963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313143789162350285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.033, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8049604890065705594}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8049604890065705595
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,11 +165,10 @@ GameObject:
   - component: {fileID: 8049604890065705591}
   - component: {fileID: 8049604890065705590}
   - component: {fileID: 755553843604279129}
-  - component: {fileID: 6890535570428845951}
-  - component: {fileID: 4710849969295191853}
   - component: {fileID: -3967163872744819470}
+  - component: {fileID: 3365086916430048772}
   m_Layer: 3
-  m_Name: Knight_enemy
+  m_Name: Lereon_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,11 +182,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049604890065705595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.61, y: -0.84, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6165286168022744482}
+  - {fileID: 5409523520645615963}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,7 +204,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.049661875, y: -0.042304635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -167,7 +215,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.46}
+  m_Size: {x: 0.19067621, y: 0.30181748}
   m_EdgeRadius: 0
 --- !u!50 &8049604890065705590
 Rigidbody2D:
@@ -203,10 +251,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  activateDistance: 20
+  activateDistance: 2
   pathUpdateSeconds: 0.5
   speed: 700
-  nextWaypointDistance: 3
+  nextWaypointDistance: 0.5
   JumpNodeHeightRequirement: 0.8
   jumpforce: 6
   jumpCheckOffset: 0.1
@@ -217,39 +265,6 @@ MonoBehaviour:
   animator: {fileID: 5661275878427487515}
   timeToDestoryThis: 5
   LockRotate: 1
---- !u!70 &6890535570428845951
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049604890065705595}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: 0}
-  m_Size: {x: 0.53, y: 0.47}
-  m_Direction: 1
---- !u!114 &4710849969295191853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049604890065705595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b17659a667ace43821e91c4ee9dfd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyAi: {fileID: 755553843604279129}
-  animator: {fileID: 5661275878427487515}
-  die: 0
-  thinkingTime_fixed: 5
-  thinkingTime_remaining: 0
 --- !u!114 &-3967163872744819470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,3 +293,31 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &3365086916430048772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890065705595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc229262338b67479307fb309286a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAi: {fileID: 0}
+  stage: 
+  rand: 0
+  shouldAttackBox: {fileID: 5409523520645615963}
+  HitboxX: 1.29
+  HitboxY: 0.79
+  player:
+    serializedVersion: 2
+    m_Bits: 512
+  animator: {fileID: 5661275878427487515}
+  thinkingTime_fixed: 5
+  thinkingTime_remaining: 0
+  currentAttackCooldown: 0
+  baseAttackSpeed: 1.5
+  currentSkillcooldown: 0
+  baseSkillCooldown: 3

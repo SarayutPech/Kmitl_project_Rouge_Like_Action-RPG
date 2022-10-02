@@ -1,0 +1,1 @@
+เปิด - ปิด log a* ได้ที่ : Assets/ImportPack/AstarPathfindingProject/Core/AstarPath.cs:837

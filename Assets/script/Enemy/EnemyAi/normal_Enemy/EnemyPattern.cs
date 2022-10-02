@@ -9,11 +9,14 @@ public abstract class EnemyPattern : MonoBehaviour
     public string stage;
     public int rand = 0;
 
-    [Header("Status")]
+    [Header("Hitbox detect")]
+    public Transform shouldAttackBox;
+    public float HitboxX = 0.1f;
+    public float HitboxY = 0.1f;
+    public LayerMask player;
 
     [Header("Animation")]
     public Animator animator;
-    public bool die = false;
 
     [Header("Pattern Script")]
     [SerializeField] private float thinkingTime_fixed = 5;
@@ -26,23 +29,11 @@ public abstract class EnemyPattern : MonoBehaviour
         enemyAi = GetComponent<EnemyAi>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         enemyStage();
-        if (enemyAi.TargetInDistance() && enemyAi.followEnable)
-        {
-            // What your enemy can do doo doo dooo do
-            todo();
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isJumping", false);
-        }
-
-        if (die)
-            enemyAi.enemydie();
+        todo();   
     }
 
     public void enemyStage()
@@ -59,4 +50,15 @@ public abstract class EnemyPattern : MonoBehaviour
     }
 
     public abstract void todo();
+
+    public bool shouldAttack()
+    {
+        return Physics2D.OverlapBox(shouldAttackBox.position, new Vector2(HitboxX, HitboxY), 0f,player);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(shouldAttackBox.position, new Vector2(HitboxX, HitboxY));
+    }
 }

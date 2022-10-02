@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &687269216131944852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8334280787699666252}
+  m_Layer: 3
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8334280787699666252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687269216131944852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.054, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8049604890065705594}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8049604890065705595
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8049604890519221803}
+  - {fileID: 8334280787699666252}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +79,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -76,10 +108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  activateDistance: 50
+  activateDistance: 6
   pathUpdateSeconds: 0.5
-  speed: 200
-  nextWaypointDistance: 3
+  speed: 50
+  nextWaypointDistance: 0.5
   JumpNodeHeightRequirement: 0.8
   jumpforce: 5
   jumpCheckOffset: 0.1
@@ -154,10 +186,18 @@ MonoBehaviour:
   enemyAi: {fileID: 4218061373546766486}
   stage: 
   rand: 0
+  shouldAttackBox: {fileID: 8334280787699666252}
+  HitboxX: 0.35
+  HitboxY: 0.5
+  player:
+    serializedVersion: 2
+    m_Bits: 512
   animator: {fileID: 7526202931026111161}
-  die: 0
   thinkingTime_fixed: 2
   thinkingTime_remaining: 0
+  knockbackTimenormalAttack: 0.5
+  rb: {fileID: 3749901382101133040}
+  stop_chase_at: 4
 --- !u!1 &8049604890519221806
 GameObject:
   m_ObjectHideFlags: 0

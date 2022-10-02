@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyAi : MonoBehaviour
 {
+    #region Variable
     [Header("Pathfinding")]
     public Transform target;
     public float activateDistance = 50f;
@@ -31,12 +32,18 @@ public class EnemyAi : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
     public float timeToDestoryThis = 5;
-    private bool inAttackRange = false;
     public bool LockRotate = true;
 
     
 
     private BoxCollider2D boxCollider;
+    #endregion
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(gameObject.transform.position, activateDistance);
+    }
 
     private void Start()
     {   
@@ -51,38 +58,30 @@ public class EnemyAi : MonoBehaviour
 
     }
 
-    public void enemydie()
-    {
-        if (timeToDestoryThis >= 5)
-        {
-            animator.SetTrigger("isDie");
-            followEnable = false;
-        }
-        timeToDestoryThis -= Time.deltaTime;
-        if (timeToDestoryThis <= 0)
-            Destroy(gameObject);
-    }
-
     public void UpdatePath()
     {
         if (followEnable && TargetInDistance() && seeker.IsDone())
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
-    public void PathFollow(float speed, float stop_chase_at = -1)
+
+    //stop_chase_at : distance of player and enemy
+    public void PathFollow(float speed, float stop_chase_at = -1, string moveingStage = "isRunning")
     {
         if (path == null) {
+            animator.SetBool(moveingStage, false);
             return;
         }
 
         if (currentWaypoint >= path.vectorPath.Count){
+            animator.SetBool(moveingStage, false);
             return;
         }
 
         if (Vector2.Distance(transform.position, target.position) <= stop_chase_at && Vector2.Distance(transform.position, target.position) > -0.0001)
         {
             rb.velocity = new Vector2(rb.velocity.x / 2, rb.velocity.y / 2);
-            animator.SetBool("isRunning", false);
+            animator.SetBool(moveingStage, false);
             return;
         }
 
@@ -91,10 +90,12 @@ public class EnemyAi : MonoBehaviour
         LayerMask groundLayer = LayerMask.GetMask("Ground");
         RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
 
+
         //Animation set
         if (isGrounded.collider != null )
-            animator.SetBool("isRunning", true);
-        animator.SetBool("isJumping", (isGrounded.collider == null));
+            animator.SetBool(moveingStage, true);
+        if (jumpEnable)
+            animator.SetBool("isJumping", (isGrounded.collider == null));
 
         //Calculate Direction
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -135,7 +136,7 @@ public class EnemyAi : MonoBehaviour
 
     public bool TargetInDistance()
     {
-        return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
+        return Vector2.Distance(transform.position, target.transform.position) <= activateDistance;
     }
 
     public void OnPathComplete(Path p)
@@ -157,12 +158,17 @@ public class EnemyAi : MonoBehaviour
         if (LockRotate)
             lockRotation();
 
-        LayerMask groundLayer = LayerMask.GetMask("Ground");
-        RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+        if (jumpEnable)
+        {
+            LayerMask groundLayer = LayerMask.GetMask("Ground");
+            RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
 
-        if(isGrounded.collider != null)
-            animator.SetBool("isJumping", false);
-        else
-            animator.SetBool("isJumping", true);
+            if (isGrounded.collider != null)
+                animator.SetBool("isJumping", false);
+            else
+                animator.SetBool("isJumping", true);
+        }
     }
+
+    
 }

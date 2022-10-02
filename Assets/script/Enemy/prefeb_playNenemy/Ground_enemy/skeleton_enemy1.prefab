@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2541253326496692989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62729257166165447}
+  m_Layer: 3
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &62729257166165447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541253326496692989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.004, y: 0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8049604890065705594}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8049604890065705595
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,8 +42,8 @@ GameObject:
   - component: {fileID: 8049604890065705594}
   - component: {fileID: 8049604890065705591}
   - component: {fileID: 8049604890065705590}
+  - component: {fileID: 6918753245331780401}
   - component: {fileID: 4703965817917165774}
-  - component: {fileID: 4061838470002615787}
   - component: {fileID: 7052682258489676413}
   m_Layer: 3
   m_Name: skeleton_enemy1
@@ -34,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8049604890519221803}
+  - {fileID: 62729257166165447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,6 +116,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6918753245331780401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890065705595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85793ee81130be8438f8ce4ddb968904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAi: {fileID: 0}
+  stage: 
+  rand: 0
+  shouldAttackBox: {fileID: 62729257166165447}
+  HitboxX: 1.2
+  HitboxY: 0.8
+  player:
+    serializedVersion: 2
+    m_Bits: 512
+  animator: {fileID: 7745308214365865371}
+  thinkingTime_fixed: 5
+  thinkingTime_remaining: 0
 --- !u!114 &4703965817917165774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,10 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  activateDistance: 20
+  activateDistance: 5
   pathUpdateSeconds: 0.5
-  speed: 400
-  nextWaypointDistance: 3
+  speed: 350
+  nextWaypointDistance: 0.5
   JumpNodeHeightRequirement: 0.8
   jumpforce: 0
   jumpCheckOffset: 0.1
@@ -108,32 +164,9 @@ MonoBehaviour:
   jumpEnable: 0
   diractionLookEnable: 1
   canFly: 0
-  animator: {fileID: 0}
+  animator: {fileID: 7745308214365865371}
   timeToDestoryThis: 5
   LockRotate: 1
---- !u!114 &4061838470002615787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049604890065705595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b17659a667ace43821e91c4ee9dfd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyAi: {fileID: 4703965817917165774}
-  stage: 
-  rand: 0
-  animator: {fileID: 0}
-  die: 0
-  thinkingTime_fixed: 5
-  thinkingTime_remaining: 0
-  canwarp: 0
-  warp_cd_fixed: 6
-  warp_cd_remain: 0
-  canHeal: 0
 --- !u!114 &7052682258489676413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +206,7 @@ GameObject:
   - component: {fileID: 8049604890519221803}
   - component: {fileID: 8049604890519221800}
   - component: {fileID: 7745308214365865371}
+  - component: {fileID: 5486328093552071211}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -267,3 +301,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5486328093552071211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890519221806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f65a7d5d07d8e747a535d410ef30d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeleton: {fileID: 6918753245331780401}
+  knockbackY: 3.5
+  knockbackX: 5
+  knockbackTimenormalAttack: 0.1
