@@ -18,6 +18,7 @@ MonoBehaviour:
   itemType: 0
   attack: 5
   Health: 0
+  animationWeapon: {fileID: 7400000, guid: b8a47808126279f458a042cc4cbdce4f, type: 2}
   equipSlot: 0
   attackModifier: 0
   healthModifier: 0

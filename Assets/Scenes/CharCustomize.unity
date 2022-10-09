@@ -3834,8 +3834,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 21300000, guid: 556a2f3b046024d4c9621c1b4be5f0c1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3882,7 +3882,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8928,7 +8928,8 @@ MonoBehaviour:
   attacking: 0
   animator: {fileID: 1705095416}
   weaponAnimator: {fileID: 928126711}
-  equipmentManager: {fileID: 0}
+  animatorOverride: {fileID: 22100000, guid: 258e4f8c90ced034fbb439304616ce0f, type: 2}
+  equipmentManager: {fileID: 249344605}
 --- !u!95 &1705095416 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1615699087613944827, guid: 894de8edef0ccb14387367d7e7dcb15f, type: 3}
@@ -9593,6 +9594,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615699087613944825, guid: 894de8edef0ccb14387367d7e7dcb15f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615699087613944826, guid: 894de8edef0ccb14387367d7e7dcb15f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615699087613944826, guid: 894de8edef0ccb14387367d7e7dcb15f, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

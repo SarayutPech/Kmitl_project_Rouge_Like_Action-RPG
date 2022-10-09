@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
 
     public Animator animator;
     public Animator weaponAnimator;
+    public AnimatorOverrideController animatorOverride;
 
     // private Equipment[] equipWeapon = new Equipment[5];
     Equipment equipWeapon;
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
        equipmentManager = EquipmentManager.instance;
+       weaponAnimator.runtimeAnimatorController = animatorOverride;
     }
 
     // Update is called once per frame
@@ -48,19 +50,29 @@ public class PlayerAttack : MonoBehaviour
         if (equipmentManager.AttackCmd(indexWeapon) < 5)
         {
             attacking = true;
+            //string usingweapon = equipmentManager.currentEquipCard[indexWeapon].animationWeapon.ToString();
+            animatorOverride["Sword_Sprite"] = equipmentManager.currentEquipCard[indexWeapon].animationWeapon;
             indexWeapon += 1;
             //animator.SetBool("attacking", attacking);
             animator.SetTrigger("attack");
+
+            // Debug.Log("Using "+ usingweapon);
+            //animator.runtimeAnimatorController.n
+            //weaponAnimator.SetBool("WeaponAttack", attacking);
+            //animatorOverride.ApplyOverrides(equipmentManager.currentEquipCard[indexWeapon].animationWeapon);
+            //animatorOverride = equipmentManager.currentEquipCard[indexWeapon].animationWeapon;
+            
+            weaponAnimator.SetTrigger("WeaponAttack");
             // Play weapon Animation
             //weaponAnimator.GetComponent<Animator>();           
-           //string currentWeaponAnimation = equipmentManager.currentEquipCard[indexWeapon - 1].animationWeapon.name;
-           // Debug.Log("animate : "+ currentWeaponAnimation);
-            //weaponAnimator.SetTrigger(currentWeaponAnimation);
-
+            //string currentWeaponAnimation = equipmentManager.currentEquipCard[indexWeapon - 1].animationWeapon.name;
+            // Debug.Log("animate : "+ currentWeaponAnimation);
+            //weaponAnimator.SetTrigger(currentWeaponAnimation);          
             if (indexWeapon >= 5)
             {
                 indexWeapon = 0;
             }
+            
         }
         else
         {
