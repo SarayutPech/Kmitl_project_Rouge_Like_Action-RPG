@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 707e553f1b5cd8346955b51a4e150594, type: 3}
-  m_Name: Pickaxe
+  m_Name: Spear
   m_EditorClassIdentifier: 
-  name: Pickaxe
-  icon: {fileID: 21300000, guid: 1fb46228a3bcb5042a763829cc07f9e5, type: 3}
+  name: Spear
+  icon: {fileID: 21300000, guid: 58d810b0ce568b64e85fc811a4c0a0b3, type: 3}
   isDefaultItem: 0
   itemType: 0
-  attack: 7
+  attack: 10
   Health: 0
+  animationWeapon: {fileID: 7400000, guid: e7608136812c79f4b9444d84b0851378, type: 2}
   equipSlot: 0
   attackModifier: 0
   healthModifier: 0
