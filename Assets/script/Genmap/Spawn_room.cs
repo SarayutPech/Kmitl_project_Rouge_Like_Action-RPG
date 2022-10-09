@@ -12,10 +12,12 @@ public class Spawn_room : MonoBehaviour
     private int direction;
     public float moveX,moveY,minX,maxX,maxY;
     public bool stop_Gen = false;
+    public bool graph_Gen = false;
 
 
     private float timeBtwRoom;
     public float startTimeBtwRoom = 0.25f;
+    public float waitForGraph = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,21 @@ public class Spawn_room : MonoBehaviour
         else
         {
             timeBtwRoom -= Time.deltaTime;
+        }
+
+        if(graph_Gen == false && stop_Gen == true)
+        {
+            generateGraphAstar();
+        }
+    }
+    private void generateGraphAstar()
+    {
+        if(waitForGraph >= 0)
+        {
+            waitForGraph -= Time.deltaTime;
+        }else
+        {
+            AstarPath.active.Scan();
         }
     }
 
