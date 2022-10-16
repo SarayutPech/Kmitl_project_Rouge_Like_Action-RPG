@@ -5,17 +5,17 @@ using UnityEngine;
 public class CameraFollowPlayer : MonoBehaviour
 {
     public Transform followTransform;
-
-    private void Start()
-    {
-        followTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    public bool foundPlayer = false;
 
     // Update is called once per frame
     void Update()
     {
+        if(foundPlayer == false)
+        {
+            followTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            foundPlayer = true;
+        }
+
         this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
-
-
     }
 }
