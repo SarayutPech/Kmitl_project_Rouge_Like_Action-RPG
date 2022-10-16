@@ -7,8 +7,6 @@ public class Item : ScriptableObject
     public bool isDefaultItem = false;
     public enum ItemType { WeaponCard, Accessory }
     public ItemType itemType;
-    public int attack = 0;
-    public int Health = 0;
     public AnimationClip animationWeapon;
     
 

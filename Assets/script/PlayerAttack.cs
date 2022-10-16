@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
 
     public bool attacking = false;
 
-    private float timeToAttack = 0.25f;
+    private float timeToAttack = 0.20f;
     private float timer = 0f;
     private int indexWeapon = 0;
 
@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public AnimatorOverrideController animatorOverride;
 
     // private Equipment[] equipWeapon = new Equipment[5];
-    Equipment equipWeapon;
+   // Equipment equipWeapon;
     public EquipmentManager equipmentManager;
     void Start()
     {
@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
             if(timer >= timeToAttack)
             {
                 timer = 0;
-                attacking = false;
+                attacking = false;             
             }
         }
     }

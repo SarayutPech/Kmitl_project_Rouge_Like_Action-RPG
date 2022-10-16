@@ -8,8 +8,12 @@ public class Equipment : Item
 
     public EquipmentSlot equipSlot;
 
-    public int attackModifier;
-    public int healthModifier;
+    public int attack_Modifier;
+    public int critRate_Modifier;
+    public int critDamage_Modifier;
+    public int moveSpeed_Modifier;
+    public int dropRate_Modifier;
+    public int health_Modifier;
 
     //public bool isEquip = false; 
 
