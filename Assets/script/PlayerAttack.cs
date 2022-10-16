@@ -50,24 +50,14 @@ public class PlayerAttack : MonoBehaviour
         if (equipmentManager.AttackCmd(indexWeapon) < 5)
         {
             attacking = true;
-            //string usingweapon = equipmentManager.currentEquipCard[indexWeapon].animationWeapon.ToString();
+            //Override Animation clip 
             animatorOverride["Sword_Sprite"] = equipmentManager.currentEquipCard[indexWeapon].animationWeapon;
             indexWeapon += 1;
-            //animator.SetBool("attacking", attacking);
-            animator.SetTrigger("attack");
 
-            // Debug.Log("Using "+ usingweapon);
-            //animator.runtimeAnimatorController.n
-            //weaponAnimator.SetBool("WeaponAttack", attacking);
-            //animatorOverride.ApplyOverrides(equipmentManager.currentEquipCard[indexWeapon].animationWeapon);
-            //animatorOverride = equipmentManager.currentEquipCard[indexWeapon].animationWeapon;
-            
-            weaponAnimator.SetTrigger("WeaponAttack");
             // Play weapon Animation
-            //weaponAnimator.GetComponent<Animator>();           
-            //string currentWeaponAnimation = equipmentManager.currentEquipCard[indexWeapon - 1].animationWeapon.name;
-            // Debug.Log("animate : "+ currentWeaponAnimation);
-            //weaponAnimator.SetTrigger(currentWeaponAnimation);          
+            animator.SetTrigger("attack");
+            weaponAnimator.SetTrigger("WeaponAttack");
+
             if (indexWeapon >= 5)
             {
                 indexWeapon = 0;
