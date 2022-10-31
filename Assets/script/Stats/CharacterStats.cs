@@ -4,8 +4,13 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
+    public int maxStatPoint = 30;
     public int currentHealth { get; private set; }
 
+    //Status
+    public Stats str,vit,agi,dex,luk;
+
+    //Parameter
     public Stats attack;
     public Stats critRate;
     public Stats critDamage;
@@ -36,7 +41,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            TakeDamage(10);
+            TakeDamage(attack.GetValue());
         }
     }
 

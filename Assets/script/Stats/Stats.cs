@@ -17,7 +17,11 @@ public class Stats {
         return finalValue;
     }
 
-    public void AddModifier (int modifier)
+    public void SetBaseValue(int newValue)
+    {
+        baseValue = newValue;
+    }
+        public void AddModifier (int modifier)
     {
         if (modifier != 0)
         {
