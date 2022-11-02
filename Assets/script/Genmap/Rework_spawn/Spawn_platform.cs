@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawn_platform : MonoBehaviour
 {
     private Spawn_room sp;
+    private EnemySpawner es;
     [SerializeField]private bool start_Gen = false;
     [SerializeField]private bool stop_Gen = false;
     
@@ -26,8 +27,12 @@ public class Spawn_platform : MonoBehaviour
     public float startX;
     public float scale = 0.1f;
     public float blockScale = 1f;
+    public int stepY = 3;
+    public int[] randomYRange;
 
     public float platformGenLevel = 0.2f;
+    public float enemyGenLevel = 0.3f;
+    
 
    
     public LayerMask room;
@@ -36,13 +41,14 @@ public class Spawn_platform : MonoBehaviour
     void Start()
     {
         sp = GetComponent<Spawn_room>();
+        es = GetComponent<EnemySpawner>();
     }
 
     private void Update()
     {
         if (sp.stop_Gen && !start_Gen) {
             resetTransform();
-            transform.position = new Vector2(0, 0);
+            transform.position = new Vector2(sp.moveX, 0);
         }
 
         if(!stop_Gen)
@@ -68,12 +74,14 @@ public class Spawn_platform : MonoBehaviour
 
     private void placePlatform()
     {
+        //es.createEnemyList(10);
         float[,] noiseMap = new float[roomSizeX, roomSizeY];
 
         float seedX = Random.Range(-1000f, 1000f);
         float seedY = Random.Range(-1000f, 1000f);
 
-        for (int y = 0; y < roomSizeY; y++)
+        // Map noise เข้า Array
+        for (int y = 0; y < roomSizeY; y ++)
         {
             for (int x = 0; x < roomSizeX; x++)
             {
@@ -84,30 +92,37 @@ public class Spawn_platform : MonoBehaviour
                     noiseMap[x, y] = noiseValue;
             }
         }
-        for(int y = 1; y < roomSizeY-1; y++)
+
+        stepY = Random.Range( randomYRange[0], randomYRange[1] );
+
+        // เอา noise ที่ Map ไว้มา spawn platform
+        for(int y = 1; y < roomSizeY-1; y += stepY)
         {
             for (int x = 1; x < roomSizeX-1; x ++)
             {
                 float noiseValue = noiseMap[x, y];
 
                 Vector3 pos = new Vector2(x * blockScale + startX, y * blockScale - 2.75f);
-                if (noiseValue < platformGenLevel)
+                if (noiseValue < platformGenLevel && platformGenLevel > enemyGenLevel)
                 {
                     GameObject placed_block = (GameObject)Instantiate(blockToPlace(
                         noiseMap[x-1, y] < platformGenLevel,
-                        noiseMap[x+1, y] < platformGenLevel,
-                        noiseMap[x, y+1] < platformGenLevel,
-                        noiseMap[x, y-1] < platformGenLevel
+                        noiseMap[x+1, y] < platformGenLevel
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
                 }
+                
+                /*else if (noiseValue < enemyGenLevel)
+                {
+                    es.createEnemy( pos );
+                }*/
             }
         }
     }
 
-    GameObject blockToPlace(bool left, bool right, bool top, bool bot)
+    GameObject blockToPlace(bool left, bool right)
     {
-        if (left && right && top && bot)
+        /*if (left && right && top && bot)
             return blockCenter;
         else if (left && right && !top || !left && !right && !top && bot)
             return blockTop;
@@ -127,7 +142,15 @@ public class Spawn_platform : MonoBehaviour
             return blockLeft;
         else if (left && !right && top && bot || left && !right && !top && !bot)
             return blockRight;
-
+        */
+        if(!left && !right)
+            return noBlock;
+        else if (left && right)
+            return blockTop;
+        else if (!left && right)
+            return blockTopLeft;
+        else if (left && !right)
+            return blockTopRight;
 
 
         return noBlock;
@@ -149,15 +172,15 @@ public class Spawn_platform : MonoBehaviour
 
     private bool onRoom()
     {
-        Debug.Log( Physics2D.OverlapBox(transform.position, new Vector2(5, 5), 0f, room) );
+        //Debug.Log( Physics2D.OverlapBox(transform.position, new Vector2(5, 5), 0f, room) );
         return Physics2D.OverlapBox(transform.position, new Vector2(5, 5), 0f, room);
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector2(5, 5));
 
-    }
+    }*/
 }

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f89a76453c3f7b48b6cd910a6d73641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight: {fileID: 0}
+  knight: {fileID: 4710849969295191853}
   knockbackY: 2
   knockbackX: 10
   knockbackTimenormalAttack: 0.05

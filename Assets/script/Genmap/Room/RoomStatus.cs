@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class RoomStatus : MonoBehaviour
 {
-    [SerializeField] private bool isclear = false;
-    
+    public bool isclear = false;
+    [SerializeField] private Vector3 roomPosition;
+
+    private void Awake()
+    {
+        roomPosition = transform.position;
+    }
+
     public bool setClear( bool status )
     {
         return status;

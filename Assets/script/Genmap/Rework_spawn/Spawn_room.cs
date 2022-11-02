@@ -4,32 +4,39 @@ using UnityEngine;
 
 public class Spawn_room : MonoBehaviour
 {
-    [Header("GameObject")]
+    [Header("Note : This script is run only one time. we only use Stop_Gen when all room created.")]
+
+    [Header("GameObject.")]
     public GameObject[] room;
     public GameObject warpDoor;
     public GameObject player;
     public GameObject chest;
     public Transform spawnPoint;
 
-    [Header("Agent")]
+    [Header("Agent property.")]
     public int agentMove_StepLeft;
     private int direction;
     public float moveX,moveY;
 
-    [Header("Status")]
-    public bool stop_Gen = false;
+    [Header("Room border. just for veiw don't need to assign")]
+    public float maxX = 0;
+    public float minX = 0;
+    public float maxY = 0;
     
-    [Header("TimeConfig")]
+    [Header("TimeConfig.")]
+    [Tooltip("Time to create next room. (sec)")]
     public float startTimeBtwRoom = 1f;
     private float timeBtwRoom;
 
     private int SpawnRound = 1;
     private int warpDorCount = 0;
 
-    [Header("RoomPath")]
-    public float maxX = 0;
-    public float minX = 0;
-    public float maxY = 0;
+    [Header("Status.")]
+    [Tooltip("True : all room created.")]
+    public bool stop_Gen = false;
+    public bool fast_Gen = true;
+
+
 
 
     // Start is called before the first frame update
@@ -48,20 +55,26 @@ public class Spawn_room : MonoBehaviour
 
     private void Update()
     {
-        if (timeBtwRoom <= 0 && stop_Gen == false)
+        if (!fast_Gen)
         {
-            Move();
-            timeBtwRoom = startTimeBtwRoom;
+            if (timeBtwRoom <= 0 && stop_Gen == false)
+            {
+                Move();
+                timeBtwRoom = startTimeBtwRoom;
+            }
+            else
+            {
+                timeBtwRoom -= Time.deltaTime;
+            }
         }
         else
         {
-            timeBtwRoom -= Time.deltaTime;
+            if(stop_Gen == false)
+            {
+                Move();
+                timeBtwRoom = startTimeBtwRoom;
+            }
         }
-
-        /*if(graph_Gen == false && stop_Gen == true)
-        {
-            generateGraphAstar();
-        }*/
     }
 
     
