@@ -13711,7 +13711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.3329084, y: -52.06749}
+  m_AnchoredPosition: {x: -1.3329163, y: -52.06749}
   m_SizeDelta: {x: -1.2658, y: -119.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329198251
@@ -14538,6 +14538,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTransform: {fileID: 1705095406}
+  foundPlayer: 0
+  Stage_border: {fileID: 0}
+  smooth: 3
+  maxX: 0
+  maxY: 0
+  minX: 0
+  minY: 0
 --- !u!224 &1449438293 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1848846441638274447, guid: 1fcca4fca770de145b89165c91916cc0, type: 3}
@@ -18652,15 +18659,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacking: 0
-  animator: {fileID: 1705095416}
+  animator: {fileID: 1705095424}
   weaponAnimator: {fileID: 928126711}
   animatorOverride: {fileID: 22100000, guid: 258e4f8c90ced034fbb439304616ce0f, type: 2}
   equipmentManager: {fileID: 249344605}
---- !u!95 &1705095416 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1615699087613944827, guid: 894de8edef0ccb14387367d7e7dcb15f, type: 3}
-  m_PrefabInstance: {fileID: 1873894757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1705095421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18691,6 +18693,11 @@ MonoBehaviour:
   maxStatPoint: 30
   currentStatPoint: 5
   currentPlayerLevel: 5
+--- !u!95 &1705095424 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1242147520370011678, guid: 894de8edef0ccb14387367d7e7dcb15f, type: 3}
+  m_PrefabInstance: {fileID: 1873894757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1705105906 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3772428451704104142, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}

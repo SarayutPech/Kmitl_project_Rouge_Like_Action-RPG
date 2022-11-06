@@ -18,7 +18,8 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void Start()
     {
-        Stage_border = GameObject.Find("level manager").transform;
+        if(GameObject.Find("level manager").transform != null)
+            Stage_border = GameObject.Find("level manager").transform;
     }
 
     // Update is called once per frame

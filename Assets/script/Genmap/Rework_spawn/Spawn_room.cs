@@ -43,8 +43,8 @@ public class Spawn_room : MonoBehaviour
     void Start()
     {
         //Instantiate(room[1], transform.position, Quaternion.identity); // room R
-        GameObject roomName = (GameObject)Instantiate(room[1], transform.position, Quaternion.identity);
-        roomName.name = "Started_Room";
+        //GameObject roomName = (GameObject)Instantiate(room[1], transform.position, Quaternion.identity);
+        //roomName.name = "Started_Room";
         Instantiate(player, spawnPoint.position, Quaternion.identity); // Spawn player
 
         GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
