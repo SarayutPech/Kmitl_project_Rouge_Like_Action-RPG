@@ -35,8 +35,11 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void camMove()
     {
-        //this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
-        transform.position = new Vector3(Mathf.Clamp(followTransform.position.x, minX, maxX), Mathf.Clamp(followTransform.position.y, minY, maxY), transform.position.z);
+        
+        if(Stage_border != null)
+            transform.position = new Vector3(Mathf.Clamp(followTransform.position.x, minX, maxX), Mathf.Clamp(followTransform.position.y, minY, maxY), transform.position.z);
+        else
+            this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
     }
 
     
