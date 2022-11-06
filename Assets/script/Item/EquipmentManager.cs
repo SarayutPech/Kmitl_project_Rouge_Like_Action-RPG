@@ -148,4 +148,17 @@ public class EquipmentManager : MonoBehaviour
 
         
     }
+
+    public int AttackCmd(int indexSlot)
+    {
+        if(currentEquipCard[indexSlot]!= null && indexSlot <= 4)
+        {
+            currentEquipCard[indexSlot].Attack();
+            return indexSlot;
+        }
+        else
+        {
+            return 5;
+        }
+    }
 }

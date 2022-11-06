@@ -16,8 +16,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 90e99a7fde056a4418b9fe16084adb5c, type: 3}
   isDefaultItem: 0
   itemType: 0
-  attack: 5
-  Health: 0
+  animationWeapon: {fileID: 7400000, guid: b8a47808126279f458a042cc4cbdce4f, type: 2}
   equipSlot: 0
-  attackModifier: 0
-  healthModifier: 0
+  attack_Modifier: 6
+  critRate_Modifier: 5
+  critDamage_Modifier: 0
+  moveSpeed_Modifier: 0
+  dropRate_Modifier: 0
+  health_Modifier: 0

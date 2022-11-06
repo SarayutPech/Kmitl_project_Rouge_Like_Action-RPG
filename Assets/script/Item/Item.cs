@@ -7,8 +7,8 @@ public class Item : ScriptableObject
     public bool isDefaultItem = false;
     public enum ItemType { WeaponCard, Accessory }
     public ItemType itemType;
-    public int attack = 0;
-    public int Health = 0;
+    public AnimationClip animationWeapon;
+    
 
 
     public virtual void Use()
@@ -17,6 +17,11 @@ public class Item : ScriptableObject
 
 
         Debug.Log("Using " + name);
+    }
+
+    public virtual void Attack()
+    {
+        Debug.Log("Attack With " + name);
     }
 
     public void RemoveFromInventory()
