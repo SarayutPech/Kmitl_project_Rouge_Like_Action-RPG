@@ -24,6 +24,11 @@ public class PlayerAttack : MonoBehaviour
        weaponAnimator.runtimeAnimatorController = animatorOverride;
     }
 
+    private void Awake()
+    {
+        equipmentManager = GameObject.Find("GameManager").GetComponent<EquipmentManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
