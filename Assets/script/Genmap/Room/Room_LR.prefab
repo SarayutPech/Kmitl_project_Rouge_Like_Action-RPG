@@ -412,6 +412,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isclear: 0
+  isplayed: 0
+  enemyInRoom: 0
+  col: {fileID: 0}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 8
+  player:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1918372042000981168
 GameObject:
   m_ObjectHideFlags: 0

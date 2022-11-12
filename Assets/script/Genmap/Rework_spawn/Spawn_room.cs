@@ -49,7 +49,7 @@ public class Spawn_room : MonoBehaviour
 
         GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
         DoorBot.name = "Warp_Door_" + warpDorCount;
-
+        DoorBot.transform.parent = GameObject.Find("warp&key").transform;
         direction = 2;
     }
 
@@ -110,6 +110,7 @@ public class Spawn_room : MonoBehaviour
         {
             GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
             chestOb.name = "Chest_" + warpDorCount;
+            chestOb.transform.parent = GameObject.Find("warp&key").transform;
 
             Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveY);
             transform.position = newPos; // Move Agent to next position
@@ -119,7 +120,8 @@ public class Spawn_room : MonoBehaviour
             warpDorCount++;
             GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
             DoorBot.name = "Warp_Door_" + warpDorCount;
-            
+            DoorBot.transform.parent = GameObject.Find("warp&key").transform;
+
             direction = Random.Range(1, 6);
         }
         agentMove_StepLeft--;
@@ -129,6 +131,7 @@ public class Spawn_room : MonoBehaviour
             stop_Gen = true;
             GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
             chestOb.name = "Chest_" + warpDorCount;
+            chestOb.transform.parent = GameObject.Find("warp&key").transform;
             Debug.Log("Last room spawn.");
             maxX += moveX;
             minX -= moveX;
@@ -140,6 +143,7 @@ public class Spawn_room : MonoBehaviour
         //LR
         GameObject roomName = (GameObject)Instantiate(room[2], transform.position, Quaternion.identity);
         roomName.name = "Room_" + SpawnRound;
+        roomName.transform.parent = GameObject.Find("rooms").transform;
         SpawnRound++;
     }
 }

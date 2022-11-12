@@ -51,7 +51,7 @@ public class Graph : MonoBehaviour
         posPortalRight = transform.position + new Vector3(posx, posy, 0);
 
         // spawn enemy here
-        if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear)
+        if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear && !GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isplayed)
             es.canEnemySpawn();
     }
 

@@ -110,6 +110,7 @@ public class Spawn_platform : MonoBehaviour
                         noiseMap[x+1, y] < platformGenLevel
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
+                    placed_block.transform.parent = GameObject.Find("platforms").transform;
                 }
                 
                 /*else if (noiseValue < enemyGenLevel)

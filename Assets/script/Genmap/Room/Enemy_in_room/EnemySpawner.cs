@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemy Spawn Property")]
     [SerializeField] private LayerMask ground;
     [SerializeField] private int enemyPerWave = 10;
-    [SerializeField] private int enemyToSpawnLeft = 10;
+    [SerializeField] private int enemyToSpawnLeft;
 
     [Header("Agent Property")]
     [SerializeField] private float stepX = 10;
@@ -22,6 +22,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float startX = 0.5f;
     [SerializeField] private float startY = 0.5f;
     [SerializeField] private float space = 0.25f;
+
+    private void Awake()
+    {
+        enemyToSpawnLeft = enemyPerWave;
+    }
 
     public enum EnemyType
     {
@@ -91,10 +96,13 @@ public class EnemySpawner : MonoBehaviour
 
     public void createEnemy(Vector3 pos)
     {
-        EnemyType enemyType;
-        enemyType = randType();
-        Instantiate(AddEnemy(enemyType), transform.position + pos, Quaternion.identity);
-        enemyToSpawnLeft--;
+        if(enemyToSpawnLeft > 0)
+        {
+            EnemyType enemyType;
+            enemyType = randType();
+            Instantiate(AddEnemy(enemyType), transform.position + pos, Quaternion.identity);
+            enemyToSpawnLeft--;
+        }
     }
 
     public void canEnemySpawn()
@@ -111,7 +119,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Debug.Log("can spawn");
                     int rand = Random.Range(0, 10);
-                    if(rand > 6)
+                    if(rand > 3)
                     {
                         createEnemy(pos);
                         x += scale * 5;
