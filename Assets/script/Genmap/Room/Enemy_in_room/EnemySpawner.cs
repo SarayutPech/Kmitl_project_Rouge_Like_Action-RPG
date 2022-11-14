@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float startY = 0.5f;
     [SerializeField] private float space = 0.25f;
 
+    public List<Vector3> canSpawn = new List<Vector3>();
     private void Awake()
     {
         enemyToSpawnLeft = enemyPerWave;
@@ -107,6 +108,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void canEnemySpawn()
     {
+        canSpawn.Clear();
+
         for (float y = 0; y < stepY; y += scale)
         {
             y += space;
@@ -114,23 +117,24 @@ public class EnemySpawner : MonoBehaviour
             {
                 x += space;
                 Vector3 pos = new Vector2(x - startX, y - startY);
-                Collider2D block = Physics2D.OverlapBox(transform.position + pos, new Vector2(2.5f, 2.5f), 0, ground);
-                if(!block && enemyToSpawnLeft > 0)
+                Collider2D block = Physics2D.OverlapBox(transform.position + pos, new Vector2(scale, scale), 0, ground);
+                if(!block)
                 {
-                    Debug.Log("can spawn");
-                    int rand = Random.Range(0, 10);
-                    if(rand > 3)
-                    {
-                        createEnemy(pos);
-                        x += scale * 5;
-                    }
-                }else
-                    Debug.Log("can't spawn");
-                    
+                    //Debug.Log("can spawn");
+                    canSpawn.Add(pos);
+                }     
             }
-            
         }
 
+        while(enemyToSpawnLeft > 0)
+        {
+            int rand = Random.Range(0, canSpawn.Count);
+            createEnemy(canSpawn[rand]);
+            //Debug.Log("Spawn at : " + canSpawn[rand] + " by " + rand);
+            canSpawn.RemoveAt(rand);
+        }
+
+        //Debug.Log(canSpawn.Count);
         enemyToSpawnLeft = enemyPerWave;
     }
 
