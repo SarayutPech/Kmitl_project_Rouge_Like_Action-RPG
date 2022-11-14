@@ -10,6 +10,7 @@ public class UI_Status : MonoBehaviour
     public PlayerStats charaStat;
     public GameObject statusUI;
     public GameObject upstatusUI;
+    public GameObject playerObj;
 
     public TextMeshProUGUI remainPoint;
     //------Status-----
@@ -23,8 +24,27 @@ public class UI_Status : MonoBehaviour
     //------Button Up Status----
     public Button downStr_btn, downVit_btn, downAgi_Btn, downDex_Btn, downLuk_Btn;
 
+    public void Start()
+    {
+        UpdateParameterUI();
+        EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
+
+        /*playerObj = GameObject.FindWithTag("Player").gameObject;
+        if(playerObj != null)
+        {
+            Debug.Log("Found Player");
+        }
+        else
+        {
+            Debug.Log("Not Found Player");
+        }*/
+        
+    }
+
     void Awake()
     {
+
+
         //------Up Status Button----
         plusStr_btn.onClick.AddListener(delegate { UpStatus("STR"); });
         plusVit_btn.onClick.AddListener(delegate { UpStatus("VIT"); });
@@ -38,13 +58,13 @@ public class UI_Status : MonoBehaviour
         downDex_Btn.onClick.AddListener(delegate { DownStatus("DEX"); });
         downLuk_Btn.onClick.AddListener(delegate { DownStatus("LUK"); });
 
+        playerObj = GameObject.Find("Player_witch(Clone)");
+        Debug.Log(playerObj.name);
+        charaStat = playerObj.GetComponent<PlayerStats>();
+
+
     }
 
-    public void Start()
-    {
-        UpdateParameterUI();
-        EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
-    }
 
     public void UpdateParameterUI()
     {
