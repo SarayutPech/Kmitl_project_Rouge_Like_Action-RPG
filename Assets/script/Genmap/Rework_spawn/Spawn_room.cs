@@ -132,7 +132,7 @@ public class Spawn_room : MonoBehaviour
             GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
             chestOb.name = "Chest_" + warpDorCount;
             chestOb.transform.parent = GameObject.Find("warp&key").transform;
-            Debug.Log("Last room spawn.");
+            //Debug.Log("Last room spawn.");
             maxX += moveX;
             minX -= moveX;
         }

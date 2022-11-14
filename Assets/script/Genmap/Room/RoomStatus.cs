@@ -22,10 +22,17 @@ public class RoomStatus : MonoBehaviour
     private void FixedUpdate()
     {
         if (EnemyInRoom() < 1 && isplayed)
+        {
+            if (!isclear)
+            {
+                GameObject.Find("GateL").SetActive(false);
+                GameObject.Find("GateR").SetActive(false);
+            }
             isclear = true;
-        isRoomClear();
+        }
+        isRoomPlayed();
 
-        Debug.Log(EnemyInRoom());
+        //Debug.Log(EnemyInRoom());
     }
 
     public bool setClear( bool status )
@@ -49,7 +56,7 @@ public class RoomStatus : MonoBehaviour
         return counting;
     }
 
-    public void isRoomClear()
+    public void isRoomPlayed()
     {
         hitplayer = Physics2D.OverlapBox(transform.position, col.size, 0, player);
 

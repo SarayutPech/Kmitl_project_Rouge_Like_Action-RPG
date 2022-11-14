@@ -369,6 +369,7 @@ Transform:
   - {fileID: 7041316389756599154}
   - {fileID: 8764094324168710217}
   - {fileID: 1156938632146371640}
+  - {fileID: 6356813567567592364}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -412,7 +413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isclear: 0
   isplayed: 0
-  enemyInRoom: 0
   col: {fileID: 0}
   enemy:
     serializedVersion: 2
@@ -420,6 +420,8 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 512
+  delayForEnemySpawn: 3
+  hitplayer: {fileID: 0}
 --- !u!1 &2427101437414489008
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +473,37 @@ MonoBehaviour:
   sizey: 5
   checkRoomPos: {x: 18, y: 0, z: 0}
   room: {fileID: 1789109513549553060, guid: 05a5a0a9b453f174894f0b59d94b2c7f, type: 3}
+--- !u!1 &3307539631189009925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6356813567567592364}
+  m_Layer: 7
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6356813567567592364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307539631189009925}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1789109513549553061}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4441281653295204264
 GameObject:
   m_ObjectHideFlags: 0

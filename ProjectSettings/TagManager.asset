@@ -10,6 +10,7 @@ TagManager:
   - Enemy_Sentinel
   - Enemy_Fly
   - Warp
+  - Block_Gate
   layers:
   - Default
   - TransparentFX

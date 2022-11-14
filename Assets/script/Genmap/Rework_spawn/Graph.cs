@@ -14,6 +14,8 @@ public class Graph : MonoBehaviour
     private EnemySpawner es;
 
     private Player_Status ps;
+    public GameObject gate_L;
+    public GameObject gate_R;
 
 
     private void Start()
@@ -44,6 +46,7 @@ public class Graph : MonoBehaviour
     //move agent and spawn enemy.
     private void move()
     {
+        GameObject[] block_gate;
         RoomTrasition roomTrasition = GameObject.Find("Main Camera").GetComponent<RoomTrasition>();
         roomTrasition.startTrasition();
                        
@@ -53,6 +56,21 @@ public class Graph : MonoBehaviour
         // spawn enemy here
         if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear && !GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isplayed)
             es.canEnemySpawn();
+
+        // เปิดปิดประตูไม่ให้เปลี่ยนด่านตอนเล่น
+        block_gate = GameObject.FindGameObjectsWithTag("Block_Gate");
+        if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear)
+        {
+            gate_L.SetActive(true);
+            gate_R.SetActive(true);
+        }
+        else
+        {
+            gate_L.SetActive(false);
+            gate_R.SetActive(false);
+        }
+
+        ps.transform.position = GameObject.Find("Spawn Point").transform.position;
     }
 
     private void OnDrawGizmos()
