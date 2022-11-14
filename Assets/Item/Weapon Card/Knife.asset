@@ -18,6 +18,8 @@ MonoBehaviour:
   itemType: 0
   animationWeapon: {fileID: 7400000, guid: 24d0b463961744a449e2fbdb56d31251, type: 2}
   equipSlot: 0
+  forceWeapon: {x: 1, y: 0}
+  hitboxWeapon: {x: 0.7, y: 0.7}
   attack_Modifier: 4
   critRate_Modifier: 7
   critDamage_Modifier: 0

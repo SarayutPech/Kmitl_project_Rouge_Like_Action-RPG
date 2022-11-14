@@ -6,12 +6,19 @@ public class PlayerStats : CharacterStats
 {
     public int currentStatPoint = 5;
     public int currentPlayerLevel = 5;
-
+    private UI_Status playerStat;
     // Start is called before the first frame update
     void Start()
     {
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
     }
+
+    private void Awake()
+    {
+        playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
+        playerStat.charaStat = this;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))

@@ -42,6 +42,8 @@ public class CharacterStats : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
 
+       
+
     }
 
 
@@ -65,7 +67,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            TakeDamage(attack.GetValue());
+            TakeDamage(10);
         }
     }
 

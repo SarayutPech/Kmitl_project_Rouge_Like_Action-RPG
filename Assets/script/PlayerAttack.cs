@@ -6,10 +6,15 @@ public class PlayerAttack : MonoBehaviour
 {
 
     public bool attacking = false;
-
+    public Vector2 playerHitbox;
+    public Vector2 playerForceAttack;
+    public Transform playerAttackHitbox;
+    public LayerMask enemyLayer;
     private float timeToAttack = 0.20f;
     private float timer = 0f;
     private int indexWeapon = 0;
+
+
 
     public Animator animator;
     public Animator weaponAnimator;
@@ -54,15 +59,32 @@ public class PlayerAttack : MonoBehaviour
     {       
         if (equipmentManager.AttackCmd(indexWeapon) < 5)
         {
+            Collider2D[] enemyHit = Physics2D.OverlapBoxAll(playerAttackHitbox.position, playerHitbox, 0, enemyLayer);
+            
+
             attacking = true;
             //Override Animation clip 
             animatorOverride["Sword_Sprite"] = equipmentManager.currentEquipCard[indexWeapon].animationWeapon;
-            indexWeapon += 1;
 
+            //Draw Weapon Hitbox
+            //ChangeGizmos(equipmentManager.currentEquipCard[indexWeapon].hitboxWeapon);
+            
+
+            //knockback Enemy When hit
+            foreach (Collider2D i in enemyHit)
+            {
+                i.GetComponent<Rigidbody2D>().AddForce(equipmentManager.currentEquipCard[indexWeapon].forceWeapon * ScaleX(), ForceMode2D.Impulse);
+                //i.GetComponent<Animator>().SetTrigger("getHit");
+                Debug.Log("Attack Enemy " + i);
+            }
+
+
+            
             // Play weapon Animation
             animator.SetTrigger("attack");
             weaponAnimator.SetTrigger("WeaponAttack");
 
+            indexWeapon += 1;
             if (indexWeapon >= 5)
             {
                 indexWeapon = 0;
@@ -77,5 +99,35 @@ public class PlayerAttack : MonoBehaviour
         }      
     }
 
-  
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(playerAttackHitbox.position, playerHitbox);
+
+        try
+        {
+            if (equipmentManager.currentEquipCard[indexWeapon - 1].hitboxWeapon != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireCube(playerAttackHitbox.position, equipmentManager.currentEquipCard[indexWeapon - 1].hitboxWeapon);
+            }
+        }
+        catch { }
+       
+        
+
+      
+    }
+
+    private void ChangeGizmos(Vector2 weaponHitbox)
+     {
+           Gizmos.color = Color.red;
+         Gizmos.DrawWireCube(playerAttackHitbox.position, weaponHitbox);
+
+     }
+    public float ScaleX()
+    {
+        return transform.root.gameObject.transform.localScale.x;
+    }
+
 }

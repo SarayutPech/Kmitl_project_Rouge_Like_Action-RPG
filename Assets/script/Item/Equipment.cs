@@ -8,6 +8,10 @@ public class Equipment : Item
 
     public EquipmentSlot equipSlot;
 
+    [SerializeField]
+    public Vector2 forceWeapon;
+    public Vector2 hitboxWeapon;
+
     public int attack_Modifier;
     public int critRate_Modifier;
     public int critDamage_Modifier;
