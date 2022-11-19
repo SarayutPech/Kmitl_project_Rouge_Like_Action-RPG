@@ -8,7 +8,7 @@ public class KnightAttack : MonoBehaviour
     [SerializeField] private float knockbackY = 5f;
     [SerializeField] private float knockbackX = 5f;
     [SerializeField] private float knockbackTimenormalAttack = 0.1f;
-
+    public int dmg;
 
     public void normalAttack()
     {
@@ -18,6 +18,7 @@ public class KnightAttack : MonoBehaviour
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
             playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackX * ScaleX(), -knockbackY), ForceMode2D.Impulse);
             // HP -
+            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
             playerCol.GetComponent<Animator>().SetTrigger("gethit");
         }
     }

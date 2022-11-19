@@ -7,6 +7,7 @@ public class AttackPoint : MonoBehaviour
     [SerializeField] private float TimeToDestroy = 1;
     [SerializeField] private float radius = 1;
     [SerializeField] private LayerMask player;
+    public int dmg;
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +18,8 @@ public class AttackPoint : MonoBehaviour
             if (playerCol)
             {
                 Debug.Log("Hit !");
+                playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
+                playerCol.GetComponent<Animator>().SetTrigger("gethit");
             }
             Destroy(gameObject);
         }

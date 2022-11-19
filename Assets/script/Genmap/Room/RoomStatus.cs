@@ -25,8 +25,8 @@ public class RoomStatus : MonoBehaviour
         {
             if (!isclear)
             {
-                GameObject.Find("GateL").SetActive(false);
-                GameObject.Find("GateR").SetActive(false);
+                /*GameObject.Find("GateL").SetActive(false);
+                GameObject.Find("GateR").SetActive(false);*/
             }
             isclear = true;
         }

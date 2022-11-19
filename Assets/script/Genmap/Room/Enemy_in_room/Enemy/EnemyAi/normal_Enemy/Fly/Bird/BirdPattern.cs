@@ -5,10 +5,11 @@ using UnityEngine;
 public class BirdPattern : EnemyPattern
 {
     [SerializeField] private float knockbackTimenormalAttack = 0.5f;
-    [SerializeField] private float deviderXForce = 10;
-    [SerializeField] private float deviderYForce = 10;
     public Rigidbody2D rb;
     public float stop_chase_at = 4;
+    [Header("Stat")]
+    public Vector2 knockbackforce;
+    public int dmg;
 
     private void Start()
     {
@@ -56,8 +57,9 @@ public class BirdPattern : EnemyPattern
         if (playerCol)
         {
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
-            playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(rb.velocity.x / deviderXForce, rb.velocity.y / deviderYForce), ForceMode2D.Impulse);
+            playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackforce.x * ScaleX(), knockbackforce.y) );
             // HP -
+            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
             playerCol.GetComponent<Animator>().SetTrigger("gethit");
         }
     }

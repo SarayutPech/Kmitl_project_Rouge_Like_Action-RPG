@@ -76,6 +76,7 @@ public class PlayerAttack : MonoBehaviour
                 i.GetComponent<Rigidbody2D>().AddForce(equipmentManager.currentEquipCard[indexWeapon].forceWeapon * ScaleX(), ForceMode2D.Impulse);
                 //i.GetComponent<Animator>().SetTrigger("getHit");
                 Debug.Log("Attack Enemy " + i);
+                i.GetComponent<EnemyStat>().setHp(20);
             }
 
 
