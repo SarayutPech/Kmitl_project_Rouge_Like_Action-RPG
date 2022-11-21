@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private int indexWeapon = 0;
 
 
-
+    public PlayerStats charaStat;
     public Animator animator;
     public Animator weaponAnimator;
     public AnimatorOverrideController animatorOverride;
@@ -32,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         equipmentManager = GameObject.Find("GameManager").GetComponent<EquipmentManager>();
+        charaStat = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -75,8 +76,9 @@ public class PlayerAttack : MonoBehaviour
             {
                 i.GetComponent<Rigidbody2D>().AddForce(equipmentManager.currentEquipCard[indexWeapon].forceWeapon * ScaleX(), ForceMode2D.Impulse);
                 //i.GetComponent<Animator>().SetTrigger("getHit");
-                Debug.Log("Attack Enemy " + i);
-                i.GetComponent<EnemyStat>().setHp(20);
+                
+                i.GetComponent<EnemyStat>().setHp(charaStat.attack.GetValue());
+                Debug.Log("Attack Enemy " + i +" Enemy Take" + charaStat.attack.GetValue() + "Damage.");
             }
 
 
