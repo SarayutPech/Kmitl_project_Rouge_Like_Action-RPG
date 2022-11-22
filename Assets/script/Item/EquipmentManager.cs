@@ -38,7 +38,7 @@ public class EquipmentManager : MonoBehaviour
 
     public void Equip (Equipment newItem)
     {
-        if(newItem.equipSlot == EquipmentSlot.WeaponCard)
+        if(newItem.equipSlot == Item.ItemType.WeaponCard)
         {
             int slotIndex = (int)CheckSlotIndex(currentEquipCard); // Check and get slot index
 
@@ -59,7 +59,7 @@ public class EquipmentManager : MonoBehaviour
             
 
         }
-        else if(newItem.equipSlot == EquipmentSlot.Accessory)
+        else if(newItem.equipSlot == Item.ItemType.Accessory)
         {
             int slotIndex = (int)CheckSlotIndex(currentEquipAccessory);
 

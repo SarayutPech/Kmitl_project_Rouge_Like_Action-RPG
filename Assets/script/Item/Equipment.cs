@@ -6,7 +6,7 @@ using UnityEngine;
 public class Equipment : Item
 {
 
-    public EquipmentSlot equipSlot;
+    public ItemType equipSlot;
 
     [SerializeField]
     public Vector2 forceWeapon;
@@ -43,4 +43,3 @@ public class Equipment : Item
 
 }
 
-public enum EquipmentSlot { WeaponCard , Accessory}
