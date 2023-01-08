@@ -33,6 +33,7 @@ public class RoomTrasition : MonoBehaviour
         trasition_left.SetActive(true);
         trasition_right.SetActive(true);
         player_movement.enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         anim.SetTrigger("open");
     }

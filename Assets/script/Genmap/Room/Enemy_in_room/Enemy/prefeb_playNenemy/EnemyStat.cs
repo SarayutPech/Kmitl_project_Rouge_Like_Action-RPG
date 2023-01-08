@@ -6,6 +6,7 @@ public class EnemyStat : MonoBehaviour
 {
     [SerializeField] private float hp;
     [SerializeField] private float MaxHp;
+    [SerializeField] private Animator animator;
 
     public HpBar hpBar;
 
@@ -23,7 +24,14 @@ public class EnemyStat : MonoBehaviour
         hp -= dmg;
         hpBar.setHpBar(hp, MaxHp, true);
         if (hp <= 0)
-            Destroy(gameObject);
+            Die();
     }
 
+    public void Die()
+    {
+        gameObject.GetComponent<EnemyAi>().enabled = false;
+        animator.SetTrigger("isDie");
+    }
+
+    
 }

@@ -622,6 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   MaxHp: 50
+  animator: {fileID: 7526202931026111161}
   hpBar: {fileID: 7985527216481732249}
 --- !u!1 &8049604890519221806
 GameObject:
@@ -634,6 +635,7 @@ GameObject:
   - component: {fileID: 8049604890519221803}
   - component: {fileID: 8049604890519221800}
   - component: {fileID: 7526202931026111161}
+  - component: {fileID: 7242148280767781419}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -728,3 +730,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7242148280767781419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890519221806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51b14cb9616f23488ce8efb0cfdc1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SkeletonPattern : EnemyPattern
 {
+    
+
     public void attack()
     {
         animator.SetTrigger("attack");

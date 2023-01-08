@@ -543,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   MaxHp: 80
+  animator: {fileID: 564199072298405223}
   hpBar: {fileID: 2038375225915646496}
 --- !u!1 &8049604890519221806
 GameObject:
@@ -556,6 +557,7 @@ GameObject:
   - component: {fileID: 8049604890519221800}
   - component: {fileID: 564199072298405223}
   - component: {fileID: 5839236658748534154}
+  - component: {fileID: 3710575218668399664}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -664,6 +666,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   huntress: {fileID: 6009577634637969682}
   attack: {fileID: 4454193865852929834, guid: 6b5245e76cc24d14085de91085b2e076, type: 3}
+--- !u!114 &3710575218668399664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890519221806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51b14cb9616f23488ce8efb0cfdc1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8274477188764664155
 GameObject:
   m_ObjectHideFlags: 0

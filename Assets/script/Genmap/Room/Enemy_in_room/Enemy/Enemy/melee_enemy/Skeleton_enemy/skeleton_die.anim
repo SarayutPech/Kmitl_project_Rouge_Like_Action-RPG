@@ -21,35 +21,35 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 167460066, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.055555556
+    - time: 0.14285715
       value: {fileID: -800010348, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.11111111
+    - time: 0.2857143
       value: {fileID: -2094517909, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.16666667
+    - time: 0.42857143
       value: {fileID: 1823223094, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.22222222
+    - time: 0.5714286
       value: {fileID: 1731334341, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.2777778
+    - time: 0.71428573
       value: {fileID: 2108302723, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.33333334
+    - time: 0.85714287
       value: {fileID: 450242213, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.3888889
+    - time: 1
       value: {fileID: -191932027, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.44444445
+    - time: 1.1428572
       value: {fileID: -1578272550, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.5
+    - time: 1.2857143
       value: {fileID: 1938911660, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.5555556
+    - time: 1.4285715
       value: {fileID: -1305693429, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.6111111
+    - time: 1.5714285
       value: {fileID: 1193627826, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
-    - time: 0.6666667
+    - time: 1.7142857
       value: {fileID: -1797080246, guid: 829a2be080a872c44851d23a67b1f627, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 18
+  m_SampleRate: 7
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -82,7 +82,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.72222227
+    m_StopTime: 1.8571429
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -101,4 +101,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.4285715
+    functionName: destroyObject
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

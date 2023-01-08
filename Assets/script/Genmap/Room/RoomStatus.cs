@@ -23,26 +23,11 @@ public class RoomStatus : MonoBehaviour
     {
         if (EnemyInRoom() < 1 && isplayed)
         {
-            if (!isclear)
-            {
-                /*GameObject.Find("GateL").SetActive(false);
-                GameObject.Find("GateR").SetActive(false);*/
-            }
             isclear = true;
         }
         isRoomPlayed();
 
         //Debug.Log(EnemyInRoom());
-    }
-
-    public bool setClear( bool status )
-    {
-        return status;
-    }
-
-    public bool getClear()
-    {
-        return isclear;
     }
 
     public int EnemyInRoom()
