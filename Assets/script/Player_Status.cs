@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player_Status : MonoBehaviour
 {
     [Header("Refer all of player status here.")]
-    public float hp;
     public string wherePlayeris;
+    public float floorLevel;
 
     private Transform levelManager;
 

@@ -47,12 +47,12 @@ public class GameState : MonoBehaviour
             
             if (playerOnLeft)
             {
-                move(Spawn_Point_R);
+                move(Spawn_Point_R.position);
                 Debug.Log(Spawn_Point_R.gameObject.name);
             }
             else if (playerOnRight)
             {
-                move(Spawn_Point_L);
+                move(Spawn_Point_L.position);
                 Debug.Log(Spawn_Point_L.gameObject.name);
             }
 
@@ -79,10 +79,10 @@ public class GameState : MonoBehaviour
     }
 
     //move agent and spawn enemy.
-    private void move(Transform pos)
+    public void move(Vector3 pos)
     {
         //ps.transform.position = GameObject.Find("Spawn Point " + dir).transform.position;
-        ps.transform.position = pos.position;
+        ps.transform.position = pos;
 
         RoomTrasition roomTrasition = GameObject.Find("Main Camera").GetComponent<RoomTrasition>();
         roomTrasition.startTrasition();

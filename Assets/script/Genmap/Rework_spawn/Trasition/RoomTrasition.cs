@@ -55,6 +55,6 @@ public class RoomTrasition : MonoBehaviour
         cameraFollowPlayer.maxX = level_manager.position.x + 3.5f;
         cameraFollowPlayer.minX = level_manager.position.x - 3.5f;
         cameraFollowPlayer.maxY = level_manager.position.y + 2f;
-        cameraFollowPlayer.minY = level_manager.position.y - 3.5f;
+        cameraFollowPlayer.minY = level_manager.position.y - 2.5f;
     }
 }

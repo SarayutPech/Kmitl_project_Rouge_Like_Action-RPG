@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637466299788451840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0037090778, y: 0.3065045, z: 0}
+  m_LocalPosition: {x: -0.0037090778, y: 0.3065045, z: -3}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8816b8619cc87f40aba9133018a0707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
   wherePlayeris: 
+  floorLevel: 0
 --- !u!114 &2212571413873323621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+  charaStat: {fileID: 0}
   animator: {fileID: 1119249428222569962}
   weaponAnimator: {fileID: 2212571413115160678}
   animatorOverride: {fileID: 22100000, guid: 258e4f8c90ced034fbb439304616ce0f, type: 2}
