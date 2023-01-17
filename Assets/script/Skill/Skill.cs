@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Skill : MonoBehaviour
+[CreateAssetMenu(fileName = "New Skill", menuName = "Skill/Skill")]
+public class Skill : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string skillname = "New Skill";
+    public string skillDescription = "Description Skill";
+    public enum StatusType { STR, VIT, AGI, DEX, LUK }
+    public Sprite skillicon = null;
+    public StatusType skillType;
 
-    // Update is called once per frame
-    void Update()
+
+    public virtual void Active()
     {
-        
+        // skill Active
+        Debug.Log("Skill " + name + " Active");
+    }
+    public virtual void InActive()
+    {
+        // skill inActive
+        Debug.Log("Skill " + name + " InActive");
     }
 }

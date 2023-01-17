@@ -9,6 +9,7 @@ public class PlayerStats : CharacterStats
     public int usedStatPoint;
     public int currentPlayerLevel;
     private UI_Status playerStat;
+    public SkillManager skillManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerStats : CharacterStats
     {
         playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
         playerStat.charaStat = this;
+        //skillManager.gameObject.GetComponent<SkillManager>();
     }
 
     private void Update()
@@ -87,6 +89,7 @@ public class PlayerStats : CharacterStats
             currentStatPoint -= 1;
             usedStatPoint++;
             CheckStatusPoint();
+            skillManager.CheckSkillActive();
         }
     }
     public void ReduceStat(string stat)
@@ -147,6 +150,7 @@ public class PlayerStats : CharacterStats
             {
                 currentStatPoint -= 1;
             }
+            skillManager.CheckSkillActive();
         }
     }
 

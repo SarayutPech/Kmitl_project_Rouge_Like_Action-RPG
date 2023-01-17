@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2212571413873323628}
   - component: {fileID: 2212571413873323631}
   - component: {fileID: 203798438984201575}
+  - component: {fileID: 7983409314336988894}
   m_Layer: 9
   m_Name: Player_witch
   m_TagString: Player
@@ -254,7 +255,10 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   expManager: {fileID: 203798438984201575}
   currentStatPoint: 0
+  statPoint: 0
+  usedStatPoint: 0
   currentPlayerLevel: 0
+  skillManager: {fileID: 7983409314336988894}
 --- !u!114 &203798438984201575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +275,39 @@ MonoBehaviour:
   targetEXP: 200
   level: 0
   statPoint: 0
+--- !u!114 &7983409314336988894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637466299788451840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2450a5ede6032434a8b43d1ff53d1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StrSkill1: {fileID: 11400000, guid: ff5ec76a515be7a41a96602406a30d1b, type: 2}
+  StrSkill2: {fileID: 11400000, guid: 7accc1f174dc7fe4f95a2ba0900b9f62, type: 2}
+  StrSkill3: {fileID: 11400000, guid: 07556663d78317d44aa111e2d5b57b6e, type: 2}
+  StrSkill4: {fileID: 11400000, guid: fa75fcdecb2785a48b9670cbd5da2024, type: 2}
+  VitSkill1: {fileID: 0}
+  VitSkill2: {fileID: 0}
+  VitSkill3: {fileID: 0}
+  VitSkill4: {fileID: 0}
+  AgiSkill1: {fileID: 0}
+  AgiSkill2: {fileID: 0}
+  AgiSkill3: {fileID: 0}
+  AgiSkill4: {fileID: 0}
+  DexSkill1: {fileID: 0}
+  DexSkill2: {fileID: 0}
+  DexSkill3: {fileID: 0}
+  DexSkill4: {fileID: 0}
+  LukSkill1: {fileID: 0}
+  LukSkill2: {fileID: 0}
+  LukSkill3: {fileID: 0}
+  LukSkill4: {fileID: 0}
+  playerStats: {fileID: 2212571413873323631}
 --- !u!1 &2212571413115160677
 GameObject:
   m_ObjectHideFlags: 0
