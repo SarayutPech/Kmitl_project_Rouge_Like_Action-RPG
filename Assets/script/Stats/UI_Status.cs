@@ -62,6 +62,8 @@ public class UI_Status : MonoBehaviour
         moveSpd.text = charaStat.moveSpeed.GetValue().ToString();
         dropRate.text = charaStat.dropRate.GetValue().ToString();
 
+        level.text = charaStat.currentPlayerLevel.ToString();
+
         str.text = charaStat.str.GetValue().ToString();
         vit.text = charaStat.vit.GetValue().ToString();
         agi.text = charaStat.agi.GetValue().ToString();

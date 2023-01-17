@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
-    public int currentStatPoint = 5;
-    public int currentPlayerLevel = 5;
+    public EXPmanager expManager;
+    public int currentStatPoint,statPoint;
+    public int usedStatPoint;
+    public int currentPlayerLevel;
     private UI_Status playerStat;
     // Start is called before the first frame update
     void Start()
     {
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
+        statPoint = expManager.statPoint;
+        currentPlayerLevel = expManager.level;
+        currentStatPoint = statPoint - usedStatPoint;
     }
 
     private void Awake()
@@ -23,8 +28,12 @@ public class PlayerStats : CharacterStats
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-           
+            expManager.AddEXP(200);
         }
+
+        statPoint = expManager.statPoint;
+        currentPlayerLevel = expManager.level;
+        currentStatPoint = statPoint - usedStatPoint;
     }
 
     void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
@@ -76,12 +85,13 @@ public class PlayerStats : CharacterStats
             }
 
             currentStatPoint -= 1;
+            usedStatPoint++;
             CheckStatusPoint();
         }
     }
     public void ReduceStat(string stat)
     {
-        if (currentStatPoint < maxStatPoint && currentStatPoint < currentPlayerLevel)
+        if (statPoint < maxStatPoint && currentStatPoint+usedStatPoint <= statPoint)
         {
             if (stat == "STR")
             {
@@ -89,6 +99,7 @@ public class PlayerStats : CharacterStats
                 {
                     str.RemoveModifier(1);
                     currentStatPoint += 1;
+                    usedStatPoint -= 1;
                 }              
             }
             else if (stat == "VIT")
@@ -97,6 +108,7 @@ public class PlayerStats : CharacterStats
                 {
                     vit.RemoveModifier(1);
                     currentStatPoint += 1;
+                    usedStatPoint -= 1;
                 }
             }
             else if (stat == "AGI")
@@ -105,6 +117,7 @@ public class PlayerStats : CharacterStats
                 {
                     agi.RemoveModifier(1);
                     currentStatPoint += 1;
+                    usedStatPoint -= 1;
                 }
             }
             else if (stat == "DEX")
@@ -113,6 +126,7 @@ public class PlayerStats : CharacterStats
                 {
                     dex.RemoveModifier(1);
                     currentStatPoint += 1;
+                    usedStatPoint -= 1;
                 }
             }
             else if (stat == "LUK")
@@ -121,10 +135,18 @@ public class PlayerStats : CharacterStats
                 {
                     luk.RemoveModifier(1);
                     currentStatPoint += 1;
+                    usedStatPoint -= 1;
                 }
             }
-
             
+            if(usedStatPoint < 0)
+            {
+                usedStatPoint = 0;
+                currentStatPoint -= 1;
+            }else if (usedStatPoint+ currentStatPoint != statPoint)
+            {
+                currentStatPoint -= 1;
+            }
         }
     }
 
