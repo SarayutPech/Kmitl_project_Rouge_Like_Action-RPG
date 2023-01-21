@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    [SerializeField] private float hp;
-    [SerializeField] private float MaxHp;
+    [SerializeField] private int hp;
+    [SerializeField] private int MaxHp;
     [SerializeField] private Animator animator;
 
     public HpBar hpBar;
 
-
+    private LevelManagerParameter levelManagerParameter;
+    private void Awake()
+    {
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+    }
 
     private void Start()
     {
-        hp = MaxHp;
+        hp = MaxHp + levelManagerParameter.HpBuffer;
         hpBar.setHpBar(MaxHp, MaxHp, false);
         hpBar.setHpBar(MaxHp, MaxHp, false);
     }
 
-    public void setHp(float dmg)
+    public void setHp(int dmg)
     {
         hp -= dmg;
         hpBar.setHpBar(hp, MaxHp, true);
@@ -30,6 +34,7 @@ public class EnemyStat : MonoBehaviour
     public void Die()
     {
         gameObject.GetComponent<EnemyAi>().enabled = false;
+        animator.SetBool("Die",true);
         animator.SetTrigger("isDie");
     }
 

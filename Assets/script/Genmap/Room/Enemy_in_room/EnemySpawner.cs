@@ -12,7 +12,6 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy Spawn Property")]
     [SerializeField] private LayerMask ground;
-    [SerializeField] private int enemyPerWave = 10;
     [SerializeField] private int enemyToSpawnLeft;
 
     [Header("Agent Property")]
@@ -23,10 +22,16 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float startY = 0.5f;
     [SerializeField] private float space = 0.25f;
 
+    private LevelManagerParameter levelManagerParameter;
+
     public List<Vector3> canSpawn = new List<Vector3>();
     private void Awake()
+    {    
+        levelManagerParameter = GetComponent<LevelManagerParameter>();
+    }
+    private void Start()
     {
-        enemyToSpawnLeft = enemyPerWave;
+        enemyToSpawnLeft = levelManagerParameter.enemyPerWave;
     }
 
     public enum EnemyType
@@ -135,7 +140,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         //Debug.Log(canSpawn.Count);
-        enemyToSpawnLeft = enemyPerWave;
+        enemyToSpawnLeft = levelManagerParameter.enemyPerWave;
     }
 
     public void OnDrawGizmos()

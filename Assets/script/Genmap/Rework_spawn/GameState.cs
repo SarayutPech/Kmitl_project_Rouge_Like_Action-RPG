@@ -47,13 +47,13 @@ public class GameState : MonoBehaviour
             
             if (playerOnLeft)
             {
-                move(Spawn_Point_R.position);
-                Debug.Log(Spawn_Point_R.gameObject.name);
+                move(Spawn_Point_L.position);
+               // Debug.Log(Spawn_Point_R.gameObject.name);
             }
             else if (playerOnRight)
             {
-                move(Spawn_Point_L.position);
-                Debug.Log(Spawn_Point_L.gameObject.name);
+                move(Spawn_Point_R.position);
+               // Debug.Log(Spawn_Point_L.gameObject.name);
             }
 
             // เปิดปิดประตูไม่ให้เปลี่ยนด่านตอนเล่น
@@ -65,6 +65,9 @@ public class GameState : MonoBehaviour
             {
                 setGate(true);
             }
+
+            posPortalLeft = transform.position + new Vector3(-posx, posy, 0);
+            posPortalRight = transform.position + new Vector3(posx, posy, 0);
         }
 
 
@@ -86,17 +89,10 @@ public class GameState : MonoBehaviour
 
         RoomTrasition roomTrasition = GameObject.Find("Main Camera").GetComponent<RoomTrasition>();
         roomTrasition.startTrasition();
-                       
-        posPortalLeft = transform.position + new Vector3(-posx, posy, 0);
-        posPortalRight = transform.position + new Vector3(posx, posy, 0);
 
         // spawn enemy here
         if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear) //  && !GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isplayed
             es.canEnemySpawn();
-
-        
-        
-        
     }
 
     private void OnDrawGizmos()

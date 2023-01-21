@@ -10,6 +10,14 @@ public class LoreonAttack : MonoBehaviour
     [SerializeField] private float knockbackTimenormalAttack = 0.1f;
     public int dmg;
 
+
+    private LevelManagerParameter levelManagerParameter;
+    private void Awake()
+    {
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+    }
+
+
     public void normalAttack()
     {
         Collider2D playerCol = Physics2D.OverlapBox(loreon.shouldAttackBox.position,new Vector2( loreon.HitboxX, loreon.HitboxX), 0f, loreon.player);
@@ -18,7 +26,7 @@ public class LoreonAttack : MonoBehaviour
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
             playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackX * ScaleX(), -knockbackY), ForceMode2D.Impulse);
             // HP -
-            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
+            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg - levelManagerParameter.DmgBuffer);
             playerCol.GetComponent<Animator>().SetTrigger("gethit");
         }
     }
@@ -31,7 +39,7 @@ public class LoreonAttack : MonoBehaviour
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack * 3;
             playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackX * ScaleX(), knockbackY), ForceMode2D.Impulse);
             // HP -
-            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
+            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg - levelManagerParameter.DmgBuffer);
             playerCol.GetComponent<Animator>().SetTrigger("gethit");
         }
     }

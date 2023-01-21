@@ -8,6 +8,13 @@ public class AttackPoint : MonoBehaviour
     [SerializeField] private float radius = 1;
     [SerializeField] private LayerMask player;
     public int dmg;
+    
+    private LevelManagerParameter levelManagerParameter;
+    private void Awake()
+    {
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +25,7 @@ public class AttackPoint : MonoBehaviour
             if (playerCol)
             {
                 Debug.Log("Hit !");
-                playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
+                playerCol.GetComponent<CharacterStats>().TakeDamage(dmg - levelManagerParameter.DmgBuffer);
                 playerCol.GetComponent<Animator>().SetTrigger("gethit");
             }
             Destroy(gameObject);

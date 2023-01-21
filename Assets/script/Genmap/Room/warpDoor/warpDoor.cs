@@ -8,7 +8,6 @@ public class warpDoor : MonoBehaviour
     public float x, y;
     public LayerMask player;
     public GameObject slider;
-    public Vector3 offset;
     private float progressBar = 0;
 
     private GameState gameState;
@@ -17,11 +16,13 @@ public class warpDoor : MonoBehaviour
 
     public float maxProgressValue;
 
+    private LevelManagerParameter levelManagerParameter;
     private void Awake()
     {
         gameState = GameObject.Find("level manager").GetComponent<GameState>();
         ps = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Status>();
         slider.GetComponent<Slider>().maxValue = maxProgressValue;
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
     }
 
     private void Update()
@@ -34,7 +35,7 @@ public class warpDoor : MonoBehaviour
             {
                 progressBar += Time.deltaTime;
                 slider.GetComponent<Slider>().value = progressBar;
-            }else if(progressBar >= maxProgressValue)
+            }else if(progressBar >= maxProgressValue && levelManagerParameter.keys == true)
             {
                 ps.floorLevel += 1;
                 if (GameObject.Find("Warp_Door_" + ps.floorLevel)) // มีชั้นต่อไป
@@ -45,6 +46,11 @@ public class warpDoor : MonoBehaviour
                     // ส่งไปซีนต่อไป
                 }
                 progressBar = 0;
+                levelManagerParameter.usekeys();
+            }
+            else
+            {
+                slider.SetActive(false);
             }
         }
         else

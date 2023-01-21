@@ -32,9 +32,9 @@ public class Spawn_platform : MonoBehaviour
 
     public float platformGenLevel = 0.2f;
     public float enemyGenLevel = 0.3f;
-    
 
-   
+
+    public LayerMask safeRoomObject;
     public LayerMask room;
     
     // Start is called before the first frame update
@@ -55,7 +55,9 @@ public class Spawn_platform : MonoBehaviour
         {
             if (start_Gen && onRoom())
             {
-                placePlatform();
+                if(!isSafeRoom()) {
+                    placePlatform();
+                }
                 move();
             }
             else if (start_Gen && !onRoom())
@@ -177,11 +179,18 @@ public class Spawn_platform : MonoBehaviour
         return Physics2D.OverlapBox(transform.position, new Vector2(5, 5), 0f, room);
     }
 
+    private bool isSafeRoom()
+    {
+        //Debug.Log( Physics2D.OverlapBox(transform.position, new Vector2(5, 5), 0f, room) );
+        return Physics2D.OverlapBox(transform.position, new Vector2(16, 9), 0f, safeRoomObject);
+    }
+
     /*private void OnDrawGizmos()
     {
         
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector2(5, 5));
+        Gizmos.DrawWireCube(transform.position, new Vector2(16, 8));
 
     }*/
+
 }

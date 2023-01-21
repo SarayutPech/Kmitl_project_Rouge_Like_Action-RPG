@@ -123,7 +123,7 @@ MonoBehaviour:
   knockbackY: 5
   knockbackX: 5
   knockbackTimenormalAttack: 0.1
-  dmg: 30
+  dmg: 15
 --- !u!114 &5715312598172420209
 MonoBehaviour:
   m_ObjectHideFlags: 0

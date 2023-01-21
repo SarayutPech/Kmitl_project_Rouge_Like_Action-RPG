@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawn_room : MonoBehaviour
 {
     [Header("Note : This script is run only one time. we only use Stop_Gen when all room created.")]
+    private LevelManagerParameter levelManagerParameter;
 
     [Header("GameObject.")]
     public GameObject[] room;
@@ -14,7 +15,6 @@ public class Spawn_room : MonoBehaviour
     public Transform spawnPoint;
 
     [Header("Agent property.")]
-    public int agentMove_StepLeft;
     private int direction;
     public float moveX,moveY;
 
@@ -45,6 +45,7 @@ public class Spawn_room : MonoBehaviour
         //Instantiate(room[1], transform.position, Quaternion.identity); // room R
         //GameObject roomName = (GameObject)Instantiate(room[1], transform.position, Quaternion.identity);
         //roomName.name = "Started_Room";
+        levelManagerParameter = GetComponent<LevelManagerParameter>();
         Instantiate(player, spawnPoint.position, Quaternion.identity); // Spawn player
 
         GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
@@ -124,9 +125,9 @@ public class Spawn_room : MonoBehaviour
 
             direction = Random.Range(1, 6);
         }
-        agentMove_StepLeft--;
+        levelManagerParameter.agentMove_Step--;
 
-        if (agentMove_StepLeft == 0)
+        if (levelManagerParameter.agentMove_Step == 0)
         {
             stop_Gen = true;
             GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);

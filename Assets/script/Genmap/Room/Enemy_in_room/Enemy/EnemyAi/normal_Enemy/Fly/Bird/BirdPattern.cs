@@ -11,8 +11,11 @@ public class BirdPattern : EnemyPattern
     public Vector2 knockbackforce;
     public int dmg;
 
+    private LevelManagerParameter levelManagerParameter;
+
     private void Start()
     {
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
         rb = GetComponent<Rigidbody2D>();
     }
     public override void todo()
@@ -58,8 +61,9 @@ public class BirdPattern : EnemyPattern
         {
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
             playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackforce.x * ScaleX(), knockbackforce.y) );
+            rb.AddForce(new Vector2(-knockbackforce.x * ScaleX() * 10, knockbackforce.y));
             // HP -
-            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg);
+            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg + levelManagerParameter.DmgBuffer);
             playerCol.GetComponent<Animator>().SetTrigger("gethit");
         }
     }
