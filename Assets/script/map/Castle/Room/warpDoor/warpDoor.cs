@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class warpDoor : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class warpDoor : MonoBehaviour
                 }else // อยู่บนยอดแล้ว 
                 {
                     // ส่งไปซีนต่อไป
+                    goToBossRoom();
                 }
                 progressBar = 0;
                 levelManagerParameter.usekeys();
@@ -69,5 +71,12 @@ public class warpDoor : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position,new Vector2(x, y));
+    }
+
+
+    private void goToBossRoom()
+    {
+        SceneManager.LoadScene("Boss_Castle");
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7,-1,-5);
     }
 }
