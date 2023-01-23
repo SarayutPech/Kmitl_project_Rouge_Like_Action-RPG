@@ -15,7 +15,7 @@ public class SkillManager : MonoBehaviour
     public PlayerStats playerStats;
     private void Awake()
     {
-        uiSkill = GameObject.Find("GameManager").GetComponent<UISkillController>();      
+        uiSkill = GameObject.Find("GameManager").GetComponent<UISkillController>();
     }
 
     // Update is called once per frame
@@ -28,8 +28,19 @@ public class SkillManager : MonoBehaviour
         int dexStat = playerStats.dex.GetValue();
         int lukStat = playerStats.luk.GetValue();
 
+        StrSkillCheck(strStat);
+        VitSkillCheck(vitStat);
+        AgiSkillCheck(agiStat);
+        DexSkillCheck(dexStat);
+        LukSkillCheck(lukStat);
+
+
+    }
+
+    private void StrSkillCheck(int stat)
+    {
         //STR
-        if(strStat >= 5 && strStat < 10)
+        if (stat >= 5 && stat < 10)
         {
             StrSkill1.Active();
             uiSkill.SetSkillActive(uiSkill.StrSkill1);
@@ -40,7 +51,7 @@ public class SkillManager : MonoBehaviour
             StrSkill4.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
-        else if(strStat >= 10 && strStat < 15)
+        else if (stat >= 10 && stat < 15)
         {
             StrSkill1.Active();
             uiSkill.SetSkillActive(uiSkill.StrSkill1);
@@ -51,7 +62,7 @@ public class SkillManager : MonoBehaviour
             StrSkill4.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
-        else if (strStat >= 15 && strStat < 20)
+        else if (stat >= 15 && stat < 20)
         {
             StrSkill1.Active();
             uiSkill.SetSkillActive(uiSkill.StrSkill1);
@@ -62,7 +73,7 @@ public class SkillManager : MonoBehaviour
             StrSkill4.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
-        else if (strStat >= 20)
+        else if (stat >= 20)
         {
             StrSkill1.Active();
             uiSkill.SetSkillActive(uiSkill.StrSkill1);
@@ -83,6 +94,246 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.StrSkill3);
             StrSkill4.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill4);
+        }
+    }
+
+    private void VitSkillCheck(int stat)
+    {
+        //VIT
+        if (stat >= 5 && stat < 10)
+        {
+            VitSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill1);
+            VitSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill2);
+            VitSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill3);
+            VitSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+        }
+        else if (stat >= 10 && stat < 15)
+        {
+            VitSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill1);
+            VitSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill2);
+            VitSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill3);
+            VitSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+        }
+        else if (stat >= 15 && stat < 20)
+        {
+            VitSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill1);
+            VitSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill2);
+            VitSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill3);
+            VitSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+        }
+        else if (stat >= 20)
+        {
+            VitSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill1);
+            VitSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill2);
+            VitSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill3);
+            VitSkill4.Active();
+            uiSkill.SetSkillActive(uiSkill.VitSkill4);
+        }
+        else
+        {
+            VitSkill1.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill1);
+            VitSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill2);
+            VitSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill3);
+            VitSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+        }
+    }
+
+    private void AgiSkillCheck(int stat)
+    {
+        //AGI
+        if (stat >= 5 && stat < 10)
+        {
+            AgiSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill1);
+            AgiSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill2);
+            AgiSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill3);
+            AgiSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+        }
+        else if (stat >= 10 && stat < 15)
+        {
+            AgiSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill1);
+            AgiSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill2);
+            AgiSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill3);
+            AgiSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+        }
+        else if (stat >= 15 && stat < 20)
+        {
+            AgiSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill1);
+            AgiSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill2);
+            AgiSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill3);
+            AgiSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+        }
+        else if (stat >= 20)
+        {
+            AgiSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill1);
+            AgiSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill2);
+            AgiSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill3);
+            AgiSkill4.Active();
+            uiSkill.SetSkillActive(uiSkill.AgiSkill4);
+        }
+        else
+        {
+            AgiSkill1.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill1);
+            AgiSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill2);
+            AgiSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill3);
+            AgiSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+        }
+    }
+
+    private void DexSkillCheck(int stat)
+    {
+        //DEX
+        if (stat >= 5 && stat < 10)
+        {
+            DexSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill1);
+            DexSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill2);
+            DexSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill3);
+            DexSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+        }
+        else if (stat >= 10 && stat < 15)
+        {
+            DexSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill1);
+            DexSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill2);
+            DexSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill3);
+            DexSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+        }
+        else if (stat >= 15 && stat < 20)
+        {
+            DexSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill1);
+            DexSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill2);
+            DexSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill3);
+            DexSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+        }
+        else if (stat >= 20)
+        {
+            DexSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill1);
+            DexSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill2);
+            DexSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill3);
+            DexSkill4.Active();
+            uiSkill.SetSkillActive(uiSkill.DexSkill4);
+        }
+        else
+        {
+            DexSkill1.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill1);
+            DexSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill2);
+            DexSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill3);
+            DexSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+        }
+    }
+
+    private void LukSkillCheck(int stat)
+    {
+        //Luk
+        if (stat >= 5 && stat < 10)
+        {
+            LukSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill1);
+            LukSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill2);
+            LukSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill3);
+            LukSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+        }
+        else if (stat >= 10 && stat < 15)
+        {
+            LukSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill1);
+            LukSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill2);
+            LukSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill3);
+            LukSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+        }
+        else if (stat >= 15 && stat < 20)
+        {
+            LukSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill1);
+            LukSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill2);
+            LukSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill3);
+            LukSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+        }
+        else if (stat >= 20)
+        {
+            LukSkill1.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill1);
+            LukSkill2.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill2);
+            LukSkill3.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill3);
+            LukSkill4.Active();
+            uiSkill.SetSkillActive(uiSkill.LukSkill4);
+        }
+        else
+        {
+            LukSkill1.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill1);
+            LukSkill2.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill2);
+            LukSkill3.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill3);
+            LukSkill4.InActive();
+            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
         }
     }
 }
