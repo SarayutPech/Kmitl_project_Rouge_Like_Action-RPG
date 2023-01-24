@@ -11,6 +11,7 @@ TagManager:
   - Enemy_Fly
   - Warp
   - Block_Gate
+  - NPC
   layers:
   - Default
   - TransparentFX
