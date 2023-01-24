@@ -1605,7 +1605,7 @@ MonoBehaviour:
   enemyPerWave: 10
   DmgBuffer: -15
   HpBuffer: -100
-  keys: 0
+  keys: 1
   haveKey: {r: 1, g: 1, b: 1, a: 1}
   dontHaveKey: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
 --- !u!114 &1760285060 stripped
