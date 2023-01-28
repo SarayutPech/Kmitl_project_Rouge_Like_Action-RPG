@@ -28,10 +28,20 @@ public class EXPmanager : MonoBehaviour
         while(currentEXP >= targetEXP)
         {
             currentEXP = currentEXP - targetEXP;
-            level++;
-            statPoint++;
-            targetEXP += targetEXP / 20 ; //increase require exp 20%
-            Debug.Log("Level Uppu");
+            if(level >= 30)
+            {
+                currentEXP = 0;
+                Debug.Log("Level Max");
+            }
+            else
+            {
+                level++;
+                statPoint++;
+                targetEXP += targetEXP / 20; //increase require exp 20%
+                Debug.Log("Level Uppu");
+            }
+            
+            
         }
     }
 }

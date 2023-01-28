@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: STR_Skill1
   m_EditorClassIdentifier: 
   skillname: New Skill
-  skillDescription: Description Skill
+  skillDescription: 1st skill of Strenght
   skillicon: {fileID: 0}
   skillType: 0
