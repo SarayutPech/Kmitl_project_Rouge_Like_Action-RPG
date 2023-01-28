@@ -650,10 +650,10 @@ MonoBehaviour:
   speed: 700
   nextWaypointDistance: 0.5
   JumpNodeHeightRequirement: 0.8
-  jumpforce: 6
-  jumpCheckOffset: 0.1
+  jumpforce: 8
+  jumpCheckOffset: 0.5
   followEnable: 1
-  jumpEnable: 0
+  jumpEnable: 1
   diractionLookEnable: 1
   canFly: 0
   animator: {fileID: 5661275878427487515}
