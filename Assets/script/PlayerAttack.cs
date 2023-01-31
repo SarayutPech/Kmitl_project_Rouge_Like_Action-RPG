@@ -76,8 +76,11 @@ public class PlayerAttack : MonoBehaviour
             {
                 i.GetComponent<Rigidbody2D>().AddForce(equipmentManager.currentEquipCard[indexWeapon].forceWeapon * ScaleX(), ForceMode2D.Impulse);
                 //i.GetComponent<Animator>().SetTrigger("getHit");
-                
-                i.GetComponent<EnemyStat>().setHp(charaStat.attack.GetValue());
+
+                if(i.GetComponent<BossStat>())
+                    i.GetComponent<BossStat>().setHp(charaStat.attack.GetValue());
+                else if(i.GetComponent<EnemyStat>())
+                    i.GetComponent<EnemyStat>().setHp(charaStat.attack.GetValue());
                 Debug.Log("Attack Enemy " + i +" Enemy Take" + charaStat.attack.GetValue() + "Damage.");
             }
 

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStat : MonoBehaviour
+public class BossStat : MonoBehaviour
 {
     [SerializeField] private int hp;
     [SerializeField] private int MaxHp;
     [SerializeField] private Animator animator;
 
-    public HpBar hpBar;
+    public BossHPBar hpBar;
 
     private LevelManagerParameter levelManagerParameter;
     private void Awake()
@@ -18,15 +18,16 @@ public class EnemyStat : MonoBehaviour
 
     private void Start()
     {
-        hp = MaxHp + levelManagerParameter.HpBuffer;
-        hpBar.setHpBar(MaxHp, MaxHp, false);
-        hpBar.setHpBar(MaxHp, MaxHp, false);
+        MaxHp = MaxHp + levelManagerParameter.HpBuffer;
+        hp = MaxHp;
+        hpBar.setHpBar(hp, MaxHp);
+        hpBar.setHpBar(hp, MaxHp);
     }
 
     public void setHp(int dmg)
     {
         hp -= dmg;
-        hpBar.setHpBar(hp, MaxHp, true);
+        hpBar.setHpBar(hp, MaxHp);
         if (hp <= 0)
             Die();
     }
@@ -35,9 +36,7 @@ public class EnemyStat : MonoBehaviour
     {
         gameObject.GetComponent<EnemyAi>().enabled = false;
         animator.SetTrigger("isDie");
-        animator.SetBool("Die",true);
-        
-    }
+        animator.SetBool("Die", true);
 
-    
+    }
 }
