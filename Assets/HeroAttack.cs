@@ -5,7 +5,8 @@ using UnityEngine;
 public class HeroAttack : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public HeroPattern hero;
+    //public HeroPattern hero;
+    //public HeroPattern hero;
     public bool enchantAttack;
     [SerializeField] private float knockbackY = 5f;
     [SerializeField] private float knockbackX = 5f;
@@ -93,7 +94,7 @@ public class HeroAttack : MonoBehaviour
 
     private void attack()
     {
-        Collider2D playerCol = Physics2D.OverlapBox(hero.shouldAttackBox.position, new Vector2(hero.HitboxX, hero.HitboxX), 0f, hero.player);
+        /*Collider2D playerCol = Physics2D.OverlapBox(hero.shouldAttackBox.position, new Vector2(hero.HitboxX, hero.HitboxX), 0f, hero.player);
         if (playerCol)
         {
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
@@ -101,7 +102,8 @@ public class HeroAttack : MonoBehaviour
             // HP -
             playerCol.GetComponent<CharacterStats>().TakeDamage(dmg - levelManagerParameter.DmgBuffer);
             playerCol.GetComponent<Animator>().SetTrigger("gethit");
-        }
+        
+        }*/
     }
 
     private Vector3 playerPos()
