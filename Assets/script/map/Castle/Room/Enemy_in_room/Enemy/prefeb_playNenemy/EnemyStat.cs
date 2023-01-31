@@ -34,8 +34,9 @@ public class EnemyStat : MonoBehaviour
     public void Die()
     {
         gameObject.GetComponent<EnemyAi>().enabled = false;
-        animator.SetBool("Die",true);
         animator.SetTrigger("isDie");
+        animator.SetBool("Die",true);
+        
     }
 
     
