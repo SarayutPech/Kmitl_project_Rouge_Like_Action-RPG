@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3244e1026cea14ca677204768a05de, type: 3}
-  m_Name: AGI_Skill1
+  m_Script: {fileID: 11500000, guid: b11e9c728f7f8a64ea11148babb27fdf, type: 3}
+  m_Name: Dash
   m_EditorClassIdentifier: 
-  skillname: New Skill
-  skillDescription: Description Skill
+  skillname: Dash
+  skillDescription: You can dash foward
   skillicon: {fileID: 0}
   skillType: 2

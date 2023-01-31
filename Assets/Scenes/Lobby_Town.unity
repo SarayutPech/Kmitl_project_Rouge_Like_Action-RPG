@@ -7049,7 +7049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275731902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9055,6 +9055,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: AgiSkill1
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fc01d50603dd4d44a9cb06d7c8a7a7d, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: AgiSkill2
+      value: 
+      objectReference: {fileID: 11400000, guid: cc4b4b54f169d8b489f29e0bbc25b871, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: AgiSkill3
+      value: 
+      objectReference: {fileID: 11400000, guid: 101b96fa47e9dc64cbd9892b7f1c3ce9, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: StrSkill1
+      value: 
+      objectReference: {fileID: 11400000, guid: 406dfd42a10dfdd4884113ea3aa304e3, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: VitSkill1
+      value: 
+      objectReference: {fileID: 11400000, guid: a148e4215bda1a947b5fe8896bcb3f00, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
 --- !u!114 &1638629752 stripped

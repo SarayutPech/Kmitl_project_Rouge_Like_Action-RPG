@@ -17,6 +17,20 @@ public class player_movement : MonoBehaviour
 
     private float DirIn;
 
+
+    //Skill DoubleJump
+    private bool canDoubleJump = false;
+    private bool doubleJump;   
+    private float doubleJumpForce= 2f;
+
+    //Skill Dash
+    private bool canDash = true;
+    private bool isDash;
+    private int dashCharge = 1;
+    private float dashForce = 5f;
+    private float dashTime = 0.2f;
+    private float dashCooldown = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +43,30 @@ public class player_movement : MonoBehaviour
         lockRotation();
         animator.SetBool("jumping", !isGrounded());
 
-
-        if (Input.GetKey(KeyCode.Space))
+        //Jumping
+        if (isGrounded() && !Input.GetKey(KeyCode.Space))
+        {
+            doubleJump = false;
+           // Debug.Log("db1");
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             jumping();
+            
+        }
+
+        // Dash
+        if (isDash)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+           
+          //  StartCoroutine(Dash());
+        }
+            
+            
 
         running();
 
@@ -63,12 +98,32 @@ public class player_movement : MonoBehaviour
     void jumping()
     {
         if (isGrounded() && !onWall())
+        {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+
+            if (canDoubleJump)
+            {
+                doubleJump = true;
+                Debug.Log(doubleJump);
+            }
+            
+        }
         else if (!isGrounded() && onWall())
         {
             animator.SetBool("jumping", false);
             rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpforce);
         }
+        else if (doubleJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            doubleJump = false;
+            Debug.Log(doubleJump);
+        }
+        /* else if (!isGrounded() && !onWall() && doubleJump == true && isjump == true)
+         {
+
+             isjump = false;          
+         }*/
     }
 
     private bool isGrounded()
@@ -89,5 +144,34 @@ public class player_movement : MonoBehaviour
     void lockRotation()
     {
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+    }
+
+   
+
+    public void SetDoubleJump(bool isdbJump)
+    {
+        canDoubleJump = isdbJump;
+    }
+
+
+    public void SetDash(bool isdash)
+    {
+        canDash = isdash;
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        isDash = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashForce, 0f);
+
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = originalGravity;
+        isDash = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+        Debug.Log("dash");
     }
 }
