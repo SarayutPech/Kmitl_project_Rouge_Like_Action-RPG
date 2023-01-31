@@ -10,7 +10,7 @@ public class STR_Skill1_Script : Skill
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.str.GetValue() <= 5)
+        if (playerStats.str.GetValue() == 5)
         {
             playerStats.attack.AddModifier(20);
         }

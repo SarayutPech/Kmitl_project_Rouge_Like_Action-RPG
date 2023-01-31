@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Healthy", menuName = "Skill/VIT/Healthy")]
-public class VIT_Skill1_Script : Skill
+[CreateAssetMenu(fileName = "VIT Skill3", menuName = "Skill/VIT/VIT Skill3")]
+public class VIT_Skill3_Script : Skill
 {
     public override void Active()
     {
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.vit.GetValue() == 5)
+        if (playerStats.vit.GetValue() == 15)
         {
             playerStats.maxHealth += 20;
         }
-
 
     }
 
@@ -22,7 +21,7 @@ public class VIT_Skill1_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.vit.GetValue() < 5)
+        if (playerStats.vit.GetValue() < 15)
         {
             playerStats.maxHealth -= 20;
         }

@@ -10,6 +10,12 @@ public class PlayerStats : CharacterStats
     public int currentPlayerLevel;
     private UI_Status playerStat;
     public SkillManager skillManager;
+
+
+
+    //skill Stat Mod
+    public float hpMultiplyer;
+
     // Start is called before the first frame update
     void Start()
     {

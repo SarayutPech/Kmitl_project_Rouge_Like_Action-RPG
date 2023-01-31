@@ -6787,13 +6787,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 101b96fa47e9dc64cbd9892b7f1c3ce9, type: 2}
     - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: DexSkill1
+      value: 
+      objectReference: {fileID: 11400000, guid: b013e8a0734d5b049af53527c646b811, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: DexSkill2
+      value: 
+      objectReference: {fileID: 11400000, guid: b72629e66a957c44ebefad26f91e65dd, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: DexSkill3
+      value: 
+      objectReference: {fileID: 11400000, guid: c9c6b5557ec2eee419d4271d14610d6e, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: LukSkill1
+      value: 
+      objectReference: {fileID: 11400000, guid: f97d56de19e9bc046ae77e328c5912c1, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: LukSkill2
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e85f055da0700d43b2db85934647ddc, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: LukSkill3
+      value: 
+      objectReference: {fileID: 11400000, guid: c13930a17915f324b8d1877f06381be0, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
       propertyPath: StrSkill1
       value: 
       objectReference: {fileID: 11400000, guid: 406dfd42a10dfdd4884113ea3aa304e3, type: 2}
     - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: StrSkill2
+      value: 
+      objectReference: {fileID: 11400000, guid: 7accc1f174dc7fe4f95a2ba0900b9f62, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: StrSkill3
+      value: 
+      objectReference: {fileID: 11400000, guid: 07556663d78317d44aa111e2d5b57b6e, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
       propertyPath: VitSkill1
       value: 
       objectReference: {fileID: 11400000, guid: a148e4215bda1a947b5fe8896bcb3f00, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: VitSkill2
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d7842d5dc404e24ebcf458136c8f64a, type: 2}
+    - target: {fileID: 7983409314336988894, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+      propertyPath: VitSkill3
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c95d5fc2c9b2394d9ee37bcfd2da234, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
 --- !u!1 &1855105985

@@ -47,7 +47,7 @@ public class player_movement : MonoBehaviour
         if (isGrounded() && !Input.GetKey(KeyCode.Space))
         {
             doubleJump = false;
-           // Debug.Log("db1");
+           
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -55,7 +55,7 @@ public class player_movement : MonoBehaviour
             
         }
 
-        // Dash
+        // Dash Skill
         if (isDash)
         {
             return;
