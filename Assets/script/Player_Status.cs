@@ -8,11 +8,11 @@ public class Player_Status : MonoBehaviour
     public string wherePlayeris;
     public float floorLevel;
 
-    private Transform levelManager;
+    [SerializeField]private GameObject levelManager;
 
     private void Awake()
     {    
-        levelManager = GameObject.Find("level manager").transform;
+        levelManager = GameObject.Find("level manager");
     }
 
     // Move Level manager agent
@@ -20,6 +20,7 @@ public class Player_Status : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Room"))
         {
+            levelManager = GameObject.Find("level manager");
             // move level manager agent
             wherePlayeris = collision.name;
             levelManager.transform.position = collision.transform.position;
