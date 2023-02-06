@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f60f75006a6de6f4b84990e3e1a19d2a, type: 3}
-  m_Name: Dex Skill3
+  m_Name: Combo Strike
   m_EditorClassIdentifier: 
-  skillname: New Skill
-  skillDescription: Description Skill
+  skillname: Combo Strike
+  skillDescription: Chance to attack again with 30% of damage when attack hit enemy.
   skillicon: {fileID: 0}
   skillType: 0

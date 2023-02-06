@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
+
+    private static PlayerStats instance;
+
+
+
     public EXPmanager expManager;
     public int currentStatPoint,statPoint;
     public int usedStatPoint;
@@ -11,7 +16,7 @@ public class PlayerStats : CharacterStats
     private UI_Status playerStat;
     public SkillManager skillManager;
 
-
+    public int skillAtkBonus, skillHPBonus, skillCriRateBonus, skillCriDamageBonus, skillMovespeedBonus, skillDropRateBonus;
 
     //skill Stat Mod
     public float hpMultiplyer;
@@ -29,6 +34,11 @@ public class PlayerStats : CharacterStats
     {
         playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
         playerStat.charaStat = this;
+
+        if(instance != null)
+        {
+            instance = this;
+        }
         //skillManager.gameObject.GetComponent<SkillManager>();
     }
 
@@ -95,7 +105,7 @@ public class PlayerStats : CharacterStats
             currentStatPoint -= 1;
             usedStatPoint++;
             CheckStatusPoint();
-            skillManager.CheckSkillActive();
+            skillManager.CheckSkillActive(stat);
         }
     }
     public void ReduceStat(string stat)
@@ -156,7 +166,7 @@ public class PlayerStats : CharacterStats
             {
                 currentStatPoint -= 1;
             }
-            skillManager.CheckSkillActive();
+            skillManager.CheckSkillActive(stat);
         }
     }
 
@@ -176,11 +186,11 @@ public class PlayerStats : CharacterStats
     }
     public void CalculateBaseStat()
     {
-        maxHealth = 100 + (vit.GetValue() * 10);
-        attack.SetBaseValue(str.GetValue() * 3);
-        moveSpeed.SetBaseValue(agi.GetValue() * 2);
-        critRate.SetBaseValue((dex.GetValue() * 1)+(luk.GetValue()*2));
-        critDamage.SetBaseValue(dex.GetValue() * 2);
-        dropRate.SetBaseValue(luk.GetValue() * 2);
+        maxHealth = 100 + (vit.GetValue() * 10) + skillHPBonus;
+        attack.SetBaseValue(str.GetValue() * 3 + skillAtkBonus) ;
+        moveSpeed.SetBaseValue(agi.GetValue() * 2 + skillMovespeedBonus);
+        critRate.SetBaseValue((dex.GetValue() * 1)+(luk.GetValue()*2) + skillCriRateBonus);
+        critDamage.SetBaseValue(dex.GetValue() * 2 +skillCriDamageBonus);
+        dropRate.SetBaseValue(luk.GetValue() * 2 + skillDropRateBonus);
     }
     }

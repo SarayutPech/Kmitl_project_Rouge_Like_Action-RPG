@@ -33,6 +33,7 @@ public class CharacterStats : MonoBehaviour
 
         if (instance != null)
         {
+            instance = this;
             Debug.LogWarning("Character Stat more than one instance !");
         }
         instance = this;

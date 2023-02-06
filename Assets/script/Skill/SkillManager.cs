@@ -20,20 +20,34 @@ public class SkillManager : MonoBehaviour
 
     // Update is called once per frame
 
-    public void CheckSkillActive()
+    public void CheckSkillActive(string stat)
     {
-        int strStat = playerStats.str.GetValue();
-        int vitStat = playerStats.vit.GetValue();
-        int agiStat = playerStats.agi.GetValue();
-        int dexStat = playerStats.dex.GetValue();
-        int lukStat = playerStats.luk.GetValue();
 
-        StrSkillCheck(strStat);
-        VitSkillCheck(vitStat);
-        AgiSkillCheck(agiStat);
-        DexSkillCheck(dexStat);
-        LukSkillCheck(lukStat);
-
+        if (stat == "STR")
+        {
+            int strStat = playerStats.str.GetValue();
+            StrSkillCheck(strStat);
+        }
+        else if (stat == "VIT")
+        {
+            int vitStat = playerStats.vit.GetValue();
+            VitSkillCheck(vitStat);
+        }
+        else if (stat == "AGI")
+        {
+            int agiStat = playerStats.agi.GetValue();
+            AgiSkillCheck(agiStat);
+        }
+        else if (stat == "DEX")
+        {
+            int dexStat = playerStats.dex.GetValue();
+            DexSkillCheck(dexStat);
+        }
+        else if (stat == "LUK")
+        {
+            int lukStat = playerStats.luk.GetValue();
+            LukSkillCheck(lukStat);
+        }
 
     }
 

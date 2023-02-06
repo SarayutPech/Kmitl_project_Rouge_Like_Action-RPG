@@ -4,14 +4,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Str Skill2", menuName = "Skill/STR/Str Skill2")]
 public class STR_Skill2_Script : Skill
 {
+    private bool isSkillActive;
     public override void Active()
     {
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.str.GetValue() == 10)
+        if (playerStats.str.GetValue() == 10 && !isSkillActive)
         {
             playerStats.attack.AddModifier(20);
+            isSkillActive = !isSkillActive;
         }
 
 
@@ -21,9 +23,10 @@ public class STR_Skill2_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.str.GetValue() < 10)
+        if (playerStats.str.GetValue() < 10 && isSkillActive)
         {
             playerStats.attack.RemoveModifier(20);
+            isSkillActive = !isSkillActive;
         }
     }
 }

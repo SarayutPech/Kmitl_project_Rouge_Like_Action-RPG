@@ -200,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wherePlayeris: 
   floorLevel: 0
+  levelManager: {fileID: 0}
 --- !u!114 &2212571413873323621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +261,13 @@ MonoBehaviour:
   usedStatPoint: 0
   currentPlayerLevel: 0
   skillManager: {fileID: 7983409314336988894}
+  skillAtkBonus: 0
+  skillHPBonus: 0
+  skillCriRateBonus: 0
+  skillCriDamageBonus: 0
+  skillMovespeedBonus: 0
+  skillDropRateBonus: 0
+  hpMultiplyer: 0
 --- !u!114 &203798438984201575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,25 +296,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2450a5ede6032434a8b43d1ff53d1c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StrSkill1: {fileID: 11400000, guid: ff5ec76a515be7a41a96602406a30d1b, type: 2}
-  StrSkill2: {fileID: 11400000, guid: 7accc1f174dc7fe4f95a2ba0900b9f62, type: 2}
-  StrSkill3: {fileID: 11400000, guid: 07556663d78317d44aa111e2d5b57b6e, type: 2}
+  StrSkill1: {fileID: 11400000, guid: 406dfd42a10dfdd4884113ea3aa304e3, type: 2}
+  StrSkill2: {fileID: 11400000, guid: 415a0876c0bc09449b719ee2aa4a461f, type: 2}
+  StrSkill3: {fileID: 11400000, guid: cb7739d66f645484f8b24aa03c22bc63, type: 2}
   StrSkill4: {fileID: 11400000, guid: fa75fcdecb2785a48b9670cbd5da2024, type: 2}
-  VitSkill1: {fileID: 11400000, guid: 2a5de1452312d1c468faf87aed50eeaf, type: 2}
-  VitSkill2: {fileID: 11400000, guid: 64a9133365d40ed4bb52ce6d1667b05a, type: 2}
-  VitSkill3: {fileID: 11400000, guid: 838cc62e2448d3a4393241c63950d5fa, type: 2}
+  VitSkill1: {fileID: 11400000, guid: a148e4215bda1a947b5fe8896bcb3f00, type: 2}
+  VitSkill2: {fileID: 11400000, guid: 9d7842d5dc404e24ebcf458136c8f64a, type: 2}
+  VitSkill3: {fileID: 11400000, guid: 7c95d5fc2c9b2394d9ee37bcfd2da234, type: 2}
   VitSkill4: {fileID: 11400000, guid: ff2caf7cd86d6e447ba9a56bb8fe95ad, type: 2}
-  AgiSkill1: {fileID: 11400000, guid: 3f2183c5be80c0743b7b4733ef6f9f62, type: 2}
-  AgiSkill2: {fileID: 11400000, guid: 8b0128794facedd4f9fc06b93d150168, type: 2}
-  AgiSkill3: {fileID: 11400000, guid: b5720f7b5e1294f4984f8f4ec402c09d, type: 2}
+  AgiSkill1: {fileID: 11400000, guid: cc4b4b54f169d8b489f29e0bbc25b871, type: 2}
+  AgiSkill2: {fileID: 11400000, guid: 101b96fa47e9dc64cbd9892b7f1c3ce9, type: 2}
+  AgiSkill3: {fileID: 11400000, guid: 7fc01d50603dd4d44a9cb06d7c8a7a7d, type: 2}
   AgiSkill4: {fileID: 11400000, guid: 06af59a0fb23c8b4fa5c85164bd7f66a, type: 2}
-  DexSkill1: {fileID: 11400000, guid: 63871afd958c4d5489db33e7119ef7db, type: 2}
-  DexSkill2: {fileID: 11400000, guid: 9b8180c4d3691f142a858a96ab8035cf, type: 2}
-  DexSkill3: {fileID: 11400000, guid: c70be9a89eb97c74d86ab9abc46a2ec0, type: 2}
+  DexSkill1: {fileID: 11400000, guid: b013e8a0734d5b049af53527c646b811, type: 2}
+  DexSkill2: {fileID: 11400000, guid: b72629e66a957c44ebefad26f91e65dd, type: 2}
+  DexSkill3: {fileID: 11400000, guid: c9c6b5557ec2eee419d4271d14610d6e, type: 2}
   DexSkill4: {fileID: 11400000, guid: 21592f12e3e2ef248828212d3a8fffbe, type: 2}
-  LukSkill1: {fileID: 11400000, guid: 2708a5ca6cf988645bee8bb911d634d5, type: 2}
-  LukSkill2: {fileID: 11400000, guid: 8fb52d622ba025947a428c35d1277e25, type: 2}
-  LukSkill3: {fileID: 11400000, guid: 8016cf466c7bc9e4bb7257596165f3bf, type: 2}
+  LukSkill1: {fileID: 11400000, guid: f97d56de19e9bc046ae77e328c5912c1, type: 2}
+  LukSkill2: {fileID: 11400000, guid: 4e85f055da0700d43b2db85934647ddc, type: 2}
+  LukSkill3: {fileID: 11400000, guid: c13930a17915f324b8d1877f06381be0, type: 2}
   LukSkill4: {fileID: 11400000, guid: aad40db9b88b6164095ed6ac81aeab96, type: 2}
   playerStats: {fileID: 2212571413873323631}
 --- !u!114 &2710255077469941619

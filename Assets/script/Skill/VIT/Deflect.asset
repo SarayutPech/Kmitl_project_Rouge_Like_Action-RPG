@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb02060867dedd7459e13274b3f64d13, type: 3}
-  m_Name: LUK Skill3
+  m_Script: {fileID: 11500000, guid: fbe308c09ddaab940ac24d61d72257e4, type: 3}
+  m_Name: Deflect
   m_EditorClassIdentifier: 
-  skillname: New Skill
-  skillDescription: Description Skill
+  skillname: Deflect
+  skillDescription: Chance to deflect any attack incoming to player
   skillicon: {fileID: 0}
   skillType: 0

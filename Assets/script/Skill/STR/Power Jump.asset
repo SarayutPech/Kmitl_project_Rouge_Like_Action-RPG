@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86402d819c699543b4336dd709f2b28, type: 3}
-  m_Name: VIT Skill2
+  m_Script: {fileID: 11500000, guid: 9d290b1a44c9a4b41b6b89db0cd10834, type: 3}
+  m_Name: Power Jump
   m_EditorClassIdentifier: 
-  skillname: New Skill
-  skillDescription: Description Skill
+  skillname: Power Jump
+  skillDescription: Deal damage around player when jump
   skillicon: {fileID: 0}
-  skillType: 1
+  skillType: 0

@@ -5,14 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "VIT Skill3", menuName = "Skill/VIT/VIT Skill3")]
 public class VIT_Skill3_Script : Skill
 {
+    private bool isSkillActive;
     public override void Active()
     {
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.vit.GetValue() == 15)
+        if (playerStats.vit.GetValue() == 15 && !isSkillActive)
         {
             playerStats.maxHealth += 20;
+            isSkillActive = !isSkillActive;
         }
 
     }
@@ -21,9 +23,10 @@ public class VIT_Skill3_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.vit.GetValue() < 15)
+        if (playerStats.vit.GetValue() < 15 && isSkillActive)
         {
             playerStats.maxHealth -= 20;
+            isSkillActive = !isSkillActive;
         }
     }
 }
