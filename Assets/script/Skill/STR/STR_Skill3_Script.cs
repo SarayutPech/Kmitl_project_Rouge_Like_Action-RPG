@@ -7,12 +7,12 @@ public class STR_Skill3_Script : Skill
     private bool isSkillActive;
     public override void Active()
     {
-
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        PlayerAttack playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
 
         if (playerStats.str.GetValue() == 15 && !isSkillActive)
         {
-            playerStats.attack.AddModifier(20);
+            playerAttack.extraAttackisActive = true;
             isSkillActive = !isSkillActive;
         }
 
@@ -22,10 +22,11 @@ public class STR_Skill3_Script : Skill
     public override void InActive()
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        PlayerAttack playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
 
         if (playerStats.str.GetValue() < 15 && isSkillActive)
         {
-            playerStats.attack.RemoveModifier(20);
+            playerAttack.extraAttackisActive = false;
             isSkillActive = !isSkillActive;
         }
     }

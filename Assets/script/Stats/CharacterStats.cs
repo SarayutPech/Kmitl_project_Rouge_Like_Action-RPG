@@ -27,6 +27,14 @@ public class CharacterStats : MonoBehaviour
     public Stats dropRate;
     public Stats hp;
 
+
+    //Skill
+    public bool heavyArmorisActive;
+
+    public bool deflectisActive;
+    public float deflectChance = 0.2f;
+
+
     void Awake()
     {
 
@@ -50,6 +58,10 @@ public class CharacterStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+       
+        damage = HeavyArmor_Skill(heavyArmorisActive,damage);
+        damage = Deflect_Skill(deflectisActive, damage);
+
         damage = Mathf.Clamp(damage, 0, int.MaxValue);//damage not below 0
         currentHealth -= damage;
 
@@ -76,6 +88,34 @@ public class CharacterStats : MonoBehaviour
     {
         //Die need to be Overwritten
         Debug.Log(transform.name + " die.");
+    }
+
+    public int Deflect_Skill(bool isActive , int damage)
+    {
+        
+        if (isActive)
+        {
+            float randValue = Random.value;
+            if (randValue < deflectChance)
+            {
+                Debug.Log("Deflect Activate!!");
+                damage = 0;               
+            }
+        }
+
+        return damage;
+    }
+
+    public int HeavyArmor_Skill(bool isActive,int damage)
+    {
+        if (isActive)
+        {
+            int incomeDamage = damage;
+            float reduceDamage = 0.2f;
+            damage -=  (int)(incomeDamage * reduceDamage);
+            Debug.Log("Heavy Armor Activate!!");
+        }
+        return damage;
     }
 
 }

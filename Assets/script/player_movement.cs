@@ -11,6 +11,7 @@ public class player_movement : MonoBehaviour
     public float knockbackTime = 0;
 
     public Animator animator;
+    
 
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
@@ -18,18 +19,24 @@ public class player_movement : MonoBehaviour
     private float DirIn;
 
 
+    // Skill Animator 
+    public Animator auraAnimator;
     //Skill DoubleJump
     private bool canDoubleJump = false;
     private bool doubleJump;   
-    private float doubleJumpForce= 2f;
+    //private float doubleJumpForce= 2f;
 
     //Skill Dash
     private bool canDash = true;
     private bool isDash;
-    private int dashCharge = 1;
+    //private int dashCharge = 1;
     private float dashForce = 5f;
     private float dashTime = 0.2f;
     private float dashCooldown = 1f;
+
+    // Skill Power Jump
+    public bool powerJumpisActive;
+
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +106,8 @@ public class player_movement : MonoBehaviour
     {
         if (isGrounded() && !onWall())
         {
+
+            PowerJump(powerJumpisActive); // active skill
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
 
             if (canDoubleJump)
@@ -115,6 +124,7 @@ public class player_movement : MonoBehaviour
         }
         else if (doubleJump)
         {
+            PowerJump(powerJumpisActive); // active skill
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             doubleJump = false;
             Debug.Log(doubleJump);
@@ -147,6 +157,20 @@ public class player_movement : MonoBehaviour
     }
 
    
+
+    // Skill
+
+    public void PowerJump(bool isActive)
+    {
+        if (isActive)
+        {
+            Debug.Log("Power Jump!!!");
+            auraAnimator.SetTrigger("PowerJump");
+            //.......
+
+        }
+       
+    }
 
     public void SetDoubleJump(bool isdbJump)
     {

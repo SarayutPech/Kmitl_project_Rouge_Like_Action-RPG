@@ -19,10 +19,23 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
     public Animator weaponAnimator;
     public AnimatorOverrideController animatorOverride;
+  
 
     // private Equipment[] equipWeapon = new Equipment[5];
    // Equipment equipWeapon;
     public EquipmentManager equipmentManager;
+
+
+    //Skill Extra Attack
+    public Animator skillAnimator;
+    public int attackTimes = 0;
+    public bool extraAttackisActive;
+
+
+    //Skill Combo Strike
+    public bool comboStrikeisActive;
+    public float comboChance = 0.1f;
+
     void Start()
     {
        equipmentManager = EquipmentManager.instance;
@@ -87,15 +100,31 @@ public class PlayerAttack : MonoBehaviour
 
             
             // Play weapon Animation
-            animator.SetTrigger("attack");
+            //animator.SetTrigger("attack");
             weaponAnimator.SetTrigger("WeaponAttack");
 
             indexWeapon += 1;
+           
             if (indexWeapon >= 5)
             {
                 indexWeapon = 0;
             }
-            
+
+            // skill Combo Strike 
+            ComboStrike_Skill(comboStrikeisActive);
+
+            // skill extra attack
+            attackTimes += 1; 
+            if (attackTimes >= 5 && extraAttackisActive)
+            {
+                attackTimes = 0;
+                skillAnimator.SetTrigger("ExtraAttack");
+                Debug.Log("Skill Extra Attack Activate !");
+            }else if(!extraAttackisActive)
+            {
+                attackTimes = 0;
+            }
+
         }
         else
         {
@@ -136,4 +165,16 @@ public class PlayerAttack : MonoBehaviour
         return transform.root.gameObject.transform.localScale.x;
     }
 
+    public void ComboStrike_Skill(bool isActive)
+    {
+        if (isActive)
+        {
+            float randValue = Random.value;
+            if (randValue < comboChance)
+            {
+                skillAnimator.SetTrigger("ComboStrike");
+                Debug.Log("Combo Strike!!");
+            }
+        }
+    }
 }

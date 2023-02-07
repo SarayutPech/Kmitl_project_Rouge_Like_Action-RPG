@@ -10,10 +10,10 @@ public class VIT_Skill2_Script : Skill
     {
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-
+        CharacterStats charaStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         if (playerStats.vit.GetValue() == 10 && !isSkillActive)
         {
-            playerStats.maxHealth += 20;
+            charaStats.heavyArmorisActive = true;
             isSkillActive = !isSkillActive;
         }
 
@@ -23,10 +23,11 @@ public class VIT_Skill2_Script : Skill
     public override void InActive()
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        CharacterStats charaStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
 
         if (playerStats.vit.GetValue() < 10 && isSkillActive)
         {
-            playerStats.maxHealth -= 20;
+            charaStats.heavyArmorisActive = false;
             isSkillActive = !isSkillActive;
         }
     }

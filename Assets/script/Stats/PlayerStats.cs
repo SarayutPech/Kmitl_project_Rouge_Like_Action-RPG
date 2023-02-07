@@ -5,10 +5,6 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
 
-    private static PlayerStats instance;
-
-
-
     public EXPmanager expManager;
     public int currentStatPoint,statPoint;
     public int usedStatPoint;
@@ -28,17 +24,16 @@ public class PlayerStats : CharacterStats
         statPoint = expManager.statPoint;
         currentPlayerLevel = expManager.level;
         currentStatPoint = statPoint - usedStatPoint;
+
+       /* playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
+        playerStat.charaStat = this;*/
     }
 
     private void Awake()
     {
-        playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
-        playerStat.charaStat = this;
+       /* playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
+        playerStat.charaStat = this;*/
 
-        if(instance != null)
-        {
-            instance = this;
-        }
         //skillManager.gameObject.GetComponent<SkillManager>();
     }
 

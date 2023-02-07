@@ -9,10 +9,11 @@ public class DEX_Skill3_Script : Skill
     {
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        PlayerAttack playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
 
         if (playerStats.dex.GetValue() == 15 && !isSkillActive)
         {
-            playerStats.critRate.AddModifier(5);
+            playerAttack.comboStrikeisActive = true;
             isSkillActive = !isSkillActive;
         }
 
@@ -22,10 +23,11 @@ public class DEX_Skill3_Script : Skill
     public override void InActive()
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        PlayerAttack playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
 
         if (playerStats.dex.GetValue() < 15 && isSkillActive)
         {
-            playerStats.critRate.RemoveModifier(5);
+            playerAttack.comboStrikeisActive = false;
             isSkillActive = !isSkillActive;
         }
     }
