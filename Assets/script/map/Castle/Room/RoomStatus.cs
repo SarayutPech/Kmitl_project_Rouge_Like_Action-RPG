@@ -12,6 +12,7 @@ public class RoomStatus : MonoBehaviour
     public float delayForEnemySpawn = 3f;
     private Vector3 roomPosition;
     public Collider2D hitplayer;
+    public string biome;
 
     private void Awake()
     {

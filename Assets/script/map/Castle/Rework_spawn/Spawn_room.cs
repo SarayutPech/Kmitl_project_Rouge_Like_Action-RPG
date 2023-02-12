@@ -82,63 +82,86 @@ public class Spawn_room : MonoBehaviour
 
     private void Move()
     {
-        if (direction == 1 || direction == 2) // move Right
+        switch (direction)
         {
-            Vector2 newPos = new Vector2(transform.position.x + moveX, transform.position.y); 
-            transform.position = newPos; // Move Agent to next position
-            maxX += moveX;
-            check_Edge();
-
-            direction = Random.Range(1, 6);
-            if (direction == 3)
-            {
-                direction = 2;
-            }else if (direction == 4)
-            {
-                direction = 5;
-            }
-
-        }else if (direction == 3 || direction == 4) // move Left
-        {
-            Vector2 newPos = new Vector2(transform.position.x - moveX, transform.position.y);
-            transform.position = newPos;
-            if(gameObject.transform.position.x < 0)
-                minX -= moveX;
-            check_Edge();
-            direction = Random.Range(3, 6);
+            case 1:
+            case 2:
+                MoveRight();
+                break;
+            case 3:
+            case 4:
+                MoveLeft();
+                break;
+            case 5:
+                MoveUp();
+                break;
         }
-        else if (direction == 5) // move Up
+        levelManagerParameter.agentMoveStep--;
+
+        if (levelManagerParameter.agentMoveStep <= 0) // Last Room
         {
-            GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
-            chestOb.name = "Chest_" + warpDorCount;
-            chestOb.transform.parent = GameObject.Find("warp&key").transform;
-
-            Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveY);
-            transform.position = newPos; // Move Agent to next position
-            maxY += moveY;
-            check_Edge();
-
-            warpDorCount++;
-            GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
-            DoorBot.name = "Warp_Door_" + warpDorCount;
-            DoorBot.transform.parent = GameObject.Find("warp&key").transform;
-
-            direction = Random.Range(1, 6);
-        }
-        levelManagerParameter.agentMove_Step--;
-
-        if (levelManagerParameter.agentMove_Step == 0)
-        {
-            stop_Gen = true;
-            GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
-            chestOb.name = "Chest_" + warpDorCount;
-            chestOb.transform.parent = GameObject.Find("warp&key").transform;
-            //Debug.Log("Last room spawn.");
-            maxX += moveX;
-            minX -= moveX;
+            LastRoomObject();
         }
     }
    
+    private void MoveRight()
+    {
+        Vector2 newPos = new Vector2(transform.position.x + moveX, transform.position.y);
+        transform.position = newPos; // Move Agent to next position
+        maxX += moveX;
+        check_Edge();
+
+        direction = Random.Range(1, 6);
+        if (direction == 3)
+        {
+            direction = 2;
+        }
+        else if (direction == 4)
+        {
+            direction = 5;
+        }
+    }
+
+    private void MoveLeft()
+    {
+        Vector2 newPos = new Vector2(transform.position.x - moveX, transform.position.y);
+        transform.position = newPos;
+        if (gameObject.transform.position.x < 0)
+            minX -= moveX;
+        check_Edge();
+        direction = Random.Range(3, 6);
+    }
+
+    private void MoveUp()
+    {
+        GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
+        chestOb.name = "Chest_" + warpDorCount;
+        chestOb.transform.parent = GameObject.Find("warp&key").transform;
+
+        Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveY);
+        transform.position = newPos; // Move Agent to next position
+        maxY += moveY;
+        check_Edge();
+
+        warpDorCount++;
+        GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
+        DoorBot.name = "Warp_Door_" + warpDorCount;
+        DoorBot.transform.parent = GameObject.Find("warp&key").transform;
+
+        direction = Random.Range(1, 6);
+    }
+
+    private void LastRoomObject()
+    {
+        stop_Gen = true;
+        GameObject chestOb = (GameObject)Instantiate(chest, transform.position + chest.transform.position, Quaternion.identity);
+        chestOb.name = "Chest_" + warpDorCount;
+        chestOb.transform.parent = GameObject.Find("warp&key").transform;
+        //Debug.Log("Last room spawn.");
+        maxX += moveX;
+        minX -= moveX;
+    }
+
     public void check_Edge()
     {
         //LR

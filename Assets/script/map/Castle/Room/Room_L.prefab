@@ -253,6 +253,7 @@ MonoBehaviour:
     m_Bits: 512
   delayForEnemySpawn: 3
   hitplayer: {fileID: 0}
+  biome: Castle
 --- !u!1 &2244585048661947598
 GameObject:
   m_ObjectHideFlags: 0

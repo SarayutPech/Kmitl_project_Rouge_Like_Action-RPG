@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LevelManagerParameter : MonoBehaviour
 {
     [Header("Map size.")]
-    public int agentMove_Step;
+    public int agentMoveStep;
     [Header("Enemy amount.")]
     public int enemyPerWave;
     [Header("Enemy Buffer.")]
