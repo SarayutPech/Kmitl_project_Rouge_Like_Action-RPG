@@ -11,9 +11,9 @@ public class Spawn_platform : MonoBehaviour
     [Header("BlockToSpawn")]
     public GameObject blockLeft;
     public GameObject blockRight;
-    public GameObject blockTop;
-    public GameObject blockTopLeft;
-    public GameObject blockTopRight;
+    public GameObject[] blockTop;
+    public GameObject[] blockTopLeft;
+    public GameObject[] blockTopRight;
     public GameObject blockBot;
     public GameObject blockBotLeft;
     public GameObject blockBotRight;
@@ -31,6 +31,8 @@ public class Spawn_platform : MonoBehaviour
 
     public float platformGenLevel = 0.2f;
     public float enemyGenLevel = 0.3f;
+    [Header("Biome List : 0 castle , 1 neon")]
+    public int biome;
 
 
     public LayerMask safeRoomObject;
@@ -53,7 +55,8 @@ public class Spawn_platform : MonoBehaviour
         {
             if (start_Gen && onRoom())
             {
-                if(!isSafeRoom()) {
+                getBiome();
+                if (!isSafeRoom()) {
                     RandomPlacePlatform();
                 }
                 move();
@@ -120,7 +123,8 @@ public class Spawn_platform : MonoBehaviour
                 {
                     GameObject placed_block = (GameObject)Instantiate(blockToPlace(
                         noiseMap[x-1, y] < platformGenLevel,
-                        noiseMap[x+1, y] < platformGenLevel
+                        noiseMap[x+1, y] < platformGenLevel,
+                        biome
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
                     placed_block.transform.parent = GameObject.Find("platforms").transform;
@@ -163,7 +167,8 @@ public class Spawn_platform : MonoBehaviour
                 {
                     GameObject placed_block = (GameObject)Instantiate(blockToPlace(
                         noiseMap[x-1, y] < platformGenLevel,
-                        noiseMap[x+1, y] < platformGenLevel
+                        noiseMap[x+1, y] < platformGenLevel,
+                        biome
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
                     placed_block.transform.parent = GameObject.Find("platforms").transform;
@@ -173,16 +178,16 @@ public class Spawn_platform : MonoBehaviour
     }
 
 
-    GameObject blockToPlace(bool left, bool right)
+    GameObject blockToPlace(bool left, bool right, int biome)
     {
         if(!left && !right)
             return noBlock;
         else if (left && right)
-            return blockTop;
+            return blockTop[biome];
         else if (!left && right)
-            return blockTopLeft;
+            return blockTopLeft[biome];
         else if (left && !right)
-            return blockTopRight;
+            return blockTopRight[biome];
 
 
         return noBlock;
@@ -199,7 +204,24 @@ public class Spawn_platform : MonoBehaviour
             stop_Gen = true;
             transform.position = new Vector2(0, 0);
         }
-            
+        
+    }
+
+    private void getBiome()
+    {
+        Collider2D BiomeCheck = Physics2D.OverlapBox(gameObject.transform.position, new Vector2(5, 5), 0f, room);
+        if (BiomeCheck)
+        {
+            switch (BiomeCheck.GetComponent<RoomStatus>().biome)
+            {
+                case "Castle":
+                    biome = 0;
+                    break;
+                case "Neon":
+                    biome = 1;
+                    break;
+            }
+        }
     }
 
     private bool onRoom()

@@ -165,9 +165,15 @@ public class Spawn_room : MonoBehaviour
     public void check_Edge()
     {
         //LR
-        GameObject roomName = (GameObject)Instantiate(room[2], transform.position, Quaternion.identity);
+        GameObject roomName = (GameObject)Instantiate(SpawnRoom(), transform.position, Quaternion.identity);
         roomName.name = "Room_" + SpawnRound;
         roomName.transform.parent = GameObject.Find("rooms").transform;
         SpawnRound++;
+    }
+
+    private GameObject SpawnRoom()
+    {
+        int rand = Random.Range(0, room.Length);
+        return room[rand];  
     }
 }

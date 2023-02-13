@@ -1237,9 +1237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room:
-  - {fileID: 1789109513549553060, guid: 05a5a0a9b453f174894f0b59d94b2c7f, type: 3}
-  - {fileID: 1789109513549553060, guid: c9ff17f27c0bac7469311bf79b262d19, type: 3}
   - {fileID: 1789109513549553060, guid: 0d07e635914d8d643848c070545d746d, type: 3}
+  - {fileID: 1789109513549553060, guid: af5eba00754d0a94787c442b6b424442, type: 3}
   warpDoor: {fileID: 5459055723713305013, guid: f0256bf4cbf316b4e83b7ee71a2497cb, type: 3}
   player: {fileID: 637466299788451840, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
   chest: {fileID: 5459055723713305013, guid: 4ba5dbccca0d73b409b165f73f705be4, type: 3}
@@ -1288,9 +1287,15 @@ MonoBehaviour:
   stop_Gen: 0
   blockLeft: {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
   blockRight: {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
-  blockTop: {fileID: 5365123455280253439, guid: 4e5f73894bfa828469891b39dbe7700c, type: 3}
-  blockTopLeft: {fileID: 3631765077133447944, guid: f26457a2a2e330149ae9edfb5605148c, type: 3}
-  blockTopRight: {fileID: 9202596467239565540, guid: fcc2d5ee5b05190468d84d7a4c8c57b1, type: 3}
+  blockTop:
+  - {fileID: 5365123455280253439, guid: 4e5f73894bfa828469891b39dbe7700c, type: 3}
+  - {fileID: 5365123455280253439, guid: 025a56c8fcae6244192dbe2439f1be6a, type: 3}
+  blockTopLeft:
+  - {fileID: 3631765077133447944, guid: f26457a2a2e330149ae9edfb5605148c, type: 3}
+  - {fileID: 3631765077133447944, guid: 93dde0f17f63cf04fbef3b90c2000079, type: 3}
+  blockTopRight:
+  - {fileID: 9202596467239565540, guid: fcc2d5ee5b05190468d84d7a4c8c57b1, type: 3}
+  - {fileID: 9202596467239565540, guid: 92f9b6ad61d6c7d4f8aa2c625916c46a, type: 3}
   blockBot: {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
   blockBotLeft: {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
   blockBotRight: {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
@@ -1306,6 +1311,7 @@ MonoBehaviour:
   randomYRange: 0400000006000000
   platformGenLevel: 0.6
   enemyGenLevel: 0.2
+  biome: 0
   safeRoomObject:
     serializedVersion: 2
     m_Bits: 1024
