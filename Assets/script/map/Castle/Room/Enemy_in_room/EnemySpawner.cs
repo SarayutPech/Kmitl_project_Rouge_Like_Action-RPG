@@ -142,7 +142,7 @@ public class EnemySpawner : MonoBehaviour
         //Debug.Log(canSpawn.Count);
         enemyToSpawnLeft = levelManagerParameter.enemyPerWave;
     }
-
+    /*
     public void OnDrawGizmos()
     {
         for (float y = 0; y < stepY; y += scale)
@@ -163,6 +163,6 @@ public class EnemySpawner : MonoBehaviour
                 Gizmos.DrawWireCube(transform.position + pos, new Vector2(scale, scale));
             }
         }
-    }
+    }*/
 
 }

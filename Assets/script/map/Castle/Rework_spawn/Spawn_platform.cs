@@ -7,7 +7,12 @@ public class Spawn_platform : MonoBehaviour
     private Spawn_room sp;
     [SerializeField]private bool start_Gen = false;
     [SerializeField]private bool stop_Gen = false;
-    
+
+    [Header("Decor")]
+    public GameObject[] decorCastle;
+    public GameObject[] decorNeon;
+    public GameObject[] decorPirate;
+
     [Header("BlockToSpawn")]
     public GameObject blockLeft;
     public GameObject blockRight;
@@ -30,6 +35,7 @@ public class Spawn_platform : MonoBehaviour
     public int[] randomYRange;
 
     public float platformGenLevel = 0.2f;
+    public float decorGenLevel = 0.2f;
     public float enemyGenLevel = 0.3f;
     [Header("Biome List : 0 castle , 1 neon")]
     public int biome;
@@ -128,6 +134,16 @@ public class Spawn_platform : MonoBehaviour
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
                     placed_block.transform.parent = GameObject.Find("platforms").transform;
+
+                    
+                }
+
+                if (noiseValue < platformGenLevel - decorGenLevel)
+                {
+                        Vector3 decorPos = new Vector2(x * blockScale + startX, y * blockScale - 2.75f + 0.25f);
+                        GameObject placed_Decor = (GameObject)Instantiate(DecorToPlace(biome), transform.position + decorPos, Quaternion.identity);
+                        placed_Decor.transform.parent = GameObject.Find("Decors").transform;
+                
                 }
             }
         }
@@ -171,7 +187,7 @@ public class Spawn_platform : MonoBehaviour
                         biome
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
-                    placed_block.transform.parent = GameObject.Find("platforms").transform;
+                    placed_block.transform.parent = GameObject.Find("platforms").transform; 
                 }
             }
         }
@@ -191,6 +207,24 @@ public class Spawn_platform : MonoBehaviour
 
 
         return noBlock;
+    }
+
+    GameObject DecorToPlace(int biome)
+    {
+        GameObject[] DecorBiome = decorPirate;
+        switch (biome)
+        {
+            case 0:
+                DecorBiome = decorCastle;
+                break;
+            case 1:
+                DecorBiome = decorNeon;
+                break;
+            case 2:
+                DecorBiome = decorPirate;
+                break;
+        }
+        return DecorBiome[RanInt(DecorBiome.Length)];
     }
 
     private void move()
@@ -220,6 +254,9 @@ public class Spawn_platform : MonoBehaviour
                 case "Neon":
                     biome = 1;
                     break;
+                case "Pirate":
+                    biome = 2;
+                    break;
             }
         }
     }
@@ -244,4 +281,8 @@ public class Spawn_platform : MonoBehaviour
 
     }*/
 
+    public int RanInt(int Range = 0)
+    {
+        return Random.Range(0, Range);
+    }
 }

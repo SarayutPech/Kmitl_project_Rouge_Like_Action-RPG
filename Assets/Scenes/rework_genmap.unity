@@ -900,6 +900,7 @@ Transform:
   - {fileID: 1542735654}
   - {fileID: 1367733388}
   - {fileID: 1310485119}
+  - {fileID: 1646878421}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1171,6 +1172,37 @@ Transform:
   m_Father: {fileID: 1412546630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1646878420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646878421}
+  m_Layer: 0
+  m_Name: Decors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1646878421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646878420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1412546630}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1715113570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1249,7 @@ GameObject:
   - component: {fileID: 1731683134}
   - component: {fileID: 1731683135}
   - component: {fileID: 1731683136}
+  - component: {fileID: 1731683137}
   m_Layer: 12
   m_Name: level manager
   m_TagString: Untagged
@@ -1238,6 +1271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   room:
   - {fileID: 1789109513549553060, guid: 0d07e635914d8d643848c070545d746d, type: 3}
+  - {fileID: 1789109513549553060, guid: c0c70c9e6f2fafb4097cd1b51388e75e, type: 3}
   - {fileID: 1789109513549553060, guid: af5eba00754d0a94787c442b6b424442, type: 3}
   warpDoor: {fileID: 5459055723713305013, guid: f0256bf4cbf316b4e83b7ee71a2497cb, type: 3}
   player: {fileID: 637466299788451840, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
@@ -1285,17 +1319,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start_Gen: 0
   stop_Gen: 0
+  decorCastle:
+  - {fileID: 3439959233402296009, guid: 8834c6ca69a9bbe44ae0ed47ccf7d50d, type: 3}
+  - {fileID: 3439959233402296009, guid: fac6f1f6b67da3e4683bb78bc1d2908a, type: 3}
+  - {fileID: 3439959233402296009, guid: 8d674e984580cb547804cbcadd051b88, type: 3}
+  - {fileID: 3439959233402296009, guid: 4b13748b60e28194c953ef22e56cfe79, type: 3}
+  - {fileID: 3439959233402296009, guid: 15a6ca2fd4079a740ac92cf08cdcc79d, type: 3}
+  decorNeon:
+  - {fileID: 3439959233402296009, guid: 8d674e984580cb547804cbcadd051b88, type: 3}
+  - {fileID: 4523445460355911984, guid: 868a49e3d5988694882c2d6e67de08f9, type: 3}
+  - {fileID: 4523445460355911984, guid: 02bd4433cd2b6984db08d270f6037d2b, type: 3}
+  - {fileID: 4523445460355911984, guid: 25518fd4fc464ed4a955cb0c1a298489, type: 3}
+  - {fileID: 4523445460355911984, guid: a7726dc97b50e0844b61671d6c59a69c, type: 3}
+  - {fileID: 4523445460355911984, guid: 42f180437cf5f4745ae20a905a9fc0c8, type: 3}
+  - {fileID: 4523445460355911984, guid: 02bd4433cd2b6984db08d270f6037d2b, type: 3}
+  - {fileID: 4523445460355911984, guid: 25f03044d7fc0eb44b72096ac7c407cd, type: 3}
+  - {fileID: 4523445460355911984, guid: 5525f781013ea9e4bb22705041ed76bc, type: 3}
+  decorPirate:
+  - {fileID: 2660397454556009398, guid: de449609a2778be4e98d3a1421cf2021, type: 3}
+  - {fileID: 2660397454556009398, guid: 2b7fb91105c9ace49b7f79e1b7f2dff6, type: 3}
+  - {fileID: 2660397454556009398, guid: f378fb8ba57ba314abc686cefc61ac2b, type: 3}
+  - {fileID: 3379877712998561154, guid: 4af18ebf8e089e743b8a8460630b6da7, type: 3}
+  - {fileID: 3379877712998561154, guid: 0001fd9f65de9bb49ad9558742ad880a, type: 3}
+  - {fileID: 3379877712998561154, guid: 58e3962c17c8f734c8243cd7c00d9411, type: 3}
+  - {fileID: 3379877712998561154, guid: 0001fd9f65de9bb49ad9558742ad880a, type: 3}
+  - {fileID: 3379877712998561154, guid: 0001fd9f65de9bb49ad9558742ad880a, type: 3}
+  - {fileID: 3379877712998561154, guid: 4af18ebf8e089e743b8a8460630b6da7, type: 3}
+  - {fileID: 3379877712998561154, guid: 4af18ebf8e089e743b8a8460630b6da7, type: 3}
   blockLeft: {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
   blockRight: {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
   blockTop:
   - {fileID: 5365123455280253439, guid: 4e5f73894bfa828469891b39dbe7700c, type: 3}
   - {fileID: 5365123455280253439, guid: 025a56c8fcae6244192dbe2439f1be6a, type: 3}
+  - {fileID: 5365123455280253439, guid: 865dc9784bc93424b929d321b855076a, type: 3}
   blockTopLeft:
   - {fileID: 3631765077133447944, guid: f26457a2a2e330149ae9edfb5605148c, type: 3}
   - {fileID: 3631765077133447944, guid: 93dde0f17f63cf04fbef3b90c2000079, type: 3}
+  - {fileID: 3631765077133447944, guid: 8296269ae1f3aab4b81cc29db4fe7a8b, type: 3}
   blockTopRight:
   - {fileID: 9202596467239565540, guid: fcc2d5ee5b05190468d84d7a4c8c57b1, type: 3}
   - {fileID: 9202596467239565540, guid: 92f9b6ad61d6c7d4f8aa2c625916c46a, type: 3}
+  - {fileID: 9202596467239565540, guid: e4c399d60c547784b8700056e55dcb51, type: 3}
   blockBot: {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
   blockBotLeft: {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
   blockBotRight: {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
@@ -1310,6 +1374,7 @@ MonoBehaviour:
   stepY: 5
   randomYRange: 0400000006000000
   platformGenLevel: 0.6
+  decorGenLevel: 0.4
   enemyGenLevel: 0.2
   biome: 0
   safeRoomObject:
@@ -1410,13 +1475,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 20
+  agentMoveStep: 30
   enemyPerWave: 1
   DmgBuffer: -15
   HpBuffer: -100
   keys: 0
   haveKey: {r: 1, g: 1, b: 1, a: 1}
   dontHaveKey: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+--- !u!114 &1731683137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731683129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfb9f194877465438e9058dc43ceeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepX: 18
+  stepY: 10
+  scale: 0.5
+  startX: 8.75
+  startY: 4.75
+  space: 0
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1963908235
 PrefabInstance:
   m_ObjectHideFlags: 0
