@@ -678,6 +678,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51b14cb9616f23488ce8efb0cfdc1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropTable:
+    list:
+    - item: {fileID: 91605571327936426, guid: a639c77e0c3872a4e9f0aef23e5afe69, type: 3}
+      weight: 0
+    - item: {fileID: 6550801441902898604, guid: cd5c4ff3a3dc19f429f1c55e2093e186, type: 3}
+      weight: 0
+    - item: {fileID: 212264404161909247, guid: 44cf0bf7de8caf84eb63b9ef3a1a5601, type: 3}
+      weight: 0
+    - item: {fileID: 3337587488865035475, guid: d324906b72b34bf4db0d9b63ea193ed3, type: 3}
+      weight: 0
+    - item: {fileID: 0}
+      weight: 0
+    - item: {fileID: 854427016055824965, guid: 8c5ca0c66ef5a5141a9899f7ce3c6fb1, type: 3}
+      weight: 0
+    - item: {fileID: 6826930817304664332, guid: da8a943bf3bb41a48a0a09967382b757, type: 3}
+      weight: 0
+  positionDrop: {x: 1, y: 0.2, z: 0}
 --- !u!1 &8274477188764664155
 GameObject:
   m_ObjectHideFlags: 0

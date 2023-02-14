@@ -10,6 +10,8 @@ public class Openable : Interactable
     private SpriteRenderer sr;
     private bool isOpen = false;
 
+    public bool istrigger;
+
     public override void Interact()
     {
         if (isOpen)
@@ -20,6 +22,7 @@ public class Openable : Interactable
         {
             sr.sprite = open;
             //Chest Open
+            istrigger = !istrigger;
         }
     }
 
