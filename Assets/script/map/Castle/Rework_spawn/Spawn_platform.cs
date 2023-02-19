@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Spawn_platform : MonoBehaviour
 {
+    // Hide component
     private Spawn_room sp;
     [SerializeField]private bool start_Gen = false;
     [SerializeField]private bool stop_Gen = false;
 
-    [Header("Decor")]
+    [Header("Decor \n---------------------------------------------------------------------------------------------------------------------")]
     public GameObject[] decorCastle;
     public GameObject[] decorNeon;
     public GameObject[] decorPirate;
 
-    [Header("BlockToSpawn")]
+    [Header("")]
+    [Header("BlockToSpawn \n---------------------------------------------------------------------------------------------------------------------")]
     public GameObject blockLeft;
     public GameObject blockRight;
     public GameObject[] blockTop;
@@ -26,21 +28,41 @@ public class Spawn_platform : MonoBehaviour
     public GameObject oneWayPlatform;
     public GameObject noBlock;
 
+    [Header("")]
+    [Header("RoomOverView \n---------------------------------------------------------------------------------------------------------------------")]
     public int roomSizeX = 16;
     public int roomSizeY = 7;
-    public float startX;
-    public float scale = 0.1f;
-    public float blockScale = 1f;
-    public int stepY = 3;
-    public int[] randomYRange;
-
-    public float platformGenLevel = 0.2f;
+    
     public float decorGenLevel = 0.2f;
-    public float enemyGenLevel = 0.3f;
-    [Header("Biome List : 0 castle , 1 neon")]
+
+    [Header("")]
+    [Header("platform algorithm : Horizontal \n---------------------------------------------------------------------------------------------------------------------")]
+    public float horPlatformGenLevel = 0.6f;
+    public float horStartX;
+    public float horScale = 0.1f;
+    public float horBlockScale = 1f;
+    public int horStepY = 3;
+    public float horStartY = 3.25f;
+    public int[] horRandomYRange;
+
+
+    [Header("")]
+    [Header("platform algorithm : Vertical \n---------------------------------------------------------------------------------------------------------------------")]
+    public float verPlatformGenLevel = 0.6f;
+    public float verStartY = 3.25f;
+    public float verScale = 0.1f;
+    public float verBlockScale = 1f;
+    public int verStepX = 3;
+    public int verStopSpawnX = 9;
+    public int verStartSpawnX = 20;
+    public int[] verYSpace;
+    public int[] verRandomYRange;
+
+    [Header("Biome List : 0 castle , 1 neon \n---------------------------------------------------------------------------------------------------------------------")]
     public int biome;
 
-
+    [Header("")]
+    [Header("Layer")]
     public LayerMask safeRoomObject;
     public LayerMask room;
     
@@ -74,7 +96,6 @@ public class Spawn_platform : MonoBehaviour
         }
         
     }
-
     private void resetTransform(float y = 0)
     {
         transform.position = new Vector2(sp.minX ,transform.position.y + y);
@@ -83,53 +104,59 @@ public class Spawn_platform : MonoBehaviour
     
     private void RandomPlacePlatform()
     {
-        int rand = Random.Range(1, 2);
+        int rand = Random.Range(1, 3);
         switch (rand)
         {
             case 1:
-                placeStraightPlatform();
+                placeHorizontalPlatform();
                 break;
             case 2:
-                placePlatform();
+                placeVerticalPlatform();
                 break;
         }
     }
 
-    private void placeStraightPlatform()
+    private float[,] noiseMaping(int roomSizeForMapingX, int roomSizeForMapingY)
     {
-        float[,] noiseMap = new float[roomSizeX, roomSizeY];
-
+        float[,] noiseMap = new float[roomSizeForMapingX, roomSizeForMapingY];
         float seedX = Random.Range(-1000f, 1000f);
         float seedY = Random.Range(-1000f, 1000f);
 
         // Map noise เข้า Array
-        for (int y = 0; y < roomSizeY; y ++)
+        for (int y = 0; y < roomSizeForMapingY; y++)
         {
-            for (int x = 0; x < roomSizeX; x++)
+            for (int x = 0; x < roomSizeForMapingX; x++)
             {
-                float noiseValue = Mathf.PerlinNoise(x * scale + seedX, y * scale + seedY);
-                if(x == 0 || y == 0 || x == roomSizeX -1 || y == roomSizeY - 1)
+                float noiseValue = Mathf.PerlinNoise(x * horScale + seedX, y * horScale + seedY);
+                if (x == 0 || y == 0 || x == roomSizeX - 1 || y == roomSizeY - 1)
                     noiseMap[x, y] = 1;
                 else
                     noiseMap[x, y] = noiseValue;
             }
         }
 
-        stepY = Random.Range( randomYRange[0], randomYRange[1] );
+        return noiseMap;
+    }
+
+    private void placeHorizontalPlatform()
+    {
+        float[,] noiseMap = new float[roomSizeX, roomSizeY];
+        noiseMap = noiseMaping(roomSizeX, roomSizeY);
+        horStepY = Random.Range( horRandomYRange[0], horRandomYRange[1] );
 
         // เอา noise ที่ Map ไว้มา spawn platform
-        for(int y = 1; y < roomSizeY-1; y += stepY)
+        for(int y = 1; y < roomSizeY-1; y += horStepY)
         {
             for (int x = 1; x < roomSizeX-1; x ++)
             {
                 float noiseValue = noiseMap[x, y];
 
-                Vector3 pos = new Vector2(x * blockScale + startX, y * blockScale - 2.75f);
-                if (noiseValue < platformGenLevel)
+                Vector3 pos = new Vector2(x * horBlockScale + horStartX, y * horBlockScale - horStartY);
+                if (noiseValue < horPlatformGenLevel)
                 {
                     GameObject placed_block = (GameObject)Instantiate(blockToPlace(
-                        noiseMap[x-1, y] < platformGenLevel,
-                        noiseMap[x+1, y] < platformGenLevel,
+                        noiseMap[x-1, y] < horPlatformGenLevel,
+                        noiseMap[x+1, y] < horPlatformGenLevel,
                         biome
                         ),transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
@@ -137,10 +164,10 @@ public class Spawn_platform : MonoBehaviour
 
                     
                 }
-
-                if (noiseValue < platformGenLevel - decorGenLevel)
+                // วาง Decor
+                if (noiseValue < horPlatformGenLevel - decorGenLevel)
                 {
-                        Vector3 decorPos = new Vector2(x * blockScale + startX, y * blockScale - 2.75f + 0.25f);
+                        Vector3 decorPos = new Vector2(x * horBlockScale + horStartX, y * horBlockScale - horStartY + 0.25f);
                         GameObject placed_Decor = (GameObject)Instantiate(DecorToPlace(biome), transform.position + decorPos, Quaternion.identity);
                         placed_Decor.transform.parent = GameObject.Find("Decors").transform;
                 
@@ -149,45 +176,34 @@ public class Spawn_platform : MonoBehaviour
         }
     }
 
-    private void placePlatform()
+    private void placeVerticalPlatform()
     {
-        float[,] noiseMap = new float[roomSizeX, roomSizeY];
+        float[,] noiseMap = new float[roomSizeX, roomSizeY+8];
+        noiseMap = noiseMaping(roomSizeX, roomSizeY+8);
 
         float seedX = Random.Range(-1000f, 1000f);
         float seedY = Random.Range(-1000f, 1000f);
 
-        // Map noise เข้า Array
-        for (int y = 0; y < roomSizeY; y ++)
-        {
-            for (int x = 0; x < roomSizeX; x++)
-            {
-                float noiseValue = Mathf.PerlinNoise(x * scale + seedX, y * scale + seedY);
-                if(x == 0 || y == 0 || x == roomSizeX -1 || y == roomSizeY - 1)
-                    noiseMap[x, y] = 1;
-                else
-                    noiseMap[x, y] = noiseValue;
-            }
-        }
-
-        stepY = Random.Range( randomYRange[0], randomYRange[1] );
+        verStepX = Random.Range(verRandomYRange[0], verRandomYRange[1]);
 
         // เอา noise ที่ Map ไว้มา spawn platform
-        for(int y = 1; y < roomSizeY-1; y += stepY)
+        for (int y = 1; y < roomSizeY + 7; y++)
         {
-            for (int x = 1; x < roomSizeX-1; x ++)
+            for (int x = 1; x < roomSizeX - 1; x+=verStepX)
             {
                 float noiseValue = noiseMap[x, y];
 
-                Vector3 pos = new Vector2(x * blockScale + startX, y * blockScale - 2.75f);
-                if (noiseValue < platformGenLevel)
+                Vector3 pos = new Vector2(x * horBlockScale + horStartX, y * horBlockScale + verStartY);
+                if (noiseValue < verPlatformGenLevel && ( x < verStopSpawnX || x > verStartSpawnX ) && ( y < verYSpace[0] + RanInt(10) || y > verYSpace[1] + RanInt(10)))  
                 {
                     GameObject placed_block = (GameObject)Instantiate(blockToPlace(
-                        noiseMap[x-1, y] < platformGenLevel,
-                        noiseMap[x+1, y] < platformGenLevel,
+                        noiseMap[x - 1, y] < verPlatformGenLevel,
+                        noiseMap[x + 1, y] < verPlatformGenLevel,
                         biome
-                        ),transform.position + pos, Quaternion.identity);
+                        ), transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
-                    placed_block.transform.parent = GameObject.Find("platforms").transform; 
+                    placed_block.transform.parent = GameObject.Find("platforms").transform;
+
                 }
             }
         }
@@ -272,14 +288,6 @@ public class Spawn_platform : MonoBehaviour
         //Debug.Log( Physics2D.OverlapBox(transform.position, new Vector2(5, 5), 0f, room) );
         return Physics2D.OverlapBox(transform.position, new Vector2(16, 9), 0f, safeRoomObject);
     }
-
-    /*private void OnDrawGizmos()
-    {
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector2(16, 8));
-
-    }*/
 
     public int RanInt(int Range = 0)
     {

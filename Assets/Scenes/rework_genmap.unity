@@ -1140,14 +1140,23 @@ MonoBehaviour:
   noBlock: {fileID: 6579611219259844292, guid: ad9a8f94365d10541964a6f5948daa7c, type: 3}
   roomSizeX: 26
   roomSizeY: 12
-  startX: -6
-  scale: 0.1
-  blockScale: 0.5
-  stepY: 5
-  randomYRange: 0400000006000000
-  platformGenLevel: 0.6
   decorGenLevel: 0.4
-  enemyGenLevel: 0.2
+  horPlatformGenLevel: 0.6
+  horStartX: -6
+  horScale: 0.1
+  horBlockScale: 0.5
+  horStepY: 3
+  horStartY: 3.25
+  horRandomYRange: 0300000006000000
+  verPlatformGenLevel: 0.75
+  verStartY: -4.75
+  verScale: 0.1
+  verBlockScale: 1
+  verStepX: 2
+  verStopSpawnX: 15
+  verStartSpawnX: 16
+  verYSpace: 0100000004000000
+  verRandomYRange: 0400000007000000
   biome: 0
   safeRoomObject:
     serializedVersion: 2
@@ -1247,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 30
+  agentMoveStep: 4
   enemyPerWave: 1
   DmgBuffer: -15
   HpBuffer: -100
