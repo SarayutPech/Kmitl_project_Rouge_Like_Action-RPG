@@ -1132,15 +1132,22 @@ MonoBehaviour:
   - {fileID: 9202596467239565540, guid: fcc2d5ee5b05190468d84d7a4c8c57b1, type: 3}
   - {fileID: 9202596467239565540, guid: 92f9b6ad61d6c7d4f8aa2c625916c46a, type: 3}
   - {fileID: 9202596467239565540, guid: e4c399d60c547784b8700056e55dcb51, type: 3}
-  blockBot: {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
-  blockBotLeft: {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
-  blockBotRight: {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
-  blockCenter: {fileID: 1056005748602916510, guid: 1c74b8f3acc7ddd4aa7f67a3ae7e3d16, type: 3}
-  oneWayPlatform: {fileID: 9202596467239565540, guid: 2db1d85b25d4c744c8e1ab60b3be82b1, type: 3}
   noBlock: {fileID: 6579611219259844292, guid: ad9a8f94365d10541964a6f5948daa7c, type: 3}
+  blockTop_NoLNoR:
+  - {fileID: 5114936610756482494, guid: 012af44151d590c498fa41549bf47a07, type: 3}
+  - {fileID: 5114936610756482494, guid: eede95f80225d6046a271cb62c0a3cf3, type: 3}
+  - {fileID: 5114936610756482494, guid: 096019f59255eef42a37ad4251c92294, type: 3}
+  blockcenter_NoLNoR:
+  - {fileID: 5114936610756482494, guid: 201ff4f620fcaa0449c2e02b01744c36, type: 3}
+  - {fileID: 5114936610756482494, guid: eede95f80225d6046a271cb62c0a3cf3, type: 3}
+  - {fileID: 5114936610756482494, guid: 096019f59255eef42a37ad4251c92294, type: 3}
+  blockBot__NoLNoR:
+  - {fileID: 5114936610756482494, guid: 3175632dbf8d4214f80dfe392e54c2f7, type: 3}
+  - {fileID: 5114936610756482494, guid: eede95f80225d6046a271cb62c0a3cf3, type: 3}
+  - {fileID: 5114936610756482494, guid: 096019f59255eef42a37ad4251c92294, type: 3}
   roomSizeX: 26
   roomSizeY: 12
-  decorGenLevel: 0.4
+  decorGenLevel: 0.325
   horPlatformGenLevel: 0.6
   horStartX: -6
   horScale: 0.1
@@ -1155,8 +1162,9 @@ MonoBehaviour:
   verStepX: 2
   verStopSpawnX: 15
   verStartSpawnX: 16
-  verYSpace: 0100000004000000
-  verRandomYRange: 0400000007000000
+  verYSpace: 080000000c000000
+  verRandomYRange: 0400000009000000
+  ranPlatformGenLevel: 0.25
   biome: 0
   safeRoomObject:
     serializedVersion: 2
