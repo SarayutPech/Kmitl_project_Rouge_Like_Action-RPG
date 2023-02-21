@@ -15,10 +15,17 @@ public class ItemPickup : MonoBehaviour
             if (wasPickUp) // Check item is picked up
             {
                 Destroy(gameObject); // destroy item
+                AddItemCount();
             }
             
                                        
         }
+    }
+
+    private void AddItemCount()
+    {
+        ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
+        result.Increase_Item_Pickup();
     }
 
    

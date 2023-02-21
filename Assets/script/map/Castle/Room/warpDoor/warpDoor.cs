@@ -42,7 +42,13 @@ public class warpDoor : MonoBehaviour
                 if (GameObject.Find("Warp_Door_" + ps.floorLevel)) // มีชั้นต่อไป
                 {
                     gameState.move(GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn);
-                }else // อยู่บนยอดแล้ว 
+
+                    //Update Game Result
+                    ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
+                    result.Increase_Floor_Reach();
+
+                }
+                else // อยู่บนยอดแล้ว 
                 {
                     // ส่งไปซีนต่อไป
                     goToBossRoom();

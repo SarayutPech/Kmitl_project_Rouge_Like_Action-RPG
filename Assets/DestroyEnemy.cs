@@ -12,6 +12,7 @@ public class DestroyEnemy : MonoBehaviour
     {
         Destroy(transform.parent.gameObject);
         ItemDrop();
+        AddEnemyDefeated();
     }
 
     public void ItemDrop()
@@ -19,5 +20,11 @@ public class DestroyEnemy : MonoBehaviour
         Object itemDrop = dropTable.GetRandom();
         Instantiate(itemDrop, transform.position + positionDrop, Quaternion.identity);
         Debug.Log("Drop " + itemDrop.name + " From Enemy");
+    }
+
+    private void AddEnemyDefeated()
+    {
+        ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
+        result.Increase_Enemy_Defeated();
     }
 }

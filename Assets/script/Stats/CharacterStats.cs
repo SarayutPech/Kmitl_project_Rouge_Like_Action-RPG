@@ -86,8 +86,8 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-        //Die need to be Overwritten
-        Debug.Log(transform.name + " die.");
+       Result_UI gameResultUI = GameObject.Find("GameManager").GetComponent<Result_UI>();
+       gameResultUI.GameOver();
     }
 
     public int Deflect_Skill(bool isActive , int damage)

@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &301477952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2998726943408918032, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &301477959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301477952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eefce29fa960bd4398ed2410da353cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item_PickUp_Text: {fileID: 1878165340}
+  enemy_Defeated_Text: {fileID: 1622161553}
+  boss_Defeated_text: {fileID: 804722335}
+  floor_Reach_Text: {fileID: 1296837517}
+  convert_EXP_Text: {fileID: 1654380760}
+  player_Level: {fileID: 1011493597}
+  expBar: {fileID: 0}
+  result: {fileID: 301477960}
+  gameResult_UI: {fileID: 1242232874}
+  confirmBtn: {fileID: 1209549079}
+--- !u!114 &301477960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301477952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f792b06e3f0a741a059933998eef22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item_pickup: 0
+  enemy_defeated: 0
+  boss_defeated: 0
+  floor_clear: 0
+  exp_gain: 0
 --- !u!1 &432263080
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432263080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 3.56, y: 1.91, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -379,6 +423,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: Heavy Armor
   content: Decrease damage recive by 20%.
+--- !u!114 &804722335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4102283216014731247, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &824179492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998726943679863927, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
@@ -4805,6 +4860,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: Deflect
   content: When an enemy attacks a character there is a chance to deflect that attack.
+--- !u!114 &1011493597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3830376411406570889, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021330848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998726943303055771, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
@@ -5040,6 +5106,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1146053034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146053036}
+  - component: {fileID: 1146053035}
+  m_Layer: 0
+  m_Name: spawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1146053035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146053034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788f8ee0912932c43945e5aa0fc775bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 637466299788451840, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
+--- !u!4 &1146053036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146053034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.119837, y: 2.51535, z: 0.0952983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150445457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998726942389150687, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
@@ -5143,6 +5254,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209549079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3114221733591109532, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1242232874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 733222250838178193, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1262420171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6887,6 +7014,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1296837517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6841134765574424110, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1348354310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998726942314655053, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
@@ -7189,6 +7327,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: Healthy
   content: Increase character max HP by 20.
+--- !u!114 &1622161553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8021125418847149986, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1654380760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6313676337672643729, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1707523260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998726941924684520, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
@@ -7379,22 +7539,30 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  blockBot: {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
-  blockBotLeft: {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
-  blockBotRight: {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
-  blockCenter: {fileID: 1056005748602916510, guid: 1c74b8f3acc7ddd4aa7f67a3ae7e3d16, type: 3}
-  oneWayPlatform: {fileID: 9202596467239565540, guid: 2db1d85b25d4c744c8e1ab60b3be82b1, type: 3}
   noBlock: {fileID: 6579611219259844292, guid: ad9a8f94365d10541964a6f5948daa7c, type: 3}
+  blockTop_NoLNoR: []
+  blockcenter_NoLNoR: []
+  blockBot__NoLNoR: []
   roomSizeX: 26
   roomSizeY: 12
-  startX: -6
-  scale: 0.1
-  blockScale: 0.5
-  stepY: 5
-  randomYRange: 0400000006000000
-  platformGenLevel: 0.6
   decorGenLevel: 0.2
-  enemyGenLevel: 0.2
+  horPlatformGenLevel: 0.6
+  horStartX: 0
+  horScale: 0.1
+  horBlockScale: 1
+  horStepY: 3
+  horStartY: 3.25
+  horRandomYRange: 
+  verPlatformGenLevel: 0.6
+  verStartY: 3.25
+  verScale: 0.1
+  verBlockScale: 1
+  verStepX: 3
+  verStopSpawnX: 9
+  verStartSpawnX: 20
+  verYSpace: 
+  verRandomYRange: 
+  ranPlatformGenLevel: 0.6
   biome: 0
   safeRoomObject:
     serializedVersion: 2
@@ -7450,6 +7618,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878165340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7555747573905807951, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+  m_PrefabInstance: {fileID: 6770432409203718699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1891309726
 GameObject:
   m_ObjectHideFlags: 0
@@ -16790,17 +16969,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: Lucky Strike
   content: Moderate increase critical rate.
---- !u!114 &2037411904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2212571413873323631, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
-  m_PrefabInstance: {fileID: 1262420171}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bed2e7b26edf244a9b3b70cb0fc1faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2037411913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 637466299788451853, guid: f7e52fcc5f9404c4789853defac218dc, type: 3}
@@ -17725,6 +17893,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2998726941889181068, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2998726941924684521, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17764,6 +17936,10 @@ PrefabInstance:
     - target: {fileID: 2998726941924684526, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: m_Color.r
       value: 0.42352945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998726942080582400, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.60076904
       objectReference: {fileID: 0}
     - target: {fileID: 2998726942142431438, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -18184,7 +18360,7 @@ PrefabInstance:
     - target: {fileID: 2998726943408918036, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: charaStat
       value: 
-      objectReference: {fileID: 2037411904}
+      objectReference: {fileID: 0}
     - target: {fileID: 2998726943460827949, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18208,6 +18384,10 @@ PrefabInstance:
     - target: {fileID: 2998726943460827949, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998726943476296288, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2998726943484705795, guid: 983bfdfeb99b053478948075e6a68c5b, type: 3}
       propertyPath: m_AnchorMax.y

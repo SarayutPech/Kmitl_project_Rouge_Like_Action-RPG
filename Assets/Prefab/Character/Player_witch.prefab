@@ -166,6 +166,8 @@ MonoBehaviour:
     m_Bits: 256
   knockbackTime: 0
   animator: {fileID: 1119249428222569962}
+  auraAnimator: {fileID: 0}
+  powerJumpisActive: 0
 --- !u!95 &1119249428222569962
 Animator:
   serializedVersion: 4
@@ -225,6 +227,11 @@ MonoBehaviour:
   weaponAnimator: {fileID: 2212571413115160678}
   animatorOverride: {fileID: 22100000, guid: 258e4f8c90ced034fbb439304616ce0f, type: 2}
   equipmentManager: {fileID: 0}
+  skillAnimator: {fileID: 0}
+  attackTimes: 0
+  extraAttackisActive: 0
+  comboStrikeisActive: 0
+  comboChance: 0.1
 --- !u!114 &2212571413873323628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +247,9 @@ MonoBehaviour:
   maxHealth: 100
   maxStatPoint: 30
   healthBar: {fileID: 0}
+  heavyArmorisActive: 0
+  deflectisActive: 0
+  deflectChance: 0.2
 --- !u!114 &2212571413873323631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +265,9 @@ MonoBehaviour:
   maxHealth: 100
   maxStatPoint: 30
   healthBar: {fileID: 0}
+  heavyArmorisActive: 0
+  deflectisActive: 0
+  deflectChance: 0.2
   expManager: {fileID: 203798438984201575}
   currentStatPoint: 0
   statPoint: 0

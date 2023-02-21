@@ -27,7 +27,9 @@ public class UI_Status : MonoBehaviour
     {
         //UpdateParameterUI();
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
-     
+        charaStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+
+
     }
 
     void Awake()
