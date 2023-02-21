@@ -34,7 +34,7 @@ public class UI_Status : MonoBehaviour
 
     void Awake()
     {
-
+        
 
         //------Up Status Button----
         plusStr_btn.onClick.AddListener(delegate { UpStatus("STR"); });
