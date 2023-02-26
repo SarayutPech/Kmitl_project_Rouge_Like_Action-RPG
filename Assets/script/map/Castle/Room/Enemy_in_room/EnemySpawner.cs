@@ -142,7 +142,7 @@ public class EnemySpawner : MonoBehaviour
         //Debug.Log(canSpawn.Count);
         enemyToSpawnLeft = levelManagerParameter.enemyPerWave;
     }
-    /*
+    
     public void OnDrawGizmos()
     {
         for (float y = 0; y < stepY; y += scale)
@@ -155,14 +155,14 @@ public class EnemySpawner : MonoBehaviour
                 Collider2D block = Physics2D.OverlapBox(transform.position + pos, new Vector2(scale, scale), 0, ground);
                 if (!block)
                 {
-                    Gizmos.color = Color.green;
+                    Gizmos.color = Color.blue;
                 }
                 else
-                    Gizmos.color = Color.red;
+                    Gizmos.color = Color.yellow;
                 
                 Gizmos.DrawWireCube(transform.position + pos, new Vector2(scale, scale));
             }
         }
-    }*/
+    }
 
 }

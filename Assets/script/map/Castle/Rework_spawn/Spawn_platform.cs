@@ -21,6 +21,15 @@ public class Spawn_platform : MonoBehaviour
     public GameObject[] blockTop;
     public GameObject[] blockTopLeft;
     public GameObject[] blockTopRight;
+    [Header("       Bot block \n________________________________________________________________________________________________________")]
+    public GameObject[] blockBot;
+    public GameObject[] blockBotLeft;
+    public GameObject[] blockBotRight;
+    [Header("       Center block \n________________________________________________________________________________________________________")]
+    public GameObject[] blockCenter;
+    public GameObject[] blockCenterLeft;
+    public GameObject[] blockCenterRight;
+
     public GameObject noBlock;
 
     [Header("")]
@@ -109,7 +118,7 @@ public class Spawn_platform : MonoBehaviour
     
     private void RandomPlacePlatform()
     {
-        int rand = Random.Range(3, 4);
+        int rand = Random.Range(3,4);
         switch (rand)
         {
             case 1:
@@ -127,8 +136,8 @@ public class Spawn_platform : MonoBehaviour
     private float[,] noiseMaping(int roomSizeForMapingX, int roomSizeForMapingY)
     {
         float[,] noiseMap = new float[roomSizeForMapingX, roomSizeForMapingY];
-        float seedX = Random.Range(-1000f, 1000f);
-        float seedY = Random.Range(-1000f, 1000f);
+        float seedX = Random.Range(-10f, 10f);
+        float seedY = Random.Range(-10f, 10f);
 
         // Map noise เข้า Array
         for (int y = 0; y < roomSizeForMapingY; y++)
@@ -222,10 +231,21 @@ public class Spawn_platform : MonoBehaviour
 
     private void placeRandomPlatform()
     {
-        float[,] noiseMap = new float[roomSizeX, roomSizeY + 8];
-        noiseMap = noiseMaping(roomSizeX, roomSizeY + 8);
-        // เอา noise ที่ Map ไว้มา spawn platform
-        for (int x = 1; x < roomSizeX - 1; x ++)
+        float[,] noiseMap = new float[roomSizeX + 10, roomSizeY + 8];
+        noiseMap = noiseMaping(roomSizeX + 10, roomSizeY + 8);
+        //ลบขอบ
+        for (int x = 1; x < noiseMap.GetLength(0) - 1; x++)
+        {
+            noiseMap[x,0] = 1;
+            noiseMap[x,noiseMap.GetLength(1) - 1] = 1;
+        }
+        for (int y = 1; y < noiseMap.GetLength(1) - 5; y++)
+        {
+            noiseMap[0, y] = 1;
+            noiseMap[noiseMap.GetLength(0) - 1, y] = 1;
+        }
+
+        for (int x = 1; x < roomSizeX + 9; x ++)
         {
             int YSpace = Random.Range(-2, 5);
             verStepX = Random.Range(verRandomYRange[0], verRandomYRange[1]);
@@ -233,15 +253,18 @@ public class Spawn_platform : MonoBehaviour
             noiseMap[x, verYSpace[1] + YSpace] = 1;
 
 
-            for (int y = 1; y < roomSizeY + 7; y++)
+            for (int y = 1; y < roomSizeY + 4; y++)
             {
                 float noiseValue = noiseMap[x, y];
-                Vector3 pos = new Vector2(x * horBlockScale + horStartX, y * horBlockScale + verStartY);
-                if (noiseValue < ranPlatformGenLevel && (x < verStopSpawnX || x > verStartSpawnX) && (y < verYSpace[0] + YSpace || y > verYSpace[1] + YSpace))  //
+                Vector3 pos = new Vector2(x * horBlockScale + horStartX - 2.75f, y * horBlockScale + verStartY + 1.5f); //5.5f
+                if (noiseValue < ranPlatformGenLevel)  // && (x < verStopSpawnX || x > verStartSpawnX) && (y < verYSpace[0] + YSpace || y > verYSpace[1] + YSpace)
                 {
-                    GameObject placed_block = (GameObject)Instantiate(verBlockToPlace(
+                    GameObject placed_block = (GameObject)Instantiate(noiseBlockToPlace(
                         noiseMap[x, y - 1] < ranPlatformGenLevel,
                         noiseMap[x, y + 1] < ranPlatformGenLevel,
+                        noiseMap[x, y] < ranPlatformGenLevel,
+                        noiseMap[x-1, y] < ranPlatformGenLevel,
+                        noiseMap[x+1, y] < ranPlatformGenLevel,
                         biome
                         ), transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
@@ -276,6 +299,72 @@ public class Spawn_platform : MonoBehaviour
             return blockBot__NoLNoR[biome];
         else if (top && bot)
             return blockcenter_NoLNoR[biome];
+
+
+        return noBlock;
+    }
+
+    GameObject noiseBlockToPlace(bool top, bool bot, bool center, bool left, bool right, int biome)
+    {
+        if(top && bot)
+        {
+            // Center
+            if (left && right || !left && !right)
+            {
+                //Center
+                return blockCenter[biome];
+            }
+            else if (!left && right)
+            {
+                //left
+                return blockCenterLeft[biome];
+            }
+            else if (left && !right)
+            {
+                //right
+                return blockCenterRight[biome];
+            }
+        }
+        else if(top && !bot)
+        {
+           
+
+            // Top
+            if (left && right || !left && !right)
+            {
+                //Center
+                return blockTop[biome];
+            }
+            else if (!left && right)
+            {
+                //left
+                return blockTopLeft[biome];
+            }
+            else if (left && !right)
+            {
+                //right
+                return blockTopRight[biome];
+            }
+        }
+        else if (!top && !bot || top && !bot)
+        {
+            // Bot
+            if (left && right || !left && !right)
+            {
+                //Center
+                return blockBot[biome];
+            }
+            else if (!left && right)
+            {
+                //left
+                return blockBotLeft[biome];
+            }
+            else if (left && !right)
+            {
+                //right
+                return blockBotRight[biome];
+            }
+        }
 
 
         return noBlock;

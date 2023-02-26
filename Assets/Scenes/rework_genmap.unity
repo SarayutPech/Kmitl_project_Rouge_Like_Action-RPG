@@ -1132,6 +1132,30 @@ MonoBehaviour:
   - {fileID: 9202596467239565540, guid: fcc2d5ee5b05190468d84d7a4c8c57b1, type: 3}
   - {fileID: 9202596467239565540, guid: 92f9b6ad61d6c7d4f8aa2c625916c46a, type: 3}
   - {fileID: 9202596467239565540, guid: e4c399d60c547784b8700056e55dcb51, type: 3}
+  blockBot:
+  - {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
+  - {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
+  - {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
+  blockBotLeft:
+  - {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
+  - {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
+  - {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
+  blockBotRight:
+  - {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
+  - {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
+  - {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
+  blockCenter:
+  - {fileID: 1056005748602916510, guid: 1c74b8f3acc7ddd4aa7f67a3ae7e3d16, type: 3}
+  - {fileID: 1056005748602916510, guid: 1c74b8f3acc7ddd4aa7f67a3ae7e3d16, type: 3}
+  - {fileID: 1056005748602916510, guid: 1c74b8f3acc7ddd4aa7f67a3ae7e3d16, type: 3}
+  blockCenterLeft:
+  - {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
+  - {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
+  - {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
+  blockCenterRight:
+  - {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
+  - {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
+  - {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
   noBlock: {fileID: 6579611219259844292, guid: ad9a8f94365d10541964a6f5948daa7c, type: 3}
   blockTop_NoLNoR:
   - {fileID: 5114936610756482494, guid: 012af44151d590c498fa41549bf47a07, type: 3}
@@ -1164,7 +1188,7 @@ MonoBehaviour:
   verStartSpawnX: 16
   verYSpace: 080000000c000000
   verRandomYRange: 0400000009000000
-  ranPlatformGenLevel: 0.25
+  ranPlatformGenLevel: 0.3
   biome: 0
   safeRoomObject:
     serializedVersion: 2
@@ -1245,11 +1269,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   enemyToSpawnLeft: 2
-  stepX: 13
+  stepX: 16
   stepY: 6.95
-  scale: 0.5
-  startX: 6.5
-  startY: 4
+  scale: 1.3
+  startX: 7.64
+  startY: 3.47
   space: 0.25
   canSpawn: []
 --- !u!114 &1731683136
@@ -1264,7 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 4
+  agentMoveStep: 7
   enemyPerWave: 1
   DmgBuffer: -15
   HpBuffer: -100

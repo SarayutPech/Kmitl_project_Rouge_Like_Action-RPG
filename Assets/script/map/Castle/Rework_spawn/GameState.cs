@@ -95,13 +95,13 @@ public class GameState : MonoBehaviour
             es.canEnemySpawn();
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(posPortalRight, portalSize);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(posPortalLeft, portalSize);
-    }
+    }*/
 
 }
 
