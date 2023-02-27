@@ -54,6 +54,8 @@ public class Result_UI : MonoBehaviour
 
     public void RestartGame()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = new Vector3(24f, 1.12f, -3f);
         SceneManager.LoadScene("Lobby_Town");
         gameResult_UI.SetActive(false);
     }
