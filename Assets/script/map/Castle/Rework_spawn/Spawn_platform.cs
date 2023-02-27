@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Spawn_platform : MonoBehaviour
 {
     // Hide component
@@ -72,6 +73,12 @@ public class Spawn_platform : MonoBehaviour
     [Header("platform algorithm : Random \n________________________________________________________________________________________________________")]
     public float ranPlatformGenLevel = 0.6f;
 
+    [Header("platform algorithm : Tunnel \n________________________________________________________________________________________________________")]
+    public float TunnelStartX;
+    public float TunnelEndX;
+    public float TunnelStartY;
+    public int smooth = 3; //less for more smooth
+
     [Header("Biome List : 0 castle , 1 neon \n________________________________________________________________________________________________________")]
     public int biome;
 
@@ -118,7 +125,7 @@ public class Spawn_platform : MonoBehaviour
     
     private void RandomPlacePlatform()
     {
-        int rand = Random.Range(3,4);
+        int rand = Random.Range(1,5);
         switch (rand)
         {
             case 1:
@@ -129,6 +136,9 @@ public class Spawn_platform : MonoBehaviour
                 break;
             case 3:
                 placeRandomPlatform();
+                break;
+            case 4:
+                placeTunnelPlatform();
                 break;
         }
     }
@@ -245,7 +255,7 @@ public class Spawn_platform : MonoBehaviour
             noiseMap[noiseMap.GetLength(0) - 1, y] = 1;
         }
 
-        for (int x = 1; x < roomSizeX + 9; x ++)
+        for (int x = 0; x < roomSizeX + 8; x ++)
         {
             int YSpace = Random.Range(-2, 5);
             verStepX = Random.Range(verRandomYRange[0], verRandomYRange[1]);
@@ -253,7 +263,7 @@ public class Spawn_platform : MonoBehaviour
             noiseMap[x, verYSpace[1] + YSpace] = 1;
 
 
-            for (int y = 1; y < roomSizeY + 4; y++)
+            for (int y = 0; y < roomSizeY + 3; y++)
             {
                 float noiseValue = noiseMap[x, y];
                 Vector3 pos = new Vector2(x * horBlockScale + horStartX - 2.75f, y * horBlockScale + verStartY + 1.5f); //5.5f
@@ -267,11 +277,116 @@ public class Spawn_platform : MonoBehaviour
                         noiseMap[x+1, y] < ranPlatformGenLevel,
                         biome
                         ), transform.position + pos, Quaternion.identity);
+                    if (placed_block == noBlock)
+                        noiseMap[x, y] = 1;
                     placed_block.name = "block " + pos;
                     placed_block.transform.parent = GameObject.Find("platforms").transform;
                 }
             }
         }
+    }
+
+    private float[] selectionSort(float[] arr)
+    {
+        // Debug Array
+        /*string arr_val = "\narr_Before = [ ";
+        for (int i =0; i < arr.Length; i++)
+        {
+            arr_val += " " + arr[i] + " ";
+        }
+        arr_val += " ]\n";*/
+
+
+        // Sorting
+        for(int i = 0; i < arr.Length; i++)
+        {
+            int smallest = i;
+            for(int j = i; j < arr.Length; j++)
+            {
+                if (arr[j] < arr[smallest])
+                    smallest = j;
+            }
+            if(smallest != i)
+            {
+                float temp = arr[i];
+                arr[i] = arr[smallest];
+                arr[smallest] = temp;
+            }
+        }
+
+        // Debug Array
+        /*arr_val += "arr_After = [ ";
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr_val += " " + arr[i] + " ";
+        }
+        arr_val += " ]";
+        Debug.Log(arr_val);*/
+
+        return arr;
+    }
+
+    private void placeTunnelPlatform()
+    {
+        int xN = 24;
+        float[] noiseMap = new float[xN];
+        float seedX = Random.Range(-10f, 10f);
+        float seedY = Random.Range(-10f, 10f);
+
+        // Map noise เข้า Array
+        for (int x = 0; x < 16; x++)
+        {
+            float noiseValue = Mathf.PerlinNoise(x * horScale + seedX,horScale + seedY);
+            if (x == 0 || x == roomSizeX - 1)
+                noiseMap[x] = 1;
+            else
+                noiseMap[x] = noiseValue;
+        }
+
+        noiseMap = selectionSort(noiseMap);
+
+        GameObject placed_block;
+
+
+        {
+            // First time place
+            for (int x = 0; x < xN; x++)
+            {
+                //Debug.Log((int) Mathf.Round(noiseMap[x] * 10) );
+                int yN = (int)Mathf.Round(noiseMap[x] * smooth);
+                for (int y = 0; y < yN; y++)
+                {
+                    Vector3 pos = new Vector2(x * horBlockScale + TunnelStartX, y * horBlockScale + TunnelStartY);
+                    if (y == yN - 1)
+                        placed_block = (GameObject)Instantiate(blockTop[biome], transform.position + pos, Quaternion.identity);
+                    else
+                        placed_block = (GameObject)Instantiate(blockCenter[biome], transform.position + pos, Quaternion.identity);
+
+                    placed_block.name = "block " + pos;
+                    placed_block.transform.parent = GameObject.Find("platforms").transform;
+                }
+            }
+
+
+            // Final place
+            for (int x = xN - 1; x > 15; x--)
+            {
+                int yN = (int)Mathf.Round(noiseMap[x] * smooth);
+                for (int y = 0; y < yN; y++)
+                {
+                    Vector3 pos = new Vector2(xN - x * horBlockScale + TunnelStartX + TunnelEndX, y * horBlockScale + TunnelStartY);
+                    if (y == yN - 1)
+                        placed_block = (GameObject)Instantiate(blockTop[biome], transform.position + pos, Quaternion.identity);
+                    else
+                        placed_block = (GameObject)Instantiate(blockCenter[biome], transform.position + pos, Quaternion.identity);
+
+                    placed_block.name = "block " + pos;
+                    placed_block.transform.parent = GameObject.Find("platforms").transform;
+                }
+            }
+        } // Bot Side place
+
+
     }
 
     GameObject horBlockToPlace(bool left, bool right, int biome)
