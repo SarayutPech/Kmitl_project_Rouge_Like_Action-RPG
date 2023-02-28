@@ -12669,6 +12669,8 @@ GameObject:
   - component: {fileID: 2998726943408918036}
   - component: {fileID: 2998726943408918037}
   - component: {fileID: 6770432410552050060}
+  - component: {fileID: 1735422657227308816}
+  - component: {fileID: 7181740814517784455}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12810,6 +12812,45 @@ MonoBehaviour:
   LukSkill2: {fileID: 2998726943679863925}
   LukSkill3: {fileID: 2998726942571153228}
   LukSkill4: {fileID: 2998726943511474519}
+--- !u!114 &1735422657227308816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943408918032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eefce29fa960bd4398ed2410da353cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item_PickUp_Text: {fileID: 7555747573905807951}
+  enemy_Defeated_Text: {fileID: 8021125418847149986}
+  boss_Defeated_text: {fileID: 4102283216014731247}
+  floor_Reach_Text: {fileID: 6841134765574424110}
+  convert_EXP_Text: {fileID: 6313676337672643729}
+  player_Level: {fileID: 3830376411406570889}
+  expBar: {fileID: 0}
+  result: {fileID: 0}
+  gameResult_UI: {fileID: 733222250838178193}
+  confirmBtn: {fileID: 3114221733591109532}
+--- !u!114 &7181740814517784455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943408918032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f792b06e3f0a741a059933998eef22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item_pickup: 0
+  enemy_defeated: 0
+  boss_defeated: 0
+  floor_clear: 0
+  exp_gain: 0
 --- !u!1 &2998726943419157954
 GameObject:
   m_ObjectHideFlags: 0
