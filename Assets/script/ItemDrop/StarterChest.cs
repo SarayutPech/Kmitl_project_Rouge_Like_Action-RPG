@@ -11,6 +11,10 @@ public class StarterChest : MonoBehaviour
     public Openable chest;
 
     //public Transform itemHolder;
+    private void Start()
+    {
+        isLoot = false;
+    }
 
 
     private void Update()

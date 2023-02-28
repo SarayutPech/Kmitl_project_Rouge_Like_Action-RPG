@@ -79,5 +79,24 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RemoveAllItem()
+    {
+        if(inventoryCard.Count > 0)
+        {
+            Debug.Log("Delete Item : "+inventoryCard.Count);
+            for (int i = 0; i <= inventoryCard.Count; i++) // Unequip all Card Weapon
+            {
+                RemoveItem(inventoryCard[i]);
+            }
+        }
+        if (inventoryAccessory.Count > 0)
+        {
+            for (int i = 0; i <= inventoryAccessory.Count; i++) // Unequip all Card Weapon
+            {
+                RemoveItem(inventoryAccessory[i]);
+            }
+        }
+    }
+
 
 }

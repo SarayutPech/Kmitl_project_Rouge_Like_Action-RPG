@@ -43,6 +43,7 @@ public class player_movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        auraAnimator = GameObject.FindGameObjectWithTag("Animator_Aura").GetComponent<Animator>();
     }
     private void Update()
     {

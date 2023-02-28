@@ -1,0 +1,1 @@
+{"playerLevel":30,"statPoint":30,"currentExp":421,"targetExp":835,"str_Stat":0,"vit_Stat":0,"agi_Stat":6,"dex_Stat":0,"luk_Stat":0}

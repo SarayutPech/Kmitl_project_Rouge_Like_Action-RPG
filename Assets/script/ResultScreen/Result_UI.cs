@@ -18,6 +18,8 @@ public class Result_UI : MonoBehaviour
     private void Start()
     {
         confirmBtn.onClick.AddListener(RestartGame);
+
+        result = GetComponentInParent<ResultScreen>();
     }
 
 
@@ -54,10 +56,23 @@ public class Result_UI : MonoBehaviour
 
     public void RestartGame()
     {
+        SaveSystem saveSystem = GetComponentInParent<SaveSystem>();
+        EquipmentManager equipmentManager = GetComponentInParent<EquipmentManager>();
+        Inventory inventory = GetComponentInParent<Inventory>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = new Vector3(24f, 1.12f, -3f);
-        SceneManager.LoadScene("Lobby_Town");
+        GameObject gameSystem = GameObject.FindGameObjectWithTag("GameSystem");
+
+        saveSystem.Save();
+        equipmentManager.UnequipAll();
+        //inventory.RemoveAllItem();
+        Destroy(player);
+
         gameResult_UI.SetActive(false);
+        Destroy(gameSystem);
+        // player.transform.position = new Vector3(24f, 1.12f, -3f);
+        
+        SceneManager.LoadScene("Lobby_Town");
+        
     }
 
 }

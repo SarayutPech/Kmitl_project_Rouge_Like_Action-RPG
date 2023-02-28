@@ -12,6 +12,9 @@ TagManager:
   - Warp
   - Block_Gate
   - NPC
+  - Animator_Aura
+  - Animator_Skill
+  - GameSystem
   layers:
   - Default
   - TransparentFX

@@ -25,8 +25,8 @@ public class PlayerStats : CharacterStats
         currentPlayerLevel = expManager.level;
         currentStatPoint = statPoint - usedStatPoint;
 
-       /* playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
-        playerStat.charaStat = this;*/
+        playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
+        playerStat.charaStat = this;
     }
 
     private void Awake()
@@ -79,6 +79,7 @@ public class PlayerStats : CharacterStats
             if(stat == "STR")
             {
                 str.AddModifier(1);
+                Debug.Log("Upgrade STR!");
 
             }else if(stat == "VIT")
             {
