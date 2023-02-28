@@ -14,6 +14,7 @@ public class Spawn_platform : MonoBehaviour
     public GameObject[] decorCastle;
     public GameObject[] decorNeon;
     public GameObject[] decorPirate;
+    public GameObject upperpath;
 
     [Header("")]
     [Header("Horizontal block \n________________________________________________________________________________________________________")]
@@ -234,6 +235,14 @@ public class Spawn_platform : MonoBehaviour
                         ), transform.position + pos, Quaternion.identity);
                     placed_block.name = "block " + pos;
                     placed_block.transform.parent = GameObject.Find("platforms").transform;
+
+                    if(y % 3 == 0 && y < verYSpace[0] + YSpace)
+                    {
+                        GameObject upperpath_block = (GameObject)Instantiate(upperpath, new Vector3(pos.x - 0.45f, pos.y) + transform.position, Quaternion.Euler(0, 0, 90));
+                        upperpath_block.transform.parent = GameObject.Find("platforms").transform;
+                        upperpath_block = (GameObject)Instantiate(upperpath, new Vector3(pos.x + 0.45f, pos.y) + transform.position, Quaternion.Euler(0, 0, 90));
+                        upperpath_block.transform.parent = GameObject.Find("platforms").transform;
+                    }
                 }
             }
         }
