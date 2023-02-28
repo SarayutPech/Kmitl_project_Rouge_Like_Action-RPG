@@ -9,7 +9,7 @@ public class PlayerStats : CharacterStats
     public int currentStatPoint,statPoint;
     public int usedStatPoint;
     public int currentPlayerLevel;
-    private UI_Status playerStat;
+    private UI_Status playerStat_UI;
     public SkillManager skillManager;
 
     public int skillAtkBonus, skillHPBonus, skillCriRateBonus, skillCriDamageBonus, skillMovespeedBonus, skillDropRateBonus;
@@ -25,8 +25,8 @@ public class PlayerStats : CharacterStats
         currentPlayerLevel = expManager.level;
         currentStatPoint = statPoint - usedStatPoint;
 
-        playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
-        playerStat.charaStat = this;
+        playerStat_UI = GameObject.Find("GameManager").GetComponent<UI_Status>();
+        playerStat_UI.charaStat = this;
     }
 
     private void Awake()

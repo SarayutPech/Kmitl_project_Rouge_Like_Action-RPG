@@ -68,7 +68,7 @@ public class SaveSystem : MonoBehaviour
             for (int i = 1; i <= saveObject.str_Stat; i++)
             {
                 playerStat.UpgradeStat("STR");
-                Debug.Log("Upgrade STR :" + saveObject.str_Stat);
+                Debug.Log("Load STR :" + saveObject.str_Stat);
             }
         }
         if (saveObject.vit_Stat > 0) // VIT
@@ -76,6 +76,7 @@ public class SaveSystem : MonoBehaviour
             for (int i = 1; i <= saveObject.vit_Stat; i++)
             {
                 playerStat.UpgradeStat("VIT");
+                Debug.Log("Load VIT :" + saveObject.vit_Stat);
             }
         }
         if (saveObject.agi_Stat > 0) // AGI
@@ -83,6 +84,7 @@ public class SaveSystem : MonoBehaviour
             for (int i = 1; i <= saveObject.agi_Stat; i++)
             {
                 playerStat.UpgradeStat("AGI");
+                Debug.Log("Load AGI :" + saveObject.agi_Stat);
             }
         }
         if (saveObject.dex_Stat > 0)  // DEX
@@ -90,6 +92,7 @@ public class SaveSystem : MonoBehaviour
             for (int i = 1; i <= saveObject.dex_Stat; i++)
             {
                 playerStat.UpgradeStat("DEX");
+                Debug.Log("Load DEX :" + saveObject.dex_Stat);
             }
         }
         if (saveObject.luk_Stat > 0) // LUK
@@ -97,6 +100,7 @@ public class SaveSystem : MonoBehaviour
             for (int i = 1; i <= saveObject.luk_Stat; i++)
             {
                 playerStat.UpgradeStat("LUK");
+                Debug.Log("Load LUK :" + saveObject.luk_Stat);
             }
         }
 

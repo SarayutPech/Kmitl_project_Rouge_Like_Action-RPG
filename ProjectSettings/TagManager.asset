@@ -15,6 +15,7 @@ TagManager:
   - Animator_Aura
   - Animator_Skill
   - GameSystem
+  - EXP_Bar
   layers:
   - Default
   - TransparentFX

@@ -13,9 +13,9 @@ public class TownSpawnPoint : MonoBehaviour
         
 
         Instantiate(gameSystem);
+        Instantiate(player, transform.position, Quaternion.identity); // Spawn player
 
         SaveSystem saveSystem = GameObject.Find("GameManager").GetComponentInParent<SaveSystem>();
-        Instantiate(player, transform.position, Quaternion.identity); // Spawn player
         saveSystem.Load();
 
     }

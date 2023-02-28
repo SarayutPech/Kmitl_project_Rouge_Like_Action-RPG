@@ -20,6 +20,8 @@ public class Result_UI : MonoBehaviour
         confirmBtn.onClick.AddListener(RestartGame);
 
         result = GetComponentInParent<ResultScreen>();
+        
+        // 
     }
 
 
@@ -27,8 +29,8 @@ public class Result_UI : MonoBehaviour
 
     public void UpdateResultUI()
     {
-        expBar = GameObject.Find("exp_Bar").GetComponent<EXP_Bar>();
 
+        
         item_PickUp_Text.text = result.item_pickup.ToString();
         enemy_Defeated_Text.text = result.enemy_defeated.ToString();
         boss_Defeated_text.text = result.boss_defeated.ToString();
@@ -36,11 +38,15 @@ public class Result_UI : MonoBehaviour
         convert_EXP_Text.text = result.Calculate_EXP_Gain().ToString();
 
         EXPmanager xpManager = GameObject.FindGameObjectWithTag("Player").GetComponent<EXPmanager>();
-
+        expBar = GameObject.FindGameObjectWithTag("EXP_Bar").GetComponent<EXP_Bar>();
         xpManager.AddEXP(result.Calculate_EXP_Gain());
 
         player_Level.text = xpManager.level.ToString();
 
+        
+
+        expBar.SetEXP(xpManager.currentEXP);
+        expBar.SetMaxEXP(xpManager.targetEXP);
         expBar.SetEXP(xpManager.currentEXP);
         expBar.SetMaxEXP(xpManager.targetEXP);
         expBar.setTextEXP(xpManager.currentEXP, xpManager.targetEXP);
@@ -50,19 +56,23 @@ public class Result_UI : MonoBehaviour
 
     public void GameOver()
     {
+        
         gameResult_UI.SetActive(true);
+        
         UpdateResultUI();
+        SaveSystem saveSystem = GetComponentInParent<SaveSystem>();
+        saveSystem.Save();
     }
 
     public void RestartGame()
     {
-        SaveSystem saveSystem = GetComponentInParent<SaveSystem>();
+        
         EquipmentManager equipmentManager = GetComponentInParent<EquipmentManager>();
-        Inventory inventory = GetComponentInParent<Inventory>();
+        //Inventory inventory = GetComponentInParent<Inventory>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject gameSystem = GameObject.FindGameObjectWithTag("GameSystem");
 
-        saveSystem.Save();
+        
         equipmentManager.UnequipAll();
         //inventory.RemoveAllItem();
         Destroy(player);
