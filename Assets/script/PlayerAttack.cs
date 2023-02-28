@@ -40,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
     {
        equipmentManager = EquipmentManager.instance;
        weaponAnimator.runtimeAnimatorController = animatorOverride;
+       skillAnimator = GameObject.FindGameObjectWithTag("Animator_Skill").GetComponent<Animator>();
     }
 
     private void Awake()

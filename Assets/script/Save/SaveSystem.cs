@@ -53,6 +53,8 @@ public class SaveSystem : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerStats playerStat = player.GetComponent<PlayerStats>();
         EXPmanager playerExp = player.GetComponent<EXPmanager>();
+        SkillManager playerSkill = player.GetComponent<SkillManager>();
+        UI_Status ui_Status = GetComponentInParent<UI_Status>();
 
         playerExp.level = saveObject.playerLevel;
         playerExp.statPoint = saveObject.statPoint;
@@ -64,18 +66,29 @@ public class SaveSystem : MonoBehaviour
         // Load Stat 
         if (saveObject.str_Stat > 0) // STR
         {
-            
+            //playerStat.str.SetBaseValue(saveObject.str_Stat);
             for (int i = 1; i <= saveObject.str_Stat; i++)
             {
-                playerStat.UpgradeStat("STR");
+                playerStat.str.AddModifier(1);
+                playerStat.currentStatPoint -= 1;
+                playerStat.usedStatPoint++;
+                playerStat.CheckStatusPoint();
+                playerSkill.CheckSkillActive("STR");
+                //playerStat.UpgradeStat("STR");
                 Debug.Log("Load STR :" + saveObject.str_Stat);
             }
+            //playerSkill.StrSkillCheck(saveObject.str_Stat);
         }
         if (saveObject.vit_Stat > 0) // VIT
         {
             for (int i = 1; i <= saveObject.vit_Stat; i++)
             {
-                playerStat.UpgradeStat("VIT");
+                playerStat.vit.AddModifier(1);
+                playerStat.currentStatPoint -= 1;
+                playerStat.usedStatPoint++;
+                playerStat.CheckStatusPoint();
+                playerSkill.CheckSkillActive("VIT");
+                //playerStat.UpgradeStat("VIT");
                 Debug.Log("Load VIT :" + saveObject.vit_Stat);
             }
         }
@@ -83,7 +96,12 @@ public class SaveSystem : MonoBehaviour
         {
             for (int i = 1; i <= saveObject.agi_Stat; i++)
             {
-                playerStat.UpgradeStat("AGI");
+                playerStat.agi.AddModifier(1);
+                playerStat.currentStatPoint -= 1;
+                playerStat.usedStatPoint++;
+                playerStat.CheckStatusPoint();
+                playerSkill.CheckSkillActive("AGI");
+                //playerStat.UpgradeStat("AGI");
                 Debug.Log("Load AGI :" + saveObject.agi_Stat);
             }
         }
@@ -91,7 +109,12 @@ public class SaveSystem : MonoBehaviour
         {
             for (int i = 1; i <= saveObject.dex_Stat; i++)
             {
-                playerStat.UpgradeStat("DEX");
+                playerStat.dex.AddModifier(1);
+                playerStat.currentStatPoint -= 1;
+                playerStat.usedStatPoint++;
+                playerStat.CheckStatusPoint();
+                playerSkill.CheckSkillActive("DEX");
+                // playerStat.UpgradeStat("DEX");
                 Debug.Log("Load DEX :" + saveObject.dex_Stat);
             }
         }
@@ -99,11 +122,20 @@ public class SaveSystem : MonoBehaviour
         {
             for (int i = 1; i <= saveObject.luk_Stat; i++)
             {
-                playerStat.UpgradeStat("LUK");
+                playerStat.luk.AddModifier(1);
+                playerStat.currentStatPoint -= 1;
+                playerStat.usedStatPoint++;
+                playerStat.CheckStatusPoint();
+                playerSkill.CheckSkillActive("LUK");
+                //playerStat.UpgradeStat("LUK");
                 Debug.Log("Load LUK :" + saveObject.luk_Stat);
             }
         }
 
+        playerStat.CalculateBaseStat();
+        ui_Status.UpdateParameterUI();
+        ui_Status.UpdateStatusUI();
+        
     }
 
     private class SaveObject

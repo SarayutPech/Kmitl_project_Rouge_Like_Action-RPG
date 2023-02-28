@@ -31,8 +31,8 @@ public class PlayerStats : CharacterStats
 
     private void Awake()
     {
-       /* playerStat = GameObject.Find("GameManager").GetComponent<UI_Status>();
-        playerStat.charaStat = this;*/
+        playerStat_UI = GameObject.Find("GameManager").GetComponent<UI_Status>();
+        playerStat_UI.charaStat = this;
 
         //skillManager.gameObject.GetComponent<SkillManager>();
     }
@@ -79,7 +79,7 @@ public class PlayerStats : CharacterStats
             if(stat == "STR")
             {
                 str.AddModifier(1);
-                Debug.Log("Upgrade STR!");
+               // Debug.Log("Upgrade STR!");
 
             }else if(stat == "VIT")
             {
@@ -166,7 +166,7 @@ public class PlayerStats : CharacterStats
         }
     }
 
-    private bool CheckStatusPoint()
+    public bool CheckStatusPoint()
     {
         int allstatus = str.GetValue() + vit.GetValue() + agi.GetValue() + dex.GetValue() + luk.GetValue()+currentStatPoint;
         Debug.Log("all point : "+ allstatus.ToString());

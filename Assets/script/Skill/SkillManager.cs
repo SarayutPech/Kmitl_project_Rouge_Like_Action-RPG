@@ -13,9 +13,20 @@ public class SkillManager : MonoBehaviour
 
     private UISkillController uiSkill;
     public PlayerStats playerStats;
+
+    bool ui_trigger;
     private void Awake()
     {
         uiSkill = GameObject.Find("GameManager").GetComponent<UISkillController>();
+    }
+
+    private void Update()
+    {
+        if (uiSkill.isActiveAndEnabled && !ui_trigger)
+        {
+            CheckAllSkill();
+            ui_trigger = !ui_trigger;
+        }
     }
 
     // Update is called once per frame
@@ -51,7 +62,26 @@ public class SkillManager : MonoBehaviour
 
     }
 
-    private void StrSkillCheck(int stat)
+    public void CheckAllSkill()
+    {
+        int strStat = playerStats.str.GetValue();
+        int vitStat = playerStats.vit.GetValue();
+        int agiStat = playerStats.agi.GetValue();
+        int dexStat = playerStats.dex.GetValue();
+        int lukStat = playerStats.luk.GetValue();
+
+        LukSkillCheck(lukStat);
+
+        DexSkillCheck(dexStat);
+
+        AgiSkillCheck(agiStat);
+
+        VitSkillCheck(vitStat);
+
+        StrSkillCheck(strStat);
+    }
+
+    public void StrSkillCheck(int stat)
     {
         //STR
         if (stat >= 5 && stat < 10)

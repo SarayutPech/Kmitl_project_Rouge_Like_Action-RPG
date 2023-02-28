@@ -15,7 +15,7 @@ public class Skill : ScriptableObject
     public virtual void Active()
     {
         // skill Active
-       // Debug.Log("Skill " + name + " Active");
+        Debug.Log("Skill " + name + " Active");
     }
     public virtual void InActive()
     {
