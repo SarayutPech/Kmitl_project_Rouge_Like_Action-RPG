@@ -1189,11 +1189,13 @@ MonoBehaviour:
   verStartSpawnX: 16
   verYSpace: 080000000c000000
   verRandomYRange: 0400000009000000
-  ranPlatformGenLevel: 0.3
+  ranPlatformGenLevel:
+  - 0.24
+  - 0.32
   TunnelStartX: -10
   TunnelEndX: -0.5
   TunnelStartY: -4.25
-  smooth: 6
+  smooth: 10
   biome: 0
   safeRoomObject:
     serializedVersion: 2
