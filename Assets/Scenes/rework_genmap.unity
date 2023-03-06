@@ -1190,8 +1190,8 @@ MonoBehaviour:
   verYSpace: 080000000c000000
   verRandomYRange: 0400000009000000
   ranPlatformGenLevel:
-  - 0.24
-  - 0.32
+  - 0.2
+  - 0.33
   TunnelStartX: -10
   TunnelEndX: -0.5
   TunnelStartY: -4.25
