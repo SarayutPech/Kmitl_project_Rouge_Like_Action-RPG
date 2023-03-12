@@ -23,15 +23,8 @@ public class Spawn_platform : MonoBehaviour
     public GameObject[] blockTop;
     public GameObject[] blockTopLeft;
     public GameObject[] blockTopRight;
-    [Header("       Bot block \n________________________________________________________________________________________________________")]
-    public GameObject[] blockBot;
-    public GameObject[] blockBotLeft;
-    public GameObject[] blockBotRight;
     [Header("       Center block \n________________________________________________________________________________________________________")]
     public GameObject[] blockCenter;
-    public GameObject[] blockCenterLeft;
-    public GameObject[] blockCenterRight;
-
     public GameObject noBlock;
 
     [Header("")]
@@ -209,8 +202,6 @@ public class Spawn_platform : MonoBehaviour
         float[,] noiseMap = new float[roomSizeX, roomSizeY+8];
         noiseMap = noiseMaping(roomSizeX, roomSizeY+8);
 
-        
-
         // เอา noise ที่ Map ไว้มา spawn platform
         for  (int x = 1; x < roomSizeX - 1; x += verStepX)
         {
@@ -250,7 +241,7 @@ public class Spawn_platform : MonoBehaviour
 
     private void placeRandomPlatform()
     {
-        int sizeX = roomSizeX + 6;
+        int sizeX = roomSizeX;
         int sizeY = roomSizeY;
         int x, y = 0;
 
@@ -272,15 +263,10 @@ public class Spawn_platform : MonoBehaviour
                     if (noiseValue > ranPlatformGenLevel[0] && noiseValue < ranPlatformGenLevel[1])
                     {
                         GameObject placed_block = (GameObject)Instantiate(noiseBlockToPlace(
-                            noiseMap[x, y + 1] < ranPlatformGenLevel[0] && noiseMap[x, y + 1] < ranPlatformGenLevel[1],
-                            noiseMap[x, y - 1] < ranPlatformGenLevel[0] && noiseMap[x, y - 1] < ranPlatformGenLevel[1],
-                            noiseMap[x, y] < ranPlatformGenLevel[0] && noiseMap[x, y] < ranPlatformGenLevel[1],
-                            noiseMap[x + 1, y] < ranPlatformGenLevel[0] && noiseMap[x + 1, y] < ranPlatformGenLevel[1],
-                            noiseMap[x - 1, y] < ranPlatformGenLevel[0] && noiseMap[x - 1, y] < ranPlatformGenLevel[1],
+                            noiseMap[x, y + 1] > ranPlatformGenLevel[0] && noiseMap[x, y + 1] < ranPlatformGenLevel[1],
                             biome
                             ), transform.position + pos, Quaternion.identity);
-                        if (placed_block == noBlock)
-                            noiseMap[x, y] = 1;
+                        
                         placed_block.name = "block " + pos;
                         placed_block.transform.parent = GameObject.Find("platforms").transform;
                     }
@@ -296,17 +282,9 @@ public class Spawn_platform : MonoBehaviour
         }
     }
 
+
     private float[] selectionSort(float[] arr)
     {
-        // Debug Array
-        /*string arr_val = "\narr_Before = [ ";
-        for (int i =0; i < arr.Length; i++)
-        {
-            arr_val += " " + arr[i] + " ";
-        }
-        arr_val += " ]\n";*/
-
-
         // Sorting
         for(int i = 0; i < arr.Length; i++)
         {
@@ -323,16 +301,6 @@ public class Spawn_platform : MonoBehaviour
                 arr[smallest] = temp;
             }
         }
-
-        // Debug Array
-        /*arr_val += "arr_After = [ ";
-        for (int i = 0; i < arr.Length; i++)
-        {
-            arr_val += " " + arr[i] + " ";
-        }
-        arr_val += " ]";
-        Debug.Log(arr_val);*/
-
         return arr;
     }
 
@@ -429,68 +397,13 @@ public class Spawn_platform : MonoBehaviour
         return noBlock;
     }
 
-    GameObject noiseBlockToPlace(bool top, bool bot, bool center, bool left, bool right, int biome)
+
+    GameObject noiseBlockToPlace(bool top, int biome)
     {
-        if(top && bot)
-        {
-            // Center
-            if (left && right || !left && !right)
-            {
-                //Center
-                return blockCenter[biome];
-            }
-            else if (!left && right)
-            {
-                //left
-                return blockCenterLeft[biome];
-            }
-            else if (left && !right)
-            {
-                //right
-                return blockCenterRight[biome];
-            }
-        }
-        else if(!top && bot || !top && !bot || top && !bot)
-        {
-            // Top
-            if (left && right || !left && !right)
-            {
-                //Center
-                return blockTop[biome];
-            }
-            else if (!left && right)
-            {
-                //left
-                return blockTopLeft[biome];
-            }
-            else if (left && !right)
-            {
-                //right
-                return blockTopRight[biome];
-            }
-        }
-        else if (top && !bot)
-        {
-            // Bot
-            if (left && right || !left && !right)
-            {
-                //Center
-                return blockBot[biome];
-            }
-            else if (!left && right)
-            {
-                //left
-                return blockBotLeft[biome];
-            }
-            else if (left && !right)
-            {
-                //right
-                return blockBotRight[biome];
-            }
-        }
-
-
-            return noBlock;
+        if(!top)
+            return blockTop[biome];
+        else
+            return blockCenter[biome];
     }
 
     GameObject DecorToPlace(int biome)
