@@ -60,16 +60,23 @@ public class Result_UI : MonoBehaviour
         gameResult_UI.SetActive(true);
         
         UpdateResultUI();
+
+        //Save Character Stat
         SaveSystem saveSystem = GetComponentInParent<SaveSystem>();
         saveSystem.Save();
+
+       
     }
 
     public void RestartGame()
     {
+        //Destroy Player Object
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         
+
         EquipmentManager equipmentManager = GetComponentInParent<EquipmentManager>();
         //Inventory inventory = GetComponentInParent<Inventory>();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
         GameObject gameSystem = GameObject.FindGameObjectWithTag("GameSystem");
 
         

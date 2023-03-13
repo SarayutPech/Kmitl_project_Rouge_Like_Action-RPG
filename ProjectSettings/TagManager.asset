@@ -16,6 +16,7 @@ TagManager:
   - Animator_Skill
   - GameSystem
   - EXP_Bar
+  - SaveData
   layers:
   - Default
   - TransparentFX

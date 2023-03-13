@@ -9,7 +9,7 @@ public class SaveSystem : MonoBehaviour
 
     public void Save()
     {
-
+        SelectedSave saveSlot = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SelectedSave>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerStats playerStat = player.GetComponent<PlayerStats>();
         EXPmanager playerExp = player.GetComponent<EXPmanager>();
@@ -29,14 +29,16 @@ public class SaveSystem : MonoBehaviour
 
         string saveJson = JsonUtility.ToJson(saveObject);
 
-        File.WriteAllText(Application.dataPath + "/Save/saveData.txt", saveJson);
+        File.WriteAllText(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected() + ".txt", saveJson);
     }
 
     public void Load()
     {
-        if(File.Exists(Application.dataPath + "/Save/saveData.txt"))
+        SelectedSave saveSlot = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SelectedSave>();
+
+        if (File.Exists(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected()+".txt"))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData.txt");
+            string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected()+".txt");
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
             LoadCharacterStat(saveObject);
             Debug.Log("Save Loaded. !");
