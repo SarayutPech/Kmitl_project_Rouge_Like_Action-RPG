@@ -1133,30 +1133,10 @@ MonoBehaviour:
   - {fileID: 9202596467239565540, guid: fcc2d5ee5b05190468d84d7a4c8c57b1, type: 3}
   - {fileID: 9202596467239565540, guid: 92f9b6ad61d6c7d4f8aa2c625916c46a, type: 3}
   - {fileID: 9202596467239565540, guid: e4c399d60c547784b8700056e55dcb51, type: 3}
-  blockBot:
-  - {fileID: 1905596874291482707, guid: 5b9cff77b51fb2a4884acd6013997a6d, type: 3}
-  - {fileID: 5365123455280253439, guid: 99010dcfca356b6438b38712138a7015, type: 3}
-  - {fileID: 5365123455280253439, guid: e3733cf922a132a489f0fb77bf58d17e, type: 3}
-  blockBotLeft:
-  - {fileID: 8976830776128242589, guid: 38591ebb444a9564d8d64334d8028b7f, type: 3}
-  - {fileID: 3631765077133447944, guid: 473de62d7c100f043b72432a4571381c, type: 3}
-  - {fileID: 3631765077133447944, guid: 8cd954b079936484584f7f7538cbc984, type: 3}
-  blockBotRight:
-  - {fileID: 6803740777631597452, guid: a836489f2e00b404f86f6983940a7759, type: 3}
-  - {fileID: 9202596467239565540, guid: 6af8d2fec12ec6d4d901a877570585eb, type: 3}
-  - {fileID: 9202596467239565540, guid: 0e8ff959370554142bc9547e6c54e44d, type: 3}
   blockCenter:
   - {fileID: 1056005748602916510, guid: 1c74b8f3acc7ddd4aa7f67a3ae7e3d16, type: 3}
   - {fileID: 5365123455280253439, guid: 5033ee72cee9ca14caa7e7ec8190be7c, type: 3}
   - {fileID: 9202596467239565540, guid: ffb80d2f02ef86f46bf592e67fb84517, type: 3}
-  blockCenterLeft:
-  - {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
-  - {fileID: 3631765077133447944, guid: f2037021746715142878f319d761bfff, type: 3}
-  - {fileID: 9202596467239565540, guid: c5e2b09b87cb94541ab0001e3ceb5fb2, type: 3}
-  blockCenterRight:
-  - {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
-  - {fileID: 3631765077133447944, guid: 7b1b376aadfeed042a1831cd3d14893f, type: 3}
-  - {fileID: 9202596467239565540, guid: dfd3fa097b8820c48b140f517f96f4a5, type: 3}
   noBlock: {fileID: 6579611219259844292, guid: ad9a8f94365d10541964a6f5948daa7c, type: 3}
   blockTop_NoLNoR:
   - {fileID: 5114936610756482494, guid: 012af44151d590c498fa41549bf47a07, type: 3}

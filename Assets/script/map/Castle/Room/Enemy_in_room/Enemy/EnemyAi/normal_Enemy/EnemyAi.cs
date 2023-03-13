@@ -31,7 +31,6 @@ public class EnemyAi : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
-    public float timeToDestoryThis = 5;
     public bool LockRotate = true;
 
     
@@ -160,13 +159,20 @@ public class EnemyAi : MonoBehaviour
 
         if (jumpEnable)
         {
-            LayerMask groundLayer = LayerMask.GetMask("Ground");
-            RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+            try
+            {
+                LayerMask groundLayer = LayerMask.GetMask("Ground");
+                RaycastHit2D isGrounded = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
 
-            if (isGrounded.collider != null)
-                animator.SetBool("isJumping", false);
-            else
-                animator.SetBool("isJumping", true);
+                if (isGrounded.collider != null)
+                    animator.SetBool("isJumping", false);
+                else
+                    animator.SetBool("isJumping", true);
+            }
+            catch
+            {
+                
+            }
         }
     }
 
