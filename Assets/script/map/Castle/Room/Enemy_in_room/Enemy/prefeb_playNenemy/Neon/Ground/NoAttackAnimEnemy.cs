@@ -11,6 +11,10 @@ public class NoAttackAnimEnemy : EnemyPattern
     public int dmg;
     private LevelManagerParameter levelManagerParameter;
 
+    private void Start()
+    {
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+    }
     public override void todo()
     {
         enemyAi.PathFollow(enemyAi.speed);

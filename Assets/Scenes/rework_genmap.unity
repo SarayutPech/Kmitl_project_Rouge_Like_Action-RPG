@@ -1057,6 +1057,7 @@ MonoBehaviour:
   startTimeBtwRoom: 0.5
   stop_Gen: 0
   fast_Gen: 1
+  spawnPlayer: 0
 --- !u!4 &1731683131
 Transform:
   m_ObjectHideFlags: 0
@@ -1295,8 +1296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentMoveStep: 7
   enemyPerWave: 1
-  DmgBuffer: -15
-  HpBuffer: -100
+  DmgBuffer: 0
+  HpBuffer: 0
   keys: 0
   haveKey: {r: 1, g: 1, b: 1, a: 1}
   dontHaveKey: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}

@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
     private float timeToAttack = 0.20f;
     private float timer = 0f;
-    private int indexWeapon = 0;
+    public int indexWeapon = 0;
 
 
     public PlayerStats charaStat;
@@ -74,7 +74,7 @@ public class PlayerAttack : MonoBehaviour
     {       
         if (equipmentManager.AttackCmd(indexWeapon) < 5)
         {
-            Collider2D[] enemyHit = Physics2D.OverlapBoxAll(playerAttackHitbox.position, playerHitbox, 0, enemyLayer);
+            
             
 
             attacking = true;
@@ -83,26 +83,19 @@ public class PlayerAttack : MonoBehaviour
 
             //Draw Weapon Hitbox
             //ChangeGizmos(equipmentManager.currentEquipCard[indexWeapon].hitboxWeapon);
-            
+
 
             //knockback Enemy When hit
-            foreach (Collider2D i in enemyHit)
-            {
-                i.GetComponent<Rigidbody2D>().AddForce(equipmentManager.currentEquipCard[indexWeapon].forceWeapon * ScaleX(), ForceMode2D.Impulse);
-                //i.GetComponent<Animator>().SetTrigger("getHit");
-
-                if(i.GetComponent<BossStat>())
-                    i.GetComponent<BossStat>().setHp(charaStat.attack.GetValue());
-                else if(i.GetComponent<EnemyStat>())
-                    i.GetComponent<EnemyStat>().setHp(charaStat.attack.GetValue());
-                Debug.Log("Attack Enemy " + i +" Enemy Take" + charaStat.attack.GetValue() + "Damage.");
-            }
 
 
-            
+
             // Play weapon Animation
             //animator.SetTrigger("attack");
             weaponAnimator.SetTrigger("WeaponAttack");
+
+            //CheckEnemyHit();
+
+
 
             indexWeapon += 1;
            
@@ -135,6 +128,23 @@ public class PlayerAttack : MonoBehaviour
         }      
     }
 
+    public void CheckEnemyHit()
+    {
+        Collider2D[] enemyHit = Physics2D.OverlapBoxAll(playerAttackHitbox.position, playerHitbox, 0, enemyLayer);
+
+        foreach (Collider2D i in enemyHit)
+        {
+            i.GetComponent<Rigidbody2D>().AddForce(equipmentManager.currentEquipCard[indexWeapon].forceWeapon * ScaleX(), ForceMode2D.Impulse);
+            //i.GetComponent<Animator>().SetTrigger("getHit");
+
+            if (i.GetComponent<BossStat>())
+                i.GetComponent<BossStat>().setHp(charaStat.attack.GetValue());
+            else if (i.GetComponent<EnemyStat>())
+                i.GetComponent<EnemyStat>().setHp(charaStat.attack.GetValue());
+            Debug.Log("Attack Enemy " + i + " Enemy Take" + charaStat.attack.GetValue() + "Damage.");
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -157,7 +167,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void ChangeGizmos(Vector2 weaponHitbox)
      {
-           Gizmos.color = Color.red;
+         Gizmos.color = Color.red;
          Gizmos.DrawWireCube(playerAttackHitbox.position, weaponHitbox);
 
      }

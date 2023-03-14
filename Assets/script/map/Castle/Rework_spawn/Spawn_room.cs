@@ -36,6 +36,10 @@ public class Spawn_room : MonoBehaviour
     public bool stop_Gen = false;
     public bool fast_Gen = true;
 
+    [Header("Spawn Player.")]
+    [SerializeField]
+    bool spawnPlayer;
+
 
 
 
@@ -46,7 +50,12 @@ public class Spawn_room : MonoBehaviour
         //GameObject roomName = (GameObject)Instantiate(room[1], transform.position, Quaternion.identity);
         //roomName.name = "Started_Room";
         levelManagerParameter = GetComponent<LevelManagerParameter>();
-        Instantiate(player, spawnPoint.position, Quaternion.identity); // Spawn player
+
+        if (spawnPlayer)
+        {
+           Instantiate(player, spawnPoint.position, Quaternion.identity); // Spawn player
+        }
+
 
         GameObject DoorBot = (GameObject)Instantiate(warpDoor, transform.position + warpDoor.transform.position, Quaternion.identity);
         DoorBot.name = "Warp_Door_" + warpDorCount;
