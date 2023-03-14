@@ -18,7 +18,7 @@ public class SaveSelect : MonoBehaviour
         LoadSaveSlotData();
     }
 
-    private void LoadSaveSlotData()
+    public void LoadSaveSlotData()
     {
         //Check Save Slot1
         if (File.Exists(Application.dataPath + "/Save/saveData_Slot1.txt"))

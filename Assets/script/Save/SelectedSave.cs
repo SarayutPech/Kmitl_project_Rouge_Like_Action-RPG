@@ -5,7 +5,19 @@ using UnityEngine;
 public class SelectedSave : MonoBehaviour
 {
     private int saveSelect;
-     
+    public static SelectedSave Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     public string getSaveSelected()
     {
         string saveSlot;
