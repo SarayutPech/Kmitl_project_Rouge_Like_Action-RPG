@@ -526,7 +526,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5065627700869742398, guid: f8ef80a7e54236145a47ed49274c8715, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 281
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065627700869742398, guid: f8ef80a7e54236145a47ed49274c8715, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -74
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065627702312087161, guid: f8ef80a7e54236145a47ed49274c8715, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5065627702312087162, guid: f8ef80a7e54236145a47ed49274c8715, type: 3}
       propertyPath: m_Name

@@ -28,7 +28,8 @@ public class UI_Status : MonoBehaviour
         //UpdateParameterUI();
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
         //charaStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-
+        statusUI.SetActive(false);
+        upstatusUI.SetActive(false);
 
     }
 
@@ -97,6 +98,15 @@ public class UI_Status : MonoBehaviour
         {
 
             upstatusUI.SetActive(!upstatusUI.activeSelf);
+        }
+
+        if(statusUI.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
         }
         UpdateParameterUI();
         //UpdateStatusUI();

@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
 
         slotsCard = inventoryCard.GetComponentsInChildren<InventorySlot>();
         slotsAccessory = inventoryAccessory.GetComponentsInChildren<InventorySlot>();
+        inventoryUI.SetActive(false);
     }
 
     // Update is called once per frame

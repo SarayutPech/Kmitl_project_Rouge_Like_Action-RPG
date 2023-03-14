@@ -20,6 +20,7 @@ public class EquipmentUI : MonoBehaviour
         equipCardSlot = equipmentCard.GetComponentsInChildren<EquipmentCardSlot>();
         equipAccSlot = equipmentAccessory.GetComponentsInChildren<EquipmentAccSlot>();
 
+        equipmentUI.SetActive(false);
     }
 
     void Update()
