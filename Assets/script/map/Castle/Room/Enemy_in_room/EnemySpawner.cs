@@ -5,10 +5,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public IList<GameObject> groupOfEnemy;
-    [Header("Enemy Type")]
-    [SerializeField] private GameObject[] enemyGround;
-    [SerializeField] private GameObject[] enemyFly;
-    [SerializeField] private GameObject[] enemyRange;
+    [Header("Castle Enemy Type")]
+    [SerializeField] private GameObject[] CastleEnemyGround;
+    [SerializeField] private GameObject[] CastleEnemyFly;
+    [SerializeField] private GameObject[] CastleEnemyRange;
+
+    [Header("Neon Enemy Type")]
+    [SerializeField] private GameObject[] NeonEnemyGround;
+    [SerializeField] private GameObject[] NeonEnemyFly;
+    [SerializeField] private GameObject[] NeonEnemyRange;
+
+    [Header("Pirate Enemy Type")]
+    [SerializeField] private GameObject[] PirateEnemyGround;
+    [SerializeField] private GameObject[] PirateEnemyFly;
+    [SerializeField] private GameObject[] PirateEnemyRange;
 
     [Header("Enemy Spawn Property")]
     [SerializeField] private LayerMask ground;
@@ -23,6 +33,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float space = 0.25f;
 
     private LevelManagerParameter levelManagerParameter;
+    public int biome;
+    public LayerMask room;
 
     public List<Vector3> canSpawn = new List<Vector3>();
     private void Awake()
@@ -45,21 +57,61 @@ public class EnemySpawner : MonoBehaviour
     {
         int rand;
         GameObject result = null;
-        switch (type)
+        if(biome == 0)
         {
-            case EnemyType.ground:
-                rand = Random.Range(0, enemyGround.Length);
-                result = enemyGround[rand];
-                break;
-            case EnemyType.fly:
-                rand = Random.Range(0, enemyFly.Length);
-                result = enemyFly[rand];
-                break;
-            case EnemyType.range:
-                rand = Random.Range(0, enemyRange.Length);
-                result = enemyRange[rand];
-                break;     
+            switch (type)
+            {
+                case EnemyType.ground:
+                    rand = Random.Range(0, CastleEnemyGround.Length);
+                    result = CastleEnemyGround[rand];
+                    break;
+                case EnemyType.fly:
+                    rand = Random.Range(0, CastleEnemyFly.Length);
+                    result = CastleEnemyFly[rand];
+                    break;
+                case EnemyType.range:
+                    rand = Random.Range(0, CastleEnemyRange.Length);
+                    result = CastleEnemyRange[rand];
+                    break;
+            }
         }
+        else if (biome == 1)
+        {
+            switch (type)
+            {
+                case EnemyType.ground:
+                    rand = Random.Range(0, NeonEnemyGround.Length);
+                    result = NeonEnemyGround[rand];
+                    break;
+                case EnemyType.fly:
+                    rand = Random.Range(0, NeonEnemyFly.Length);
+                    result = NeonEnemyFly[rand];
+                    break;
+                case EnemyType.range:
+                    rand = Random.Range(0, NeonEnemyRange.Length);
+                    result = NeonEnemyRange[rand];
+                    break;
+            }
+        }
+        else if (biome == 2)
+        {
+            switch (type)
+            {
+                case EnemyType.ground:
+                    rand = Random.Range(0, PirateEnemyGround.Length);
+                    result = PirateEnemyGround[rand];
+                    break;
+                case EnemyType.fly:
+                    rand = Random.Range(0, PirateEnemyFly.Length);
+                    result = PirateEnemyFly[rand];
+                    break;
+                case EnemyType.range:
+                    rand = Random.Range(0, PirateEnemyRange.Length);
+                    result = PirateEnemyRange[rand];
+                    break;
+            }
+        }
+
         return result;
     }
 
@@ -114,6 +166,7 @@ public class EnemySpawner : MonoBehaviour
     public void canEnemySpawn()
     {
         canSpawn.Clear();
+        getBiome();
 
         for (float y = 0; y < stepY; y += scale)
         {
@@ -165,4 +218,23 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void getBiome()
+    {
+        Collider2D BiomeCheck = Physics2D.OverlapBox(gameObject.transform.position, new Vector2(5, 5), 0f, room);
+        if (BiomeCheck)
+        {
+            switch (BiomeCheck.GetComponent<RoomStatus>().biome)
+            {
+                case "Castle":
+                    biome = 0;
+                    break;
+                case "Neon":
+                    biome = 1;
+                    break;
+                case "Pirate":
+                    biome = 2;
+                    break;
+            }
+        }
+    }
 }

@@ -737,7 +737,7 @@ MonoBehaviour:
   animator: {fileID: 1570677775636189220}
   thinkingTime_fixed: 5
   thinkingTime_remaining: 0
-  knockbackY: 2
+  knockbackY: 1.2
   knockbackX: 1
   knockbackTimenormalAttack: 0.1
   dmg: 30

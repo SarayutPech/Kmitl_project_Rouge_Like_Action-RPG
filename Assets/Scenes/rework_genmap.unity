@@ -1244,14 +1244,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5d8ee82d3217743becd1919a61d154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyGround:
+  CastleEnemyGround:
   - {fileID: 8049604890065705595, guid: d344c330b868344469a47eb43260e7c2, type: 3}
   - {fileID: 8049604890065705595, guid: fff941cce4a1cc348a3c0298a3cb1624, type: 3}
   - {fileID: 8049604890065705595, guid: f1e6912643524d24aa7fdb0ada141ff4, type: 3}
-  enemyFly:
+  CastleEnemyFly:
   - {fileID: 8049604890065705595, guid: 92186b1e250c69e4aad26b24333ede89, type: 3}
-  enemyRange:
+  CastleEnemyRange:
   - {fileID: 8049604890065705595, guid: e1b011a241a2e1d47a4f625ee4ca5f98, type: 3}
+  NeonEnemyGround:
+  - {fileID: 8049604890065705595, guid: 74b1c0610e4c76543b3e2ccb16be48cd, type: 3}
+  - {fileID: 8049604890065705595, guid: c4e3caf494d5c814c92aa20f0375011d, type: 3}
+  - {fileID: 8049604890065705595, guid: b73b95907a58a2b45a0dc08bb2c44c5e, type: 3}
+  NeonEnemyFly:
+  - {fileID: 8049604890065705595, guid: 1d4089004a9411a45bc9b1fff2ed6f41, type: 3}
+  NeonEnemyRange:
+  - {fileID: 8049604890065705595, guid: c4e3caf494d5c814c92aa20f0375011d, type: 3}
+  PirateEnemyGround:
+  - {fileID: 8049604890065705595, guid: ecbf6bebecef72a468da8761309d41bb, type: 3}
+  PirateEnemyFly:
+  - {fileID: 8049604890065705595, guid: f30f43df4a40afa4189681c5a13b40c7, type: 3}
+  PirateEnemyRange:
+  - {fileID: 8049604890065705595, guid: ecbf6bebecef72a468da8761309d41bb, type: 3}
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -1262,6 +1276,10 @@ MonoBehaviour:
   startX: 7.64
   startY: 3.47
   space: 0.25
+  biome: 0
+  room:
+    serializedVersion: 2
+    m_Bits: 128
   canSpawn: []
 --- !u!114 &1731683136
 MonoBehaviour:
