@@ -263,7 +263,7 @@ MonoBehaviour:
   maxX: 3.5
   maxY: 2
   minX: -3.5
-  minY: -2.5
+  minY: -2
 --- !u!95 &233729405
 Animator:
   serializedVersion: 4
@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5065627702312087163, guid: f8ef80a7e54236145a47ed49274c8715, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5065627702312087163, guid: f8ef80a7e54236145a47ed49274c8715, type: 3}
       propertyPath: m_AnchorMax.x
@@ -853,7 +853,7 @@ Transform:
   - {fileID: 1310485119}
   - {fileID: 1646878421}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1472013550
 PrefabInstance:
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   startTimeBtwRoom: 0.5
   stop_Gen: 0
   fast_Gen: 1
-  spawnPlayer: 0
+  spawnPlayer: 1
 --- !u!4 &1731683131
 Transform:
   m_ObjectHideFlags: 0

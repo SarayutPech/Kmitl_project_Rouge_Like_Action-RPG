@@ -119,7 +119,7 @@ public class Spawn_platform : MonoBehaviour
     
     private void RandomPlacePlatform()
     {
-        int rand = Random.Range(3,4);
+        int rand = Random.Range(1,5);
         switch (rand)
         {
             case 1:

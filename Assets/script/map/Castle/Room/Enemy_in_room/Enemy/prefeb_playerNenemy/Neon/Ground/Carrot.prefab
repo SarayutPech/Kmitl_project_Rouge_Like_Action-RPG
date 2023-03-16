@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrot: {fileID: 5046755175728296884}
-  knockbackY: -7
+  knockbackY: 3
   knockbackX: 0
   knockbackTimenormalAttack: 0.1
   dmg: 20

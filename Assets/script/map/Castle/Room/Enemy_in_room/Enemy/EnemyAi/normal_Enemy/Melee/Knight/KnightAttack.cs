@@ -22,10 +22,10 @@ public class KnightAttack : MonoBehaviour
         if (playerCol)
         {
             playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
-            playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackX * ScaleX(), -knockbackY), ForceMode2D.Impulse);
             // HP -
             playerCol.GetComponent<CharacterStats>().TakeDamage(dmg + levelManagerParameter.DmgBuffer);
-            playerCol.GetComponent<Animator>().SetTrigger("gethit");
+            //Knockback
+            playerCol.GetComponent<CharacterStats>().Knockback(new Vector2(knockbackX * ScaleX(), knockbackY));
         }
     }
 

@@ -26,7 +26,6 @@ public class AttackPoint : MonoBehaviour
             {
                 Debug.Log("Hit !");
                 playerCol.GetComponent<CharacterStats>().TakeDamage(dmg - levelManagerParameter.DmgBuffer);
-                playerCol.GetComponent<Animator>().SetTrigger("gethit");
             }
             Destroy(gameObject);
         }

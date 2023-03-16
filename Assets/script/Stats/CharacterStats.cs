@@ -13,6 +13,7 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
     public int maxStatPoint = 30;
     public int currentHealth { get; private set; }
+    public bool iFrame = false;
 
     public HealthBar healthBar;
 
@@ -34,11 +35,10 @@ public class CharacterStats : MonoBehaviour
     public bool deflectisActive;
     public float deflectChance = 0.2f;
 
+    public Rigidbody2D rb;
 
     void Awake()
     {
-
-
         if (instance != null)
         {
             instance = this;
@@ -47,32 +47,43 @@ public class CharacterStats : MonoBehaviour
         instance = this;
 
         healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+        
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
-
-       
-
     }
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Knockback(Vector2 force)
+    {
+        if(!iFrame)
+            rb.AddForce(new Vector2(force.x, force.y), ForceMode2D.Impulse);
+    }
 
     public void TakeDamage(int damage)
     {
-       
-        damage = HeavyArmor_Skill(heavyArmorisActive,damage);
-        damage = Deflect_Skill(deflectisActive, damage);
-
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);//damage not below 0
-        currentHealth -= damage;
-
-        Debug.Log(transform.name + "Take " + damage + " Damage.");
-
-        healthBar.SetHealth(currentHealth);
-
-        if(currentHealth <= 0)
+        if (!iFrame)
         {
-            //Game Over
-            Die();
+            damage = HeavyArmor_Skill(heavyArmorisActive, damage);
+            damage = Deflect_Skill(deflectisActive, damage);
+
+            damage = Mathf.Clamp(damage, 0, int.MaxValue);//damage not below 0
+            currentHealth -= damage;
+
+            Debug.Log(transform.name + "Take " + damage + " Damage.");
+
+            healthBar.SetHealth(currentHealth);
+            GetComponent<Animator>().SetTrigger("gethit");
+
+            if (currentHealth <= 0)
+            {
+                //Game Over
+                Die();
+            }
         }
     }
 
@@ -118,4 +129,13 @@ public class CharacterStats : MonoBehaviour
         return damage;
     }
 
+    public void IFrameTrue()
+    {
+        iFrame = true;
+    }
+
+    public void IFrameFalse()
+    {
+        iFrame = false;
+    }
 }

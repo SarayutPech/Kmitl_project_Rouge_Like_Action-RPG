@@ -270,7 +270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62559859e890cc94c9cd8cc87cb72fc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4f2c6f3ce1a3594984bce66107d8a76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -320,7 +320,7 @@ Animator:
   m_GameObject: {fileID: 1988138266985242331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff72fd90ee53586478436b5960c3bc46, type: 2}
+  m_Controller: {fileID: 9100000, guid: 41a53b911a3f76f40ba2034a88d3e576, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrot: {fileID: 5046755175728296884}
-  knockbackY: -7
-  knockbackX: 0
+  knockbackY: 3
+  knockbackX: 3
   knockbackTimenormalAttack: 0.1
   dmg: 20
 --- !u!1 &2192880874734852197
@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3313143789162350285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -0.011, z: 0}
+  m_LocalPosition: {x: 0.0264, y: 0.0051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: -3967163872744819470}
   - component: {fileID: -1824054460776287033}
   m_Layer: 3
-  m_Name: PinkStar
+  m_Name: FierceTooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,7 +643,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0028549433, y: -0.00823921}
+  m_Offset: {x: -0.008294117, y: -0.0037795939}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -654,7 +654,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13582826, y: 0.12756509}
+  m_Size: {x: 0.11353014, y: 0.118645854}
   m_EdgeRadius: 0
 --- !u!50 &8049604890065705590
 Rigidbody2D:
@@ -719,8 +719,8 @@ MonoBehaviour:
   stage: 
   rand: 0
   shouldAttackBox: {fileID: 5409523520645615963}
-  HitboxX: 0.49
-  HitboxY: 0.62
+  HitboxX: 0.43
+  HitboxY: 0.29
   player:
     serializedVersion: 2
     m_Bits: 512
