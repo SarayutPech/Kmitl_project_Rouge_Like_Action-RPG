@@ -134,10 +134,13 @@ public class SaveSystem : MonoBehaviour
             }
         }
 
-        playerStat.CalculateBaseStat();
-        ui_Status.UpdateParameterUI();
-        ui_Status.UpdateStatusUI();
-        
+        try
+        {
+            playerStat.CalculateBaseStat();
+            ui_Status.UpdateParameterUI();
+            ui_Status.UpdateStatusUI();
+        }
+        catch { Debug.Log("Cannot Update UI"); }
     }
 
     private class SaveObject

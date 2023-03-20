@@ -10,17 +10,19 @@ public class Result_UI : MonoBehaviour
 
     public TextMeshProUGUI item_PickUp_Text, enemy_Defeated_Text, boss_Defeated_text, floor_Reach_Text , convert_EXP_Text , player_Level;
     public EXP_Bar expBar;
-    public ResultScreen result;
-    public GameObject gameResult_UI;
+    ResultScreen result;
+    //public GameObject gameResult_UI;
 
     public Button confirmBtn;
-
+    //GameObject gameSystem;
     private void Start()
     {
         confirmBtn.onClick.AddListener(RestartGame);
 
-        result = GetComponentInParent<ResultScreen>();
+        //gameSystem  = GameObject.FindGameObjectWithTag("GameSystem");
         
+        GameOver();
+
         // 
     }
 
@@ -29,8 +31,8 @@ public class Result_UI : MonoBehaviour
 
     public void UpdateResultUI()
     {
+        result = GameObject.FindGameObjectWithTag("GameSystem").GetComponentInChildren<ResultScreen>();
 
-        
         item_PickUp_Text.text = result.item_pickup.ToString();
         enemy_Defeated_Text.text = result.enemy_defeated.ToString();
         boss_Defeated_text.text = result.boss_defeated.ToString();
@@ -57,12 +59,12 @@ public class Result_UI : MonoBehaviour
     public void GameOver()
     {
         
-        gameResult_UI.SetActive(true);
+        //gameResult_UI.SetActive(true);
         
         UpdateResultUI();
 
         //Save Character Stat
-        SaveSystem saveSystem = GetComponentInParent<SaveSystem>();
+        SaveSystem saveSystem = GameObject.FindGameObjectWithTag("GameSystem").GetComponentInChildren<SaveSystem>();
         saveSystem.Save();
 
        
@@ -74,17 +76,17 @@ public class Result_UI : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         
 
-        EquipmentManager equipmentManager = GetComponentInParent<EquipmentManager>();
+        //EquipmentManager equipmentManager = GameObject.FindGameObjectWithTag("GameSystem").GetComponentInChildren<EquipmentManager>();
         //Inventory inventory = GetComponentInParent<Inventory>();
         
         GameObject gameSystem = GameObject.FindGameObjectWithTag("GameSystem");
 
         
-        equipmentManager.UnequipAll();
+        //equipmentManager.UnequipAll();
         //inventory.RemoveAllItem();
         Destroy(player);
 
-        gameResult_UI.SetActive(false);
+        //gameResult_UI.SetActive(false);
         Destroy(gameSystem);
         // player.transform.position = new Vector3(24f, 1.12f, -3f);
         

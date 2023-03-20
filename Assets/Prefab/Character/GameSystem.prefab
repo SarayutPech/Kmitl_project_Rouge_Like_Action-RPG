@@ -13510,7 +13510,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2998726943408918032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9eefce29fa960bd4398ed2410da353cd, type: 3}
   m_Name: 
@@ -13522,8 +13522,6 @@ MonoBehaviour:
   convert_EXP_Text: {fileID: 6313676337672643729}
   player_Level: {fileID: 3830376411406570889}
   expBar: {fileID: 0}
-  result: {fileID: 0}
-  gameResult_UI: {fileID: 733222250838178193}
   confirmBtn: {fileID: 3114221733591109532}
 --- !u!114 &7181740814517784455
 MonoBehaviour:

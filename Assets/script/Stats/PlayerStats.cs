@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : CharacterStats
 {
@@ -37,6 +38,7 @@ public class PlayerStats : CharacterStats
         //skillManager.gameObject.GetComponent<SkillManager>();
     }
 
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -47,6 +49,7 @@ public class PlayerStats : CharacterStats
         statPoint = expManager.statPoint;
         currentPlayerLevel = expManager.level;
         currentStatPoint = statPoint - usedStatPoint;
+
     }
 
     void OnEquipmentChanged(Equipment newItem, Equipment oldItem)

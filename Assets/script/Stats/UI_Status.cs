@@ -58,22 +58,24 @@ public class UI_Status : MonoBehaviour
 
     public void UpdateParameterUI()
     {
-        maxHp.text = charaStat.maxHealth.ToString();
-        atk.text = charaStat.attack.GetValue().ToString();
-        criRate.text = charaStat.critRate.GetValue().ToString();
-        criDmg.text = charaStat.critDamage.GetValue().ToString();
-        moveSpd.text = charaStat.moveSpeed.GetValue().ToString();
-        dropRate.text = charaStat.dropRate.GetValue().ToString();
+       
+            maxHp.text = charaStat.maxHealth.ToString();
+            atk.text = charaStat.attack.GetValue().ToString();
+            criRate.text = charaStat.critRate.GetValue().ToString();
+            criDmg.text = charaStat.critDamage.GetValue().ToString();
+            moveSpd.text = charaStat.moveSpeed.GetValue().ToString();
+            dropRate.text = charaStat.dropRate.GetValue().ToString();
 
-        level.text = charaStat.currentPlayerLevel.ToString();
+            level.text = charaStat.currentPlayerLevel.ToString();
 
-        str.text = charaStat.str.GetValue().ToString();
-        vit.text = charaStat.vit.GetValue().ToString();
-        agi.text = charaStat.agi.GetValue().ToString();
-        dex.text = charaStat.dex.GetValue().ToString();
-        luk.text = charaStat.luk.GetValue().ToString();
+            str.text = charaStat.str.GetValue().ToString();
+            vit.text = charaStat.vit.GetValue().ToString();
+            agi.text = charaStat.agi.GetValue().ToString();
+            dex.text = charaStat.dex.GetValue().ToString();
+            luk.text = charaStat.luk.GetValue().ToString();
 
-        remainPoint.text = charaStat.currentStatPoint.ToString();
+            remainPoint.text = charaStat.currentStatPoint.ToString();   
+       
     }
     public void UpdateStatusUI()
     {
@@ -102,13 +104,14 @@ public class UI_Status : MonoBehaviour
 
         if(statusUI.activeSelf)
         {
+            UpdateParameterUI();
             Time.timeScale = 0;
         }
         else
         {
             Time.timeScale = 1;
         }
-        UpdateParameterUI();
+        //UpdateParameterUI();
         //UpdateStatusUI();
     }
     void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
@@ -123,7 +126,8 @@ public class UI_Status : MonoBehaviour
         charaStat.UpgradeStat(stats);
         charaStat.CalculateBaseStat();
         UpdateStatusUI();
-       // UpdateParameterUI();
+        UpdateParameterUI();
+        // UpdateParameterUI();
     }
 
     public void DownStatus(string stats)
@@ -131,6 +135,7 @@ public class UI_Status : MonoBehaviour
         charaStat.ReduceStat(stats);
         charaStat.CalculateBaseStat();
         UpdateStatusUI();
+        UpdateParameterUI();
         //UpdateParameterUI();
     }
 

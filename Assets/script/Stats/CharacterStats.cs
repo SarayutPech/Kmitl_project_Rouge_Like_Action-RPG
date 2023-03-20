@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -93,12 +94,16 @@ public class CharacterStats : MonoBehaviour
         {
             TakeDamage(10);
         }
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     public virtual void Die()
     {
-       Result_UI gameResultUI = GameObject.Find("GameManager").GetComponent<Result_UI>();
-       gameResultUI.GameOver();
+        /*Result_UI gameResultUI = GameObject.Find("GameManager").GetComponent<Result_UI>();
+        gameResultUI.GameOver();*/
+
+        SceneManager.LoadScene("Result_Scene");
     }
 
     public int Deflect_Skill(bool isActive , int damage)
