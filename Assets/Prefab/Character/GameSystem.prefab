@@ -3435,6 +3435,7 @@ GameObject:
   - component: {fileID: 2998726942142431438}
   - component: {fileID: 2998726942142431436}
   - component: {fileID: 2998726942142431439}
+  - component: {fileID: 1798210111350095788}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -3500,6 +3501,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1798210111350095788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942142431433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Weak Spot Strike
+  content: Increase critical damage.
 --- !u!1 &2998726942148831955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4937,6 +4952,7 @@ GameObject:
   - component: {fileID: 2998726942338055217}
   - component: {fileID: 2998726942338055223}
   - component: {fileID: 2998726942338055222}
+  - component: {fileID: 3835693590330036858}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -5002,6 +5018,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3835693590330036858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942338055216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Combo Strike
+  content: When a character attack there is a chance to attack again with 30% damage.
 --- !u!1 &2998726942356477518
 GameObject:
   m_ObjectHideFlags: 0
@@ -5464,6 +5494,7 @@ GameObject:
   - component: {fileID: 2998726942389150684}
   - component: {fileID: 2998726942389150674}
   - component: {fileID: 2998726942389150685}
+  - component: {fileID: 3933225662849570173}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -5529,6 +5560,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3933225662849570173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942389150687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Focus
+  content: Slightly increase critical rate.
 --- !u!1 &2998726942405273226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,6 +6011,7 @@ GameObject:
   - component: {fileID: 2998726942454032396}
   - component: {fileID: 2998726942454032386}
   - component: {fileID: 2998726942454032397}
+  - component: {fileID: 3203405502544071234}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -6031,6 +6077,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3203405502544071234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942454032399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Deflect
+  content: When an enemy attacks a character there is a chance to deflect that attack.
 --- !u!1 &2998726942461477499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,6 +6327,7 @@ GameObject:
   - component: {fileID: 2998726942470739733}
   - component: {fileID: 2998726942470739755}
   - component: {fileID: 2998726942470739754}
+  - component: {fileID: 5117695144574739168}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -6332,6 +6393,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5117695144574739168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942470739732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Extra Attack
+  content: Summon sword to attack enemy when attack 5 times.
 --- !u!1 &2998726942490868802
 GameObject:
   m_ObjectHideFlags: 0
@@ -6748,6 +6823,7 @@ GameObject:
   - component: {fileID: 2998726942519152089}
   - component: {fileID: 2998726942519152095}
   - component: {fileID: 2998726942519152094}
+  - component: {fileID: 1887270742789981982}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -6813,6 +6889,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1887270742789981982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942519152088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: 'Lucky Strike '
+  content: Moderate increase critical rate.
 --- !u!1 &2998726942539809916
 GameObject:
   m_ObjectHideFlags: 0
@@ -7171,6 +7261,7 @@ GameObject:
   - component: {fileID: 2998726942571153231}
   - component: {fileID: 2998726942571153229}
   - component: {fileID: 2998726942571153228}
+  - component: {fileID: 3420844234014540064}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -7236,6 +7327,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3420844234014540064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942571153230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: EXP Bonus
+  content: Increase EXP recive.
 --- !u!1 &2998726942615543738
 GameObject:
   m_ObjectHideFlags: 0
@@ -8893,6 +8998,7 @@ GameObject:
   - component: {fileID: 2998726942942043552}
   - component: {fileID: 2998726942942043558}
   - component: {fileID: 2998726942942043553}
+  - component: {fileID: 7110910195198902737}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -8958,6 +9064,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7110910195198902737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726942942043555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Attack Bonus
+  content: Increase Attack by 20.
 --- !u!1 &2998726942946194339
 GameObject:
   m_ObjectHideFlags: 0
@@ -10874,6 +10994,7 @@ GameObject:
   - component: {fileID: 2998726943199543996}
   - component: {fileID: 2998726943199543986}
   - component: {fileID: 2998726943199543997}
+  - component: {fileID: 2492807799332202927}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -10939,6 +11060,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2492807799332202927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943199543999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: 'Hard Skin '
+  content: Decrease damage recive by 20%.
 --- !u!1 &2998726943219217300
 GameObject:
   m_ObjectHideFlags: 0
@@ -11852,6 +11987,7 @@ GameObject:
   - component: {fileID: 2998726943303055768}
   - component: {fileID: 2998726943303055774}
   - component: {fileID: 2998726943303055769}
+  - component: {fileID: 7494432625264233171}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -11917,6 +12053,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7494432625264233171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943303055771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Double Jump
+  content: A character can jump again while in the air.
 --- !u!1 &2998726943314343820
 GameObject:
   m_ObjectHideFlags: 0
@@ -13163,6 +13313,7 @@ GameObject:
   - component: {fileID: 2998726943460827949}
   - component: {fileID: 2998726943460827939}
   - component: {fileID: 2998726943460827938}
+  - component: {fileID: 3347426841245167180}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -13228,6 +13379,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3347426841245167180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943460827948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Like a wind
+  content: Increase character movement speed.
 --- !u!1 &2998726943472309458
 GameObject:
   m_ObjectHideFlags: 0
@@ -13644,6 +13809,7 @@ GameObject:
   - component: {fileID: 2998726943510623557}
   - component: {fileID: 2998726943510623579}
   - component: {fileID: 2998726943510623578}
+  - component: {fileID: 8417893025203655842}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -13709,6 +13875,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8417893025203655842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943510623556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Dash
+  content: A character can dash forward.
 --- !u!1 &2998726943511474513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14756,6 +14936,7 @@ GameObject:
   - component: {fileID: 2998726943679863924}
   - component: {fileID: 2998726943679863818}
   - component: {fileID: 2998726943679863925}
+  - component: {fileID: 3565981658901500612}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -14821,6 +15002,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3565981658901500612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943679863927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Treasure Hunter
+  content: Increase Drop Rate.
 --- !u!1 &2998726943694663409
 GameObject:
   m_ObjectHideFlags: 0
@@ -15089,6 +15284,7 @@ GameObject:
   - component: {fileID: 2998726943719091221}
   - component: {fileID: 2998726943719091243}
   - component: {fileID: 2998726943719091242}
+  - component: {fileID: 9066421166964730545}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -15154,6 +15350,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9066421166964730545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943719091220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Power Jump
+  content: Deal damage around when jump.
 --- !u!1 &2998726943727021964
 GameObject:
   m_ObjectHideFlags: 0
@@ -15390,6 +15600,7 @@ GameObject:
   - component: {fileID: 2998726943747240284}
   - component: {fileID: 2998726943747240274}
   - component: {fileID: 2998726943747240285}
+  - component: {fileID: 7030417104221318631}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -15455,6 +15666,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7030417104221318631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998726943747240287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62565afd5bff4974389408566910e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Healthy
+  content: Increase  max HP by 20.
 --- !u!1 &2998726943794910904
 GameObject:
   m_ObjectHideFlags: 0
