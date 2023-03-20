@@ -7,6 +7,7 @@ public class BossStat : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private int MaxHp;
     [SerializeField] private Animator animator;
+    public HeroAttack heroAttack;
 
     public BossHPBar hpBar;
 
@@ -28,6 +29,10 @@ public class BossStat : MonoBehaviour
     {
         hp -= dmg;
         hpBar.setHpBar(hp, MaxHp);
+
+        if (hp < MaxHp * 30 / 100)
+            heroAttack.enchantAttack = true;
+
         if (hp <= 0)
             Die();
     }
