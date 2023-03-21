@@ -18,7 +18,7 @@ public class player_movement : MonoBehaviour
 
     private float DirIn;
 
-    public float move_speed;
+    //public float move_speed;
     // Skill Animator 
     public Animator auraAnimator;
     //Skill DoubleJump
@@ -54,7 +54,7 @@ public class player_movement : MonoBehaviour
         lockRotation();
         animator.SetBool("jumping", !isGrounded());
 
-        move_speed = speed * (1 + (charaStat.moveSpeed.GetValue() / 100));
+       
         //Jumping
         if (isGrounded() && !Input.GetKey(KeyCode.Space))
         {
@@ -88,8 +88,8 @@ public class player_movement : MonoBehaviour
     }
     void running()
     {
-
-        
+        float move_speed = speed * (1 + ((float)charaStat.moveSpeed.GetValue() / 100));
+        Debug.Log((1 + ((float)charaStat.moveSpeed.GetValue() / 100)));
         //transform.position += new Vector3(DirIn, 0, 0) * Time.deltaTime * speed;
         if (knockbackTime <= 0)           
             rb.velocity = new Vector2(DirIn * move_speed, rb.velocity.y);
@@ -109,11 +109,13 @@ public class player_movement : MonoBehaviour
 
     void jumping()
     {
+
+        float jumpPower = jumpforce * (1f + (0.5f*((float)charaStat.moveSpeed.GetValue() / 100)));
         if (isGrounded() && !onWall())
         {
 
             PowerJump(powerJumpisActive); // active skill
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
 
             if (canDoubleJump)
             {
@@ -125,12 +127,12 @@ public class player_movement : MonoBehaviour
         else if (!isGrounded() && onWall())
         {
             animator.SetBool("jumping", false);
-            rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpforce);
+            rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, jumpPower);
         }
         else if (doubleJump)
         {
             PowerJump(powerJumpisActive); // active skill
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             doubleJump = false;
             Debug.Log(doubleJump);
         }
