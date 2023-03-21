@@ -18,7 +18,7 @@ public class player_movement : MonoBehaviour
 
     private float DirIn;
 
-
+    public float move_speed;
     // Skill Animator 
     public Animator auraAnimator;
     //Skill DoubleJump
@@ -37,6 +37,8 @@ public class player_movement : MonoBehaviour
     // Skill Power Jump
     public bool powerJumpisActive;
 
+    public PlayerStats charaStat;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,7 @@ public class player_movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         auraAnimator = GameObject.FindGameObjectWithTag("Animator_Aura").GetComponent<Animator>();
+        charaStat = GetComponent<PlayerStats>();
     }
     private void Update()
     {
@@ -51,6 +54,7 @@ public class player_movement : MonoBehaviour
         lockRotation();
         animator.SetBool("jumping", !isGrounded());
 
+        move_speed = speed * (1 + (charaStat.moveSpeed.GetValue() / 100));
         //Jumping
         if (isGrounded() && !Input.GetKey(KeyCode.Space))
         {
@@ -84,11 +88,11 @@ public class player_movement : MonoBehaviour
     }
     void running()
     {
-        
+
         
         //transform.position += new Vector3(DirIn, 0, 0) * Time.deltaTime * speed;
-        if(knockbackTime <= 0)
-            rb.velocity = new Vector2(DirIn * speed , rb.velocity.y);
+        if (knockbackTime <= 0)           
+            rb.velocity = new Vector2(DirIn * move_speed, rb.velocity.y);
         //rb.AddForce(Vector2.right * DirIn * speed);
 
         // fliping

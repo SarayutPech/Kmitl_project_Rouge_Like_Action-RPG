@@ -171,6 +171,7 @@ MonoBehaviour:
   animator: {fileID: 1119249428222569962}
   auraAnimator: {fileID: 0}
   powerJumpisActive: 0
+  charaStat: {fileID: 0}
 --- !u!95 &1119249428222569962
 Animator:
   serializedVersion: 4
@@ -250,10 +251,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   maxStatPoint: 30
+  iFrame: 0
   healthBar: {fileID: 0}
   heavyArmorisActive: 0
   deflectisActive: 0
   deflectChance: 0.2
+  rb: {fileID: 0}
 --- !u!114 &2212571413873323631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,10 +271,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   maxStatPoint: 30
+  iFrame: 0
   healthBar: {fileID: 0}
   heavyArmorisActive: 0
   deflectisActive: 0
   deflectChance: 0.2
+  rb: {fileID: 0}
   expManager: {fileID: 203798438984201575}
   currentStatPoint: 0
   statPoint: 0

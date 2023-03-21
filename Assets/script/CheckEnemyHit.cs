@@ -62,7 +62,6 @@ public class CheckEnemyHit : MonoBehaviour
         if (randValue < critChance)
         {
             damageDeal = attack * (1 + critDmg);
-            Debug.Log("Critical hit!");
         }
         else
         {
