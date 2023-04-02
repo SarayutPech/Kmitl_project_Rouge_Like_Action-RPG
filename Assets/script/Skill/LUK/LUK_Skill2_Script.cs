@@ -4,16 +4,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Treature Hunter", menuName = "Skill/LUK/Treature Hunter")]
 public class LUK_Skill2_Script : Skill
 {
-    private bool isSkillActive;
     public override void Active()
     {
 
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.luk.GetValue() == 10 && !isSkillActive)
+        if (playerStats.luk.GetValue() == 10 && !this.isSkillActive)
         {
             playerStats.dropRate.AddModifier(20);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
 
 
@@ -23,10 +22,10 @@ public class LUK_Skill2_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.luk.GetValue() < 10 && isSkillActive)
+        if (playerStats.luk.GetValue() < 10 && this.isSkillActive)
         {
             playerStats.dropRate.RemoveModifier(20);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
     }
 }

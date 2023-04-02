@@ -5,18 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DoubleJump", menuName = "Skill/AGI/DoubleJump")]
 public class AGI_Skill1_Script : Skill
 {
-    private bool isSkillActive;
+   
     // Double Jump 
     public override void Active()
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         player_movement movement = GameObject.FindGameObjectWithTag("Player").GetComponent<player_movement>();
 
-        if (playerStats.agi.GetValue() == 5 && !isSkillActive)
+        if (playerStats.agi.GetValue() == 5 && !this.isSkillActive)
         {
             
             movement.SetDoubleJump(true);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
         
     }
@@ -25,10 +25,10 @@ public class AGI_Skill1_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         player_movement movement = GameObject.FindGameObjectWithTag("Player").GetComponent<player_movement>();
-        if (playerStats.agi.GetValue() < 5 && isSkillActive)
+        if (playerStats.agi.GetValue() < 5 && this.isSkillActive)
         {        
             movement.SetDoubleJump(false);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
         
     }

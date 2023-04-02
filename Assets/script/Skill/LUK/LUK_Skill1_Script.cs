@@ -4,16 +4,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Lucky Strike", menuName = "Skill/LUK/Lucky Strike")]
 public class LUK_Skill1_Script : Skill
 {
-    private bool isSkillActive;
     public override void Active()
     {
         
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.luk.GetValue() == 5 && !isSkillActive)
+        if (playerStats.luk.GetValue() == 5 && !this.isSkillActive)
         {
             playerStats.critRate.AddModifier(10);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
 
 
@@ -23,10 +22,10 @@ public class LUK_Skill1_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        if (playerStats.luk.GetValue() < 5 && isSkillActive)
+        if (playerStats.luk.GetValue() < 5 && this.isSkillActive)
         {
             playerStats.critRate.RemoveModifier(10);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
     }
 }

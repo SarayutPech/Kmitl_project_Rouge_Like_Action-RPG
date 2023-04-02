@@ -9,7 +9,8 @@ public class Skill : ScriptableObject
     public enum StatusType { STR, VIT, AGI, DEX, LUK }
     public Sprite skillicon = null;
     public StatusType skillType;
-    
+
+    public bool isSkillActive; 
 
 
     public virtual void Active()

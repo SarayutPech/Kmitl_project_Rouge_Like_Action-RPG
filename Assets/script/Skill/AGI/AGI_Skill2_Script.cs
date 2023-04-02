@@ -5,18 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dash", menuName = "Skill/AGI/Dash")]
 public class AGI_Skill2_Script : Skill
 {
-    private bool isSkillActive;
     // Dash 
     public override void Active()
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         player_movement movement = GameObject.FindGameObjectWithTag("Player").GetComponent<player_movement>();
 
-        if (playerStats.agi.GetValue() == 10 && !isSkillActive)
+        if (playerStats.agi.GetValue() == 10 && !this.isSkillActive)
         {
 
             movement.SetDash(true);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
        
     }
@@ -25,10 +24,10 @@ public class AGI_Skill2_Script : Skill
     {
         PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         player_movement movement = GameObject.FindGameObjectWithTag("Player").GetComponent<player_movement>();
-        if (playerStats.agi.GetValue() < 10 && isSkillActive)
+        if (playerStats.agi.GetValue() < 10 && this.isSkillActive)
         {
             movement.SetDash(false);
-            isSkillActive = !isSkillActive;
+            this.isSkillActive = !this.isSkillActive;
         }
 
         
