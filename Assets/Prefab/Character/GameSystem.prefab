@@ -20339,6 +20339,10 @@ PrefabInstance:
       propertyPath: uiIcon
       value: 
       objectReference: {fileID: 2998726943819676392}
+    - target: {fileID: 5650074959173203079, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
 --- !u!224 &2145901401553604895 stripped
@@ -21069,6 +21073,10 @@ PrefabInstance:
       propertyPath: uiIcon
       value: 
       objectReference: {fileID: 2998726942423679949}
+    - target: {fileID: 5650074959173203079, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
 --- !u!224 &2145901401743437697 stripped
@@ -21185,6 +21193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2998726943472309459}
     m_Modifications:
+    - target: {fileID: 901637881936931700, guid: a4dcfb369d09e6e4d97666f9bdf28df3, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8552336162799074108, guid: a4dcfb369d09e6e4d97666f9bdf28df3, type: 3}
       propertyPath: m_Name
       value: AccessorySlot (3)
@@ -21593,6 +21605,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2998726943472309459}
     m_Modifications:
+    - target: {fileID: 901637881936931700, guid: a4dcfb369d09e6e4d97666f9bdf28df3, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8552336162799074108, guid: a4dcfb369d09e6e4d97666f9bdf28df3, type: 3}
       propertyPath: m_Name
       value: AccessorySlot (1)
@@ -22705,6 +22721,10 @@ PrefabInstance:
       propertyPath: uiIcon
       value: 
       objectReference: {fileID: 2998726943910694105}
+    - target: {fileID: 5650074959173203079, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
 --- !u!224 &2145901402297590009 stripped
@@ -24147,6 +24167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2998726943472309459}
     m_Modifications:
+    - target: {fileID: 901637881936931700, guid: a4dcfb369d09e6e4d97666f9bdf28df3, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8552336162799074108, guid: a4dcfb369d09e6e4d97666f9bdf28df3, type: 3}
       propertyPath: m_Name
       value: AccessorySlot (2)
@@ -24647,6 +24671,10 @@ PrefabInstance:
       propertyPath: uiIcon
       value: 
       objectReference: {fileID: 2998726942615543736}
+    - target: {fileID: 5650074959173203079, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
+      propertyPath: indexSlotEquipment
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8645e839b5967b4987c3d0b038c5c90, type: 3}
 --- !u!224 &2145901403495414276 stripped

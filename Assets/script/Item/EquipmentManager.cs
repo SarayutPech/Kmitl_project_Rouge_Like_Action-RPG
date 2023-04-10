@@ -51,7 +51,6 @@ public class EquipmentManager : MonoBehaviour
             //equipCard.EquipItem(newItem);
             
             currentEquipCard[slotIndex] = newItem; // Equip Item
-
             if (onEquipCallback != null)
             {
                 onEquipCallback.Invoke();
@@ -67,12 +66,12 @@ public class EquipmentManager : MonoBehaviour
             if (onEquipmentChanged != null)
             {
                 onEquipmentChanged.Invoke(newItem, oldItem);
-                onEquipCallback.Invoke();
+                onEquipCallback.Invoke();                      
             }
             //equipAcc.EquipItem(newItem);
             
             currentEquipAccessory[slotIndex] = newItem;
-
+            
             if (onEquipCallback != null)
             {
                 onEquipCallback.Invoke();
@@ -147,6 +146,30 @@ public class EquipmentManager : MonoBehaviour
         }
 
         
+    }
+
+    public void CheckOrderEquipment(Equipment[] equipmentSlot)
+    {    
+        bool allEmpty = true;
+        int indexSlotNotEmpty = 0;
+        for (int i = 0; i < equipmentSlot.Length; i++) // loop to find empty slot index
+        {
+            if (equipmentSlot[i] != null)
+            {
+                allEmpty = false;
+                indexSlotNotEmpty = i;
+            }           
+        }
+
+        if (!allEmpty)
+        {
+            int IndexEmpty = CheckSlotIndex(equipmentSlot);            
+            Equipment equipmentInSlot = CheckItemInSlot(currentEquipCard[indexSlotNotEmpty]);
+            equipmentSlot[IndexEmpty] = equipmentInSlot;
+            equipmentSlot[indexSlotNotEmpty] = null;
+
+
+        }
     }
 
     public int AttackCmd(int indexSlot)

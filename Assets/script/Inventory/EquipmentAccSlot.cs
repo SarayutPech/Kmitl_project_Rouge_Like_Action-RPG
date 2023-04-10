@@ -6,6 +6,15 @@ public class EquipmentAccSlot : MonoBehaviour
 
     public Image icon;
     Item item;
+    EquipmentManager equipmentManager;
+    [SerializeField]
+    int indexSlotEquipment;
+
+    private void Start()
+    {
+        equipmentManager = GameObject.Find("GameManager").GetComponent<EquipmentManager>();
+        equipmentManager = EquipmentManager.instance;
+    }
     public void EquipItem(Item newItem)
     {
         item = newItem;
@@ -25,6 +34,8 @@ public class EquipmentAccSlot : MonoBehaviour
         if (item != null)
         {
             Debug.Log("Unequip " + item.name);
+            equipmentManager.Unequip(equipmentManager.currentEquipAccessory, indexSlotEquipment);
+           
             
         }
     }
