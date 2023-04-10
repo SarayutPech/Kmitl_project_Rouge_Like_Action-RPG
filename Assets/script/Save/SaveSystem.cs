@@ -29,16 +29,22 @@ public class SaveSystem : MonoBehaviour
 
         string saveJson = JsonUtility.ToJson(saveObject);
 
-        File.WriteAllText(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected() + ".txt", saveJson);
+        // save using PlayerPerfs instead of txt file
+        PlayerPrefs.SetString("saveData" + saveSlot.getSaveSelected(), saveJson);
+
+       // File.WriteAllText(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected() + ".txt", saveJson);
     }
 
     public void Load()
     {
         SelectedSave saveSlot = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SelectedSave>();
 
-        if (File.Exists(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected()+".txt"))
+
+        //if (File.Exists(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected()+".txt"))
+        if (PlayerPrefs.HasKey("saveData" + saveSlot.getSaveSelected()))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected()+".txt");
+            //string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData"+ saveSlot.getSaveSelected()+".txt");
+            string saveString = PlayerPrefs.GetString("saveData" + saveSlot.getSaveSelected());
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
             LoadCharacterStat(saveObject);
             Debug.Log("Save Loaded. !");

@@ -21,9 +21,11 @@ public class SaveSelect : MonoBehaviour
     public void LoadSaveSlotData()
     {
         //Check Save Slot1
-        if (File.Exists(Application.dataPath + "/Save/saveData_Slot1.txt"))
+        //if (File.Exists(Application.dataPath + "/Save/saveData_Slot1.txt"))
+        if (PlayerPrefs.HasKey("saveData_Slot1"))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData_Slot1.txt");
+            // string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData_Slot1.txt");
+            string saveString = PlayerPrefs.GetString("saveData_Slot1");
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
 
             saveSlot1.setShowData(saveObject.playerLevel);
@@ -37,9 +39,11 @@ public class SaveSelect : MonoBehaviour
         }
 
         //Check Save Slot2
-        if (File.Exists(Application.dataPath + "/Save/saveData_Slot2.txt"))
+        //if (File.Exists(Application.dataPath + "/Save/saveData_Slot2.txt"))
+        if (PlayerPrefs.HasKey("saveData_Slot2"))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData_Slot2.txt");
+            //string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData_Slot2.txt");
+            string saveString = PlayerPrefs.GetString("saveData_Slot2");
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
             saveSlot2.setShowData(saveObject.playerLevel);
             saveSlot2.ShowData();
@@ -51,9 +55,11 @@ public class SaveSelect : MonoBehaviour
         }
 
         //Check Save Slot3
-        if (File.Exists(Application.dataPath + "/Save/saveData_Slot3.txt"))
+        //if (File.Exists(Application.dataPath + "/Save/saveData_Slot3.txt"))
+        if (PlayerPrefs.HasKey("saveData_Slot3"))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData_Slot3.txt");
+            //string saveString = File.ReadAllText(Application.dataPath + "/Save/saveData_Slot3.txt");
+            string saveString = PlayerPrefs.GetString("saveData_Slot3");
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
             saveSlot3.setShowData(saveObject.playerLevel);
             saveSlot3.ShowData();

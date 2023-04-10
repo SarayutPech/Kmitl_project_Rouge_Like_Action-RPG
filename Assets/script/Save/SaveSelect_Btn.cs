@@ -65,29 +65,44 @@ public class SaveSelect_Btn : MonoBehaviour
 
     private void DeleteSlot1()
     {
-        if(File.Exists(Application.dataPath + "/Save/saveData_Slot1.txt")){
-            File.Delete(Application.dataPath + "/Save/saveData_Slot1.txt");
+        if (PlayerPrefs.HasKey("saveData_Slot1"))
+        {
+            PlayerPrefs.DeleteKey("saveData_Slot1");           
             saveUI.LoadSaveSlotData();
         }
-        
+        /*if(File.Exists(Application.dataPath + "/Save/saveData_Slot1.txt")){
+            File.Delete(Application.dataPath + "/Save/saveData_Slot1.txt");
+            saveUI.LoadSaveSlotData();
+        }*/
+
     }
 
     private void DeleteSlot2()
     {
-        if (File.Exists(Application.dataPath + "/Save/saveData_Slot2.txt"))
+        if (PlayerPrefs.HasKey("saveData_Slot2"))
+        {
+            PlayerPrefs.DeleteKey("saveData_Slot2");
+            saveUI.LoadSaveSlotData();
+        }
+        /*if (File.Exists(Application.dataPath + "/Save/saveData_Slot2.txt"))
         {
             File.Delete(Application.dataPath + "/Save/saveData_Slot2.txt");
             saveUI.LoadSaveSlotData();
-        }
+        }*/
     }
 
     private void DeleteSlot3()
     {
-        if (File.Exists(Application.dataPath + "/Save/saveData_Slot3.txt"))
+        if (PlayerPrefs.HasKey("saveData_Slot3"))
+        {
+            PlayerPrefs.DeleteKey("saveData_Slot3");
+            saveUI.LoadSaveSlotData();
+        }
+        /*if (File.Exists(Application.dataPath + "/Save/saveData_Slot3.txt"))
         {
             File.Delete(Application.dataPath + "/Save/saveData_Slot3.txt");
             saveUI.LoadSaveSlotData();
-        }
+        }*/
     }
 
    
