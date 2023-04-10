@@ -7,7 +7,7 @@ public class BossStat : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private int MaxHp;
     [SerializeField] private Animator animator;
-    public HeroAttack heroAttack;
+    public Atteck_reward heroAttack;
 
     public BossHPBar hpBar;
 

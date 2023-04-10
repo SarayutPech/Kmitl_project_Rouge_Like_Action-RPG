@@ -5,7 +5,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-public class BossFollowPlayerML : Agent
+public class Boss_ML : Agent
 {
     #region Variable
     [Header("Movement")]
@@ -19,32 +19,19 @@ public class BossFollowPlayerML : Agent
     public Animator animator;
 
     private BoxCollider2D boxCollider;
-
-    public float time;
     #endregion
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-        /*
-        if(time >= 50)
-            endEp("Time");
-        */
-    }
-
     public override void OnActionReceived(ActionBuffers actions)
     {
-        run(actions.DiscreteActions[2]); 
+        run(actions.DiscreteActions[2]);
         jump(actions.DiscreteActions[0]);
         actionToDo(actions.DiscreteActions[1]);
-
-        
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -92,40 +79,5 @@ public class BossFollowPlayerML : Agent
             animator.SetTrigger("block");
         else if (action == 4)
             animator.SetTrigger("roll");
-    }
-
-    /*
-    private float calculateReward(Transform Obj1, Transform Obj2)
-    {
-        float distance = Mathf.Abs(Obj1.transform.position.x - Obj2.transform.position.x) + Mathf.Abs(Obj1.transform.position.y - Obj2.transform.position.y);
-        float rewardPoint = -1/ (distance * Mathf.Pow(0.9f, time));
-        return rewardPoint;
-    }
-    */
-
-    private float calculateReward()
-    {
-        float rewardPoint = Mathf.Pow(0.9f, time);
-        return rewardPoint;
-    }
-
-
-    public override void OnEpisodeBegin()
-    {
-        //transform.localPosition = new Vector2(Random.Range(-7.5f,7.5f), Random.Range(-5.5f, 0f));
-        transform.localPosition = new Vector2(Random.Range(-6f,6f), Random.Range(-2.5f, -0.5f));
-        target.localPosition = new Vector2(Random.Range(-6f, 6f), Random.Range(-2.5f, -0.5f));
-        //target.localPosition = new Vector2(0, 0);
-        SetReward(0);
-        time = 0;
-    }
-
-    public void endEp(string EndBy)
-    {
-        AddReward(calculateReward());
-        float reward = GetCumulativeReward();
-        Debug.Log("Ended Ep By " + EndBy + " => Reward : " + reward + " => Time : " + time);
-        
-        EndEpisode();
     }
 }

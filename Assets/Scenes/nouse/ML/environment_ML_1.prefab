@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2396422962003045495}
   m_Layer: 0
-  m_Name: environment_ML
+  m_Name: environment_ML_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

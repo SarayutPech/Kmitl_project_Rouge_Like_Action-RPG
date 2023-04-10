@@ -196,6 +196,7 @@ public class EnemySpawner : MonoBehaviour
         enemyToSpawnLeft = levelManagerParameter.enemyPerWave;
     }
     
+    /*
     public void OnDrawGizmos()
     {
         for (float y = 0; y < stepY; y += scale)
@@ -217,6 +218,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
+    */
 
     private void getBiome()
     {

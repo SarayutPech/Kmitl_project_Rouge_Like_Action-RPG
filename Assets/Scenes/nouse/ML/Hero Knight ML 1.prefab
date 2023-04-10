@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261ec598b8e971e43acf8df5a5fb34c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossML: {fileID: 2121434885135822670}
+  BossML: {fileID: 0}
   enchantAttack: 0
   knockbackY: 5
   knockbackX: 5
@@ -730,10 +730,10 @@ GameObject:
   - component: {fileID: 8049604890065705590}
   - component: {fileID: 6052420937676088970}
   - component: {fileID: -7978321591370922891}
-  - component: {fileID: 2121434885135822670}
   - component: {fileID: 8850862607197869826}
+  - component: {fileID: 7005759986045552270}
   m_Layer: 3
-  m_Name: Hero Knight ML
+  m_Name: Hero Knight ML 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   hp: 0
   MaxHp: 500
   animator: {fileID: 5661275878427487515}
-  heroAttack: {fileID: 0}
+  heroAttack: {fileID: 1861662718007274024}
   hpBar: {fileID: 4870797281180833858}
 --- !u!114 &-7978321591370922891
 MonoBehaviour:
@@ -846,7 +846,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 4cf596440eb528a43bfc446716f2a3b4, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -854,30 +854,6 @@ MonoBehaviour:
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &2121434885135822670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049604890065705595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9420723af393b641a5e1f24e3396401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
-  target: {fileID: 637466299788451853, guid: d997ff7151d04be4c87adf6bf5792229, type: 3}
-  speed: 700
-  jumpForce: 8
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  animator: {fileID: 5661275878427487515}
-  time: 0
 --- !u!114 &8850862607197869826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,6 +868,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
+--- !u!114 &7005759986045552270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049604890065705595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb27dd10896b4d4398e25598e96e148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 5000
+  target: {fileID: 0}
+  speed: 250
+  jumpForce: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  animator: {fileID: 5661275878427487515}
 --- !u!1 &8864467875191908530
 GameObject:
   m_ObjectHideFlags: 0

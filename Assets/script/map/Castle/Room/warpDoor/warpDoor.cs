@@ -20,7 +20,7 @@ public class warpDoor : Interactable
 
     private void goToBossRoom()
     {
-        SceneManager.LoadScene("Boss_Castle");
+        SceneManager.LoadScene("Boss_Castle_ML");
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7,-1,-5);
     }
 

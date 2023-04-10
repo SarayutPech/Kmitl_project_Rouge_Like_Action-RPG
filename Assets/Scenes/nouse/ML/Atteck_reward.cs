@@ -111,26 +111,33 @@ public class Atteck_reward : MonoBehaviour
         Collider2D playerCol = Physics2D.OverlapBox(hitBoxPos.position , new Vector2(hitBox.x, hitBox.y), 0f, player);
         if (playerCol)
         {
-            playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
-            playerCol.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockbackX * ScaleX() / 2, -knockbackY), ForceMode2D.Impulse);
+            /*playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
+            playerCol.GetComponent<CharacterStats>().Knockback(new Vector2(knockbackX * ScaleX() / 2, -knockbackY));
             // HP -
-            if(playerCol.GetComponent<CharacterStats>())
+            if (playerCol.GetComponent<CharacterStats>())
                 playerCol.GetComponent<CharacterStats>().TakeDamage(dmg - levelManagerParameter.DmgBuffer);
-            playerCol.GetComponent<Animator>().SetTrigger("gethit");
-            BossML.AddReward(300);
-            BossML.EndEpisode();
-            //Debug.Log(+1);
-            RewardColor.GetComponent<SpriteRenderer>().color = win;
+            playerCol.GetComponent<Animator>().SetTrigger("gethit");*/
+            try{
+                BossML.endEp("Hit");
+                //Debug.Log(+1);
+                RewardColor.GetComponent<SpriteRenderer>().color = win;
+            }
+            catch {
+                Debug.Log("Agent not in training.");
+            }
+            
         }
 
+        /*
         Collider2D dontAttackThis = Physics2D.OverlapBox(hitBoxPos.position, new Vector2(hitBox.x, hitBox.y), 0f, falseLayer);
         if (dontAttackThis)
         {
-            BossML.AddReward(-150);
+            //BossML.AddReward(-150);
             BossML.EndEpisode();
             //Debug.Log(-1);
             RewardColor.GetComponent<SpriteRenderer>().color = lose;
         }
+        */
         
     }
 

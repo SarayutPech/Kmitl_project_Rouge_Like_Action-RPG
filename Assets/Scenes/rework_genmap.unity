@@ -1184,7 +1184,7 @@ MonoBehaviour:
   TunnelStartX: -10
   TunnelEndX: -0.5
   TunnelStartY: -4.25
-  smooth: 10
+  smooth: 4
   biome: 0
   safeRoomObject:
     serializedVersion: 2
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 1
+  agentMoveStep: 6
   enemyPerWave: 1
   DmgBuffer: 0
   HpBuffer: 0
