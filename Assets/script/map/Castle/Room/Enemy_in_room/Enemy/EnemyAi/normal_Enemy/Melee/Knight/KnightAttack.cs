@@ -9,6 +9,7 @@ public class KnightAttack : MonoBehaviour
     [SerializeField] private float knockbackX = 5f;
     [SerializeField] private float knockbackTimenormalAttack = 0.1f;
     public int dmg;
+    [SerializeField] Rigidbody2D RootRb;
 
     private LevelManagerParameter levelManagerParameter;
     private void Awake()

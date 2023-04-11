@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 8110948535918019373}
   - component: {fileID: 4715804261737860825}
   - component: {fileID: 5598301388447623637}
+  - component: {fileID: 2134300824923643056}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -318,6 +319,7 @@ MonoBehaviour:
   knockbackX: 10
   knockbackTimenormalAttack: 0.05
   dmg: 5
+  RootRb: {fileID: 0}
 --- !u!114 &5598301388447623637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +349,19 @@ MonoBehaviour:
     - item: {fileID: 3337587488865035475, guid: d324906b72b34bf4db0d9b63ea193ed3, type: 3}
       weight: 2
   positionDrop: {x: 1, y: 0.2, z: 0}
+--- !u!114 &2134300824923643056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988138266985242331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd63073223c4b634eb3644dff6755d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &2192880874734852197
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +658,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0135937035}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -654,7 +669,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.46}
+  m_Size: {x: 0.29, y: 0.43281257}
   m_EdgeRadius: 0
 --- !u!50 &8049604890065705590
 Rigidbody2D:
@@ -690,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  activateDistance: 3
+  activateDistance: 10
   pathUpdateSeconds: 0.5
   speed: 700
   nextWaypointDistance: 0.5
@@ -702,7 +717,6 @@ MonoBehaviour:
   diractionLookEnable: 1
   canFly: 0
   animator: {fileID: 5661275878427487515}
-  timeToDestoryThis: 5
   LockRotate: 1
 --- !u!114 &4710849969295191853
 MonoBehaviour:

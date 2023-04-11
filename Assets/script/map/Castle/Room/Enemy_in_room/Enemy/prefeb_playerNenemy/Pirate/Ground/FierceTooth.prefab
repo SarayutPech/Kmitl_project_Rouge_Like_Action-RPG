@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 5598301388447623637}
   - component: {fileID: 1570677775636189220}
   - component: {fileID: 7537117133165698837}
+  - component: {fileID: 5633053642830653975}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -347,6 +348,19 @@ MonoBehaviour:
   knockbackX: 3
   knockbackTimenormalAttack: 0.1
   dmg: 20
+--- !u!114 &5633053642830653975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988138266985242331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd63073223c4b634eb3644dff6755d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &2192880874734852197
 GameObject:
   m_ObjectHideFlags: 0
