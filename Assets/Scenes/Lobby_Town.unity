@@ -7095,14 +7095,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5d8ee82d3217743becd1919a61d154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyGround:
-  - {fileID: 8049604890065705595, guid: d344c330b868344469a47eb43260e7c2, type: 3}
-  - {fileID: 8049604890065705595, guid: fff941cce4a1cc348a3c0298a3cb1624, type: 3}
-  - {fileID: 8049604890065705595, guid: f1e6912643524d24aa7fdb0ada141ff4, type: 3}
-  enemyFly:
-  - {fileID: 8049604890065705595, guid: 92186b1e250c69e4aad26b24333ede89, type: 3}
-  enemyRange:
-  - {fileID: 8049604890065705595, guid: e1b011a241a2e1d47a4f625ee4ca5f98, type: 3}
+  CastleEnemyGround: []
+  CastleEnemyFly: []
+  CastleEnemyRange: []
+  NeonEnemyGround: []
+  NeonEnemyFly: []
+  NeonEnemyRange: []
+  PirateEnemyGround: []
+  PirateEnemyFly: []
+  PirateEnemyRange: []
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -7113,6 +7114,10 @@ MonoBehaviour:
   startX: 6.5
   startY: 4
   space: 0.25
+  biome: 0
+  room:
+    serializedVersion: 2
+    m_Bits: 0
   canSpawn: []
 --- !u!114 &1855105988
 MonoBehaviour:
@@ -7180,6 +7185,7 @@ MonoBehaviour:
   decorCastle: []
   decorNeon: []
   decorPirate: []
+  upperpath: {fileID: 0}
   blockLeft: {fileID: 2772120256085022426, guid: 76ff20a20fb7f4c42a2efbfabdd933c6, type: 3}
   blockRight: {fileID: 5422810907147088610, guid: 98743b80e72e8744093d9f4ffb887e9d, type: 3}
   blockTop:
@@ -7194,12 +7200,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  blockBot: []
-  blockBotLeft: []
-  blockBotRight: []
   blockCenter: []
-  blockCenterLeft: []
-  blockCenterRight: []
   noBlock: {fileID: 6579611219259844292, guid: ad9a8f94365d10541964a6f5948daa7c, type: 3}
   blockTop_NoLNoR: []
   blockcenter_NoLNoR: []
@@ -7223,7 +7224,7 @@ MonoBehaviour:
   verStartSpawnX: 20
   verYSpace: 
   verRandomYRange: 
-  ranPlatformGenLevel: 0.6
+  ranPlatformGenLevel: []
   TunnelStartX: 0
   TunnelEndX: 0
   TunnelStartY: 0
@@ -7263,6 +7264,7 @@ MonoBehaviour:
   startTimeBtwRoom: 0.5
   stop_Gen: 0
   fast_Gen: 1
+  spawnPlayer: 0
 --- !u!4 &1855105992
 Transform:
   m_ObjectHideFlags: 0

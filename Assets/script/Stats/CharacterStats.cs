@@ -38,6 +38,8 @@ public class CharacterStats : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    private MessageSpawner damageIndicator;
+
     void Awake()
     {
         if (instance != null)
@@ -48,7 +50,8 @@ public class CharacterStats : MonoBehaviour
         instance = this;
 
         healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
-        
+        damageIndicator = GetComponent<MessageSpawner>();
+
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
@@ -77,9 +80,13 @@ public class CharacterStats : MonoBehaviour
 
             Debug.Log(transform.name + "Take " + damage + " Damage.");
 
+            
+           // damageIndicator = new MessageSpawner();
+            
+
             healthBar.SetHealth(currentHealth);
             GetComponent<Animator>().SetTrigger("gethit");
-
+            damageIndicator.SpawnMessage(damage.ToString());
             if (currentHealth <= 0)
             {
                 //Game Over

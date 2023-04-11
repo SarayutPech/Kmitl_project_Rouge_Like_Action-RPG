@@ -12,12 +12,17 @@ public class CheckEnemyHit : MonoBehaviour
     public Vector2 playerForceAttack;
     public Transform playerAttackHitbox;
     public LayerMask enemyLayer;
+
+    private bool isCrit = false;
+
+    private MessageSpawner damageIndicator;
     // Start is called before the first frame update
     void Start()
     {
         equipmentManager = GameObject.Find("GameManager").GetComponent<EquipmentManager>();
         charaStat = GetComponentInParent<PlayerStats>();
         indexWeapon = GetComponentInParent<PlayerAttack>();
+        damageIndicator = GetComponentInParent<MessageSpawner>();
         equipmentManager = EquipmentManager.instance;
     }
 
@@ -34,9 +39,16 @@ public class CheckEnemyHit : MonoBehaviour
                 //i.GetComponent<Animator>().SetTrigger("getHit");
 
                 if (i.GetComponent<BossStat>())
+                {
                     i.GetComponent<BossStat>().setHp(damage);
+                    damageIndicator.EnemySpawnMessage(i, damage.ToString(), isCrit);
+                }                                  
                 else if (i.GetComponent<EnemyStat>())
-                    i.GetComponent<EnemyStat>().setHp(damage);
+                {
+                    i.GetComponent<EnemyStat>().setHp(damage); 
+                    damageIndicator.EnemySpawnMessage(i, damage.ToString(), isCrit);
+                }
+                    
                 Debug.Log("Attack Enemy " + i + " Enemy Take" + damage + "Damage.");
             }
         }
@@ -62,10 +74,12 @@ public class CheckEnemyHit : MonoBehaviour
         if (randValue < critChance)
         {
             damageDeal = attack * (1 + critDmg);
+            isCrit = true;
         }
         else
         {
             damageDeal = (float)attack;
+            isCrit = false;
         }
 
         return (int)damageDeal;
