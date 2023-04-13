@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 2337703191696125077}
   - component: {fileID: 4919871129672247351}
   - component: {fileID: 8758910732058972615}
+  - component: {fileID: 4454039209362708436}
   m_Layer: 9
   m_Name: Skill_Animator
   m_TagString: Animator_Skill
@@ -652,6 +653,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4454039209362708436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615096605917676267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd49c615fa3d0d41bc7555266466235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentManager: {fileID: 0}
+  charaStat: {fileID: 0}
+  indexWeapon: {fileID: 0}
+  playerHitbox: {x: 1, y: 1}
+  playerForceAttack: {x: 0, y: 0}
+  playerAttackHitbox: {fileID: 2772907492434896058}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &6218157173170450627
 GameObject:
   m_ObjectHideFlags: 0

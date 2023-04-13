@@ -13,6 +13,8 @@ public class CheckEnemyHit : MonoBehaviour
     public Transform playerAttackHitbox;
     public LayerMask enemyLayer;
 
+    private GameObject player;
+
     private bool isCrit = false;
 
     private MessageSpawner damageIndicator;
@@ -20,9 +22,10 @@ public class CheckEnemyHit : MonoBehaviour
     void Start()
     {
         equipmentManager = GameObject.Find("GameManager").GetComponent<EquipmentManager>();
-        charaStat = GetComponentInParent<PlayerStats>();
-        indexWeapon = GetComponentInParent<PlayerAttack>();
-        damageIndicator = GetComponentInParent<MessageSpawner>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        charaStat = player.GetComponentInParent<PlayerStats>();
+        indexWeapon = player.GetComponentInParent<PlayerAttack>();
+        damageIndicator = player.GetComponentInParent<MessageSpawner>();
         equipmentManager = EquipmentManager.instance;
     }
 
