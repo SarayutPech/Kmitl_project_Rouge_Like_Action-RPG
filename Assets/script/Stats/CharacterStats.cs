@@ -8,7 +8,7 @@ public class CharacterStats : MonoBehaviour
 
     #region Singleton
     public static CharacterStats instance;
-    
+
     #endregion
 
     public int maxHealth = 100;
@@ -19,7 +19,7 @@ public class CharacterStats : MonoBehaviour
     public HealthBar healthBar;
 
     //Status
-    public Stats str,vit,agi,dex,luk;
+    public Stats str, vit, agi, dex, luk;
 
     //Parameter
     public Stats attack;
@@ -64,7 +64,7 @@ public class CharacterStats : MonoBehaviour
 
     public void Knockback(Vector2 force)
     {
-        if(!iFrame)
+        if (!iFrame)
             rb.AddForce(new Vector2(force.x, force.y), ForceMode2D.Impulse);
     }
 
@@ -80,9 +80,9 @@ public class CharacterStats : MonoBehaviour
 
             Debug.Log(transform.name + "Take " + damage + " Damage.");
 
-            
-           // damageIndicator = new MessageSpawner();
-            
+
+            // damageIndicator = new MessageSpawner();
+
 
             healthBar.SetHealth(currentHealth);
             GetComponent<Animator>().SetTrigger("gethit");
@@ -94,6 +94,17 @@ public class CharacterStats : MonoBehaviour
             }
         }
     }
+
+    public void Heal(int heal)
+    {
+        if (currentHealth + heal > maxHealth)
+            currentHealth = maxHealth;
+        else
+            currentHealth += heal;
+
+        healthBar.SetHealth(currentHealth);
+    }
+
 
     private void Update()
     {
@@ -113,29 +124,29 @@ public class CharacterStats : MonoBehaviour
         SceneManager.LoadScene("Result_Scene");
     }
 
-    public int Deflect_Skill(bool isActive , int damage)
+    public int Deflect_Skill(bool isActive, int damage)
     {
-        
+
         if (isActive)
         {
             float randValue = Random.value;
             if (randValue < deflectChance)
             {
                 Debug.Log("Deflect Activate!!");
-                damage = 0;               
+                damage = 0;
             }
         }
 
         return damage;
     }
 
-    public int HeavyArmor_Skill(bool isActive,int damage)
+    public int HeavyArmor_Skill(bool isActive, int damage)
     {
         if (isActive)
         {
             int incomeDamage = damage;
             float reduceDamage = 0.2f;
-            damage -=  (int)(incomeDamage * reduceDamage);
+            damage -= (int)(incomeDamage * reduceDamage);
             Debug.Log("Heavy Armor Activate!!");
         }
         return damage;

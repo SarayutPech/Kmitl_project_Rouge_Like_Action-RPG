@@ -23,6 +23,8 @@ public class RewardChest : Interactable
         anim.SetTrigger("Open");
         levelManagerParameter.givekeys();
         // give Item
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<CharacterStats>().Heal(50);
     }
 
     
