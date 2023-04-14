@@ -68,7 +68,7 @@ public class SaveSystem : MonoBehaviour
         playerExp.statPoint = saveObject.statPoint;
         playerExp.targetEXP = saveObject.targetExp;
         playerExp.currentEXP = saveObject.currentExp;
-
+        playerStat.currentStatPoint = saveObject.statPoint;
         Debug.Log("Level : " + saveObject.playerLevel + " StatPoint : "+ saveObject.statPoint);
         
         // Load Stat 
@@ -142,9 +142,12 @@ public class SaveSystem : MonoBehaviour
 
         try
         {
+            ui_Status.statusUI.SetActive(true);
+            ui_Status.upstatusUI.SetActive(true);
             playerStat.CalculateBaseStat();
             ui_Status.UpdateParameterUI();
             ui_Status.UpdateStatusUI();
+
         }
         catch { Debug.Log("Cannot Update UI"); }
     }

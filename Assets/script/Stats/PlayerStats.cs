@@ -109,7 +109,7 @@ public class PlayerStats : CharacterStats
     }
     public void ReduceStat(string stat)
     {
-        if (statPoint < maxStatPoint && currentStatPoint+usedStatPoint <= statPoint)
+        if (statPoint <= maxStatPoint && currentStatPoint+usedStatPoint <= statPoint)
         {
             if (stat == "STR")
             {

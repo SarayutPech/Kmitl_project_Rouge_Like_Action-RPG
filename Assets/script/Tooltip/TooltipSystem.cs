@@ -13,12 +13,28 @@ public class TooltipSystem : MonoBehaviour
 
     public static void Show(string content, string header = "")
     {
-        current.tooltip.SetText(content, header);
-        current.tooltip.gameObject.SetActive(true);
+        try
+        {
+            current.tooltip.SetText(content, header);
+            current.tooltip.gameObject.SetActive(true);
+        }
+        catch
+        {
+            Debug.Log("Cannot show tooltip");
+        }
+       
     }
 
     public static void Hide()
     {
-        current.tooltip.gameObject.SetActive(false);
+        try
+        {
+            current.tooltip.gameObject.SetActive(false);
+        }
+        catch
+        {
+            Debug.Log("Tooltip Error");
+        }
+        
     }
 }
