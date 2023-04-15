@@ -16,3 +16,4 @@ MonoBehaviour:
   skillDescription: Deal damage around player when jump
   skillicon: {fileID: 0}
   skillType: 0
+  isSkillActive: 0

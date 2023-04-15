@@ -61,5 +61,12 @@ public class FloatingMessage : MonoBehaviour
         }
     }
 
+    public void SkillMessage(string msg)
+    {
+        damageValue.color = Color.green;
+        damageValue.SetText(msg);
+        damageValue.text = msg;
+    }
+
     
 }

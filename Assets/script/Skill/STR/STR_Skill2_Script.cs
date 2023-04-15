@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Str Skill2", menuName = "Skill/STR/Str Skill2")]
 public class STR_Skill2_Script : Skill
-{ 
+{
     public override void Active()
     {
 
@@ -31,4 +31,5 @@ public class STR_Skill2_Script : Skill
             this.isSkillActive = !this.isSkillActive;
         }
     }
+
 }

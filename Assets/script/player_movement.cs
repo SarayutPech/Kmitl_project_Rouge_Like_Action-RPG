@@ -8,6 +8,7 @@ public class player_movement : MonoBehaviour
     [SerializeField] private float jumpforce = 5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] GameObject poweJumpskillObj;
     public float knockbackTime = 0;
 
     public Animator animator;
@@ -171,8 +172,12 @@ public class player_movement : MonoBehaviour
     {
         if (isActive)
         {
+            
+            Vector3 playerTrans = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Vector3 pos = new Vector3(0.0f, 0.1f, 0.0f);
+            Instantiate(poweJumpskillObj, playerTrans-pos, Quaternion.identity);
             Debug.Log("Power Jump!!!");
-            auraAnimator.SetTrigger("PowerJump");
+            //auraAnimator.SetTrigger("PowerJump");
             //.......
 
         }

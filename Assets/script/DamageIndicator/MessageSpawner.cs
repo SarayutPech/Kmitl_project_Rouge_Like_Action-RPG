@@ -26,6 +26,16 @@ public class MessageSpawner : MonoBehaviour
         inGameMessage.EnemyMessage(msg,isCrit);
     }
 
+    public void EnemySpawnSkillMessage(Collider2D t, string msg)
+    {
+        Vector3 enemyPos = t.GetComponent<Rigidbody2D>().transform.position + (Vector3)initPosition;
+
+        var msgObject = Instantiate(messagePrefab, enemyPos, Quaternion.identity);
+        var inGameMessage = msgObject.GetComponent<FloatingMessage>();
+
+        inGameMessage.SkillMessage(msg);
+    }
+
     private Vector3 GetSpawnPosition()
     {
         return transform.position + (Vector3)initPosition;
