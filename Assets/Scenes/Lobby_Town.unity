@@ -17243,6 +17243,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: Weak Spot Strike
   content: Increase critical damage.
+--- !u!1001 &1697343124262266316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1697343124125647461, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_Name
+      value: ExtraAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.1338
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.7639
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.985486
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
 --- !u!1001 &6770432409203718699
 PrefabInstance:
   m_ObjectHideFlags: 0
