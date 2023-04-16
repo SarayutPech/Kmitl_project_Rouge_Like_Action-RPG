@@ -10,6 +10,9 @@ public class warpDoor : Interactable
     private Player_Status ps;
     public Vector3 Player_spawn;
 
+    public float timeForPlayerMoveWhenEnterTheDoorBase;
+    private float timeForPlayerMoveWhenEnterTheDoorCounting;
+
     private LevelManagerParameter levelManagerParameter;
     private void Awake()
     {
@@ -43,8 +46,7 @@ public class warpDoor : Interactable
             ps.floorLevel += 1;
             if (GameObject.Find("Warp_Door_" + ps.floorLevel)) // มีชั้นต่อไป
             {
-                //gameState.move(GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn);
-
+                MovePlayer();
                 //Update Game Result
                 ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
                 result.Increase_Floor_Reach();
@@ -57,6 +59,13 @@ public class warpDoor : Interactable
             }
             levelManagerParameter.usekeys();
         }
+    }
+
+    void MovePlayer()
+    {
+        gameState.WherePlayerAre = GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn;
+        RoomTrasition roomTrasition = GameObject.Find("Main Camera").GetComponent<RoomTrasition>();
+        roomTrasition.startTrasition();
     }
 
 }

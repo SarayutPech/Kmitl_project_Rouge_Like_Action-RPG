@@ -57,7 +57,8 @@ public class RoomTrasition : MonoBehaviour
 
     public void movePlayer()
     {
-        gameState.move(GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn);
+        gameState.move(gameState.WherePlayerAre);
+        Debug.Log("ASDASDASDASD");
     }
 
     private void newCamBorder()

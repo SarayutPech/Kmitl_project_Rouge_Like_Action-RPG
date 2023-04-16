@@ -28,6 +28,9 @@ public class GameState : MonoBehaviour
     public Transform Spawn_Point_L;
     public Transform Spawn_Point_C;
 
+    [Header("Player.")]
+    public Vector3 WherePlayerAre;
+
     private void Start()
     {
         ps = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Status>();
@@ -87,8 +90,7 @@ public class GameState : MonoBehaviour
         //ps.transform.position = GameObject.Find("Spawn Point " + dir).transform.position;
         ps.transform.position = pos;
 
-        RoomTrasition roomTrasition = GameObject.Find("Main Camera").GetComponent<RoomTrasition>();
-        roomTrasition.startTrasition();
+        
 
         // spawn enemy here
         if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear) //  && !GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isplayed

@@ -428,15 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3489eb52ee6fe47a76bc1fe03726c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  player:
-    serializedVersion: 2
-    m_Bits: 512
-  slider: {fileID: 7498741367504155856}
-  offset: {x: 0, y: 4, z: 0}
   Player_spawn: {x: -2, y: 0, z: -10}
-  maxProgressValue: 3
+  timeForPlayerMoveWhenEnterTheDoorBase: 3
 --- !u!61 &844721019368926728
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -90,7 +90,7 @@ public class player_movement : MonoBehaviour
     void running()
     {
         float move_speed = speed * (1 + ((float)charaStat.moveSpeed.GetValue() / 100));
-        Debug.Log((1 + ((float)charaStat.moveSpeed.GetValue() / 100)));
+        //Debug.Log((1 + ((float)charaStat.moveSpeed.GetValue() / 100)));
         //transform.position += new Vector3(DirIn, 0, 0) * Time.deltaTime * speed;
         if (knockbackTime <= 0)           
             rb.velocity = new Vector2(DirIn * move_speed, rb.velocity.y);
