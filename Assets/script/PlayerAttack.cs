@@ -90,8 +90,8 @@ public class PlayerAttack : MonoBehaviour
 
 
             // Play weapon Animation
-            //animator.SetTrigger("attack");
-            weaponAnimator.SetTrigger("WeaponAttack");
+            animator.SetTrigger("attack");
+            //weaponAnimator.SetTrigger("WeaponAttack");
 
             //CheckEnemyHit();
 
@@ -115,7 +115,7 @@ public class PlayerAttack : MonoBehaviour
                 Vector3 playerTrans = GameObject.FindGameObjectWithTag("Player").transform.position;
                 Vector3 pos = new Vector3(1.0f, 0.0f, 0.0f);
                 Vector3 skillpos = (playerTrans + pos);
-                Instantiate(extraAttackskillObj, skillpos, Quaternion.identity);
+                Instantiate(extraAttackskillObj, playerTrans, Quaternion.identity);
 
                 //skillAnimator.SetTrigger("ExtraAttack");
                 Debug.Log("Skill Extra Attack Activate !");
@@ -148,6 +148,11 @@ public class PlayerAttack : MonoBehaviour
                 i.GetComponent<EnemyStat>().setHp(charaStat.attack.GetValue());
             Debug.Log("Attack Enemy " + i + " Enemy Take" + charaStat.attack.GetValue() + "Damage.");
         }
+    }
+
+    public void CallWeaponAnimator()
+    {
+        weaponAnimator.SetTrigger("WeaponAttack");
     }
 
     private void OnDrawGizmos()

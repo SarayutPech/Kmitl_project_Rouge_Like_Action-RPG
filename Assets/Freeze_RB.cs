@@ -13,11 +13,13 @@ public class Freeze_RB : MonoBehaviour
     public void startFreezePosition()
     {
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+        //Debug.Log("Freeze");
     }
 
     public void endFreezePosition()
     {
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //Debug.Log("Unfreeze");
     }
 }

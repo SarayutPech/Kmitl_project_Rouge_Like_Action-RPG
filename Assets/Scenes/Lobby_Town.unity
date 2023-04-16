@@ -7375,6 +7375,8 @@ MonoBehaviour:
   Spawn_Point_R: {fileID: 754283652}
   Spawn_Point_L: {fileID: 663395611}
   Spawn_Point_C: {fileID: 672343966}
+  WherePlayerAre: {x: 0, y: 0, z: 0}
+  MoveUp: 0
 --- !u!61 &1855105989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17259,12 +17261,20 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.1338
+      value: 29.145
       objectReference: {fileID: 0}
     - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7639
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 1697343124125647463, guid: 5e95f460c6ba2ae4ca7b437826cb6564, type: 3}
       propertyPath: m_LocalPosition.z

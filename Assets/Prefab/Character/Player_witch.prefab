@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7983409314336988894}
   - component: {fileID: 2710255077469941619}
   - component: {fileID: -1108879130819025952}
+  - component: {fileID: 1396224730219733533}
   m_Layer: 9
   m_Name: Player_witch
   m_TagString: Player
@@ -368,6 +369,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initPosition: {x: 0, y: 0.1}
   messagePrefab: {fileID: 3255373317606529342, guid: 481f302bf74a5a845acd6ba7fcb06413, type: 3}
+--- !u!114 &1396224730219733533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637466299788451840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd63073223c4b634eb3644dff6755d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &2212571413115160677
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +395,8 @@ GameObject:
   - component: {fileID: 2212571413115160681}
   - component: {fileID: 2212571413115160678}
   - component: {fileID: 6024722248224231981}
+  - component: {fileID: 2786040543641360767}
+  - component: {fileID: 764038266297277618}
   m_Layer: 0
   m_Name: WeaponCard_Animator
   m_TagString: Untagged
@@ -522,6 +538,33 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &2786040543641360767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212571413115160677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd63073223c4b634eb3644dff6755d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+--- !u!114 &764038266297277618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212571413115160677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f02db591b692443aaf08b83fd40ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAnimator: {fileID: 0}
+  animatorOverride: {fileID: 22100000, guid: 258e4f8c90ced034fbb439304616ce0f, type: 2}
 --- !u!1 &4615096605917676267
 GameObject:
   m_ObjectHideFlags: 0
