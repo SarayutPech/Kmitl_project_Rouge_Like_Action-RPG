@@ -20,9 +20,20 @@ public class warpDoor : Interactable
 
     private void goToBossRoom()
     {
+        int rand = Random.Range(0, 1);
+        switch (rand)
+        {
+            case 0:
+                SceneManager.LoadScene("Boss_Castle");
+                break;
+            case 1:
+                SceneManager.LoadScene("Boss_Castle_2");
+                break;
+        }
         //SceneManager.LoadScene("Boss_Castle_ML");
-        SceneManager.LoadScene("Boss_Castle");
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7,-1,-5);
+
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7,0,-5);
+        
     }
 
     public override void Interact()
@@ -32,7 +43,7 @@ public class warpDoor : Interactable
             ps.floorLevel += 1;
             if (GameObject.Find("Warp_Door_" + ps.floorLevel)) // มีชั้นต่อไป
             {
-                gameState.move(GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn);
+                //gameState.move(GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn);
 
                 //Update Game Result
                 ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
@@ -47,4 +58,5 @@ public class warpDoor : Interactable
             levelManagerParameter.usekeys();
         }
     }
+
 }

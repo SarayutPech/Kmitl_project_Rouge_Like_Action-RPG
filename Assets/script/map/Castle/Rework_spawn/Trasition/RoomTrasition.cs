@@ -10,10 +10,18 @@ public class RoomTrasition : MonoBehaviour
     public Animator anim;
     public CameraFollowPlayer cameraFollowPlayer;
 
+    private Player_Status ps;
+    private GameState gameState;
+
+
+
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         cameraFollowPlayer = GetComponent<CameraFollowPlayer>();
+
+
+        gameState = GameObject.Find("level manager").GetComponent<GameState>();
     }
 
 
@@ -45,6 +53,11 @@ public class RoomTrasition : MonoBehaviour
     private void generateGraphAstar()
     {
         AstarPath.active.Scan();
+    }
+
+    public void movePlayer()
+    {
+        gameState.move(GameObject.Find("Warp_Door_" + ps.floorLevel).transform.position + Player_spawn);
     }
 
     private void newCamBorder()
