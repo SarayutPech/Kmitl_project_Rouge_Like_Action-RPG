@@ -30,6 +30,7 @@ public class GameState : MonoBehaviour
 
     [Header("Player.")]
     public Vector3 WherePlayerAre;
+    public bool MoveUp;
 
     private void Start()
     {
@@ -51,11 +52,13 @@ public class GameState : MonoBehaviour
             if (playerOnLeft)
             {
                 move(Spawn_Point_L.position);
+                TransitionOn();
                // Debug.Log(Spawn_Point_R.gameObject.name);
             }
             else if (playerOnRight)
             {
                 move(Spawn_Point_R.position);
+                TransitionOn();
                // Debug.Log(Spawn_Point_L.gameObject.name);
             }
 
@@ -90,20 +93,16 @@ public class GameState : MonoBehaviour
         //ps.transform.position = GameObject.Find("Spawn Point " + dir).transform.position;
         ps.transform.position = pos;
 
-        
-
         // spawn enemy here
         if (!GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear) //  && !GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isplayed
             es.canEnemySpawn();
     }
 
-    /*private void OnDrawGizmos()
+    private void TransitionOn()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(posPortalRight, portalSize);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(posPortalLeft, portalSize);
-    }*/
+        RoomTrasition roomTrasition = GameObject.Find("Main Camera").GetComponent<RoomTrasition>();
+        roomTrasition.startTrasition();
+    }
 
 }
 

@@ -57,8 +57,10 @@ public class RoomTrasition : MonoBehaviour
 
     public void movePlayer()
     {
-        gameState.move(gameState.WherePlayerAre);
-        Debug.Log("ASDASDASDASD");
+        if(gameState.MoveUp)
+            gameState.move(gameState.WherePlayerAre);
+
+        gameState.MoveUp = false;
     }
 
     private void newCamBorder()

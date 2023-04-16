@@ -154,6 +154,9 @@ public class EnemyAi : MonoBehaviour
 
     private void Update()
     {
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+
         if (LockRotate)
             lockRotation();
 

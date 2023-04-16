@@ -1241,6 +1241,8 @@ MonoBehaviour:
   Spawn_Point_R: {fileID: 490428490}
   Spawn_Point_L: {fileID: 503494539}
   Spawn_Point_C: {fileID: 1167897306}
+  WherePlayerAre: {x: 0, y: 0, z: 0}
+  MoveUp: 0
 --- !u!114 &1731683135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,8 +1304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 6
-  enemyPerWave: 1
+  agentMoveStep: 1
+  enemyPerWave: 5
   DmgBuffer: 0
   HpBuffer: 0
   keys: 0

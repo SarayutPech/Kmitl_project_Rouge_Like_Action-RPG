@@ -17,6 +17,7 @@ TagManager:
   - GameSystem
   - EXP_Bar
   - SaveData
+  - PCG_OB
   layers:
   - Default
   - TransparentFX
@@ -34,8 +35,8 @@ TagManager:
   - RewardChest
   - BossRoom
   - Equipment
-  - 
-  - 
+  - PCG_OB
+  - DestroyPlatform
   - 
   - 
   - 

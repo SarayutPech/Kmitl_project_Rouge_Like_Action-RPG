@@ -23,7 +23,7 @@ public class warpDoor : Interactable
 
     private void goToBossRoom()
     {
-        int rand = Random.Range(0, 1);
+        int rand = Random.Range(1, 2);
         switch (rand)
         {
             case 0:
@@ -46,6 +46,7 @@ public class warpDoor : Interactable
             ps.floorLevel += 1;
             if (GameObject.Find("Warp_Door_" + ps.floorLevel)) // มีชั้นต่อไป
             {
+                gameState.MoveUp = true;
                 MovePlayer();
                 //Update Game Result
                 ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();

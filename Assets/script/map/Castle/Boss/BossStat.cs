@@ -30,8 +30,16 @@ public class BossStat : MonoBehaviour
         hp -= dmg;
         hpBar.setHpBar(hp, MaxHp);
 
-        if (hp < MaxHp * 30 / 100)
-            heroAttack.enchantAttack = true;
+        try
+        {
+            if (hp < MaxHp * 30 / 100)
+                heroAttack.enchantAttack = true;
+        }
+        catch
+        {
+            Debug.Log("This Hero dont have enchantAttack");
+        }
+        
 
         if (hp <= 0)
             Die();
