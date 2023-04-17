@@ -526,7 +526,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.05
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -553,9 +553,9 @@ MonoBehaviour:
   jumpforce: 8
   jumpCheckOffset: 0.5
   followEnable: 1
-  jumpEnable: 1
+  jumpEnable: 0
   diractionLookEnable: 1
-  canFly: 0
+  canFly: 1
   animator: {fileID: 3891070986637183243}
   LockRotate: 1
 --- !u!114 &8540720859512561530
