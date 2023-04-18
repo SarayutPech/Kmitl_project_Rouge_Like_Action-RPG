@@ -6,7 +6,7 @@ public class EquipmentManager : MonoBehaviour
 {
 
     #region Singleton
-    public static EquipmentManager instance;
+    public static EquipmentManager instance { get; private set; }
     private void Awake()
     {
         instance = this;

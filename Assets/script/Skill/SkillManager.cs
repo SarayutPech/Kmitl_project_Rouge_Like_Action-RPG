@@ -92,8 +92,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.StrSkill2);
             StrSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill3);
-            StrSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.StrSkill4);
+           // StrSkill4.InActive();
+           // uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
         else if (stat >= 10 && stat < 15)
         {
@@ -103,8 +103,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.StrSkill2);
             StrSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill3);
-            StrSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.StrSkill4);
+            //StrSkill4.InActive();
+           // uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
         else if (stat >= 15 && stat < 20)
         {
@@ -114,8 +114,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.StrSkill2);
             StrSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.StrSkill3);
-            StrSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.StrSkill4);
+           // StrSkill4.InActive();
+           // uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
         else if (stat >= 20)
         {
@@ -125,8 +125,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.StrSkill2);
             StrSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.StrSkill3);
-            StrSkill4.Active();
-            uiSkill.SetSkillActive(uiSkill.StrSkill4);
+            //StrSkill4.Active();
+           // uiSkill.SetSkillActive(uiSkill.StrSkill4);
         }
         else
         {
@@ -136,8 +136,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.StrSkill2);
             StrSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.StrSkill3);
-            StrSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.StrSkill4);
+            //StrSkill4.InActive();
+           // uiSkill.SetSkillInActive(uiSkill.StrSkill4);
         }
     }
 
@@ -152,8 +152,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.VitSkill2);
             VitSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.VitSkill3);
-            VitSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+         //   VitSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.VitSkill4);
         }
         else if (stat >= 10 && stat < 15)
         {
@@ -163,8 +163,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.VitSkill2);
             VitSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.VitSkill3);
-            VitSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+          //  VitSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.VitSkill4);
         }
         else if (stat >= 15 && stat < 20)
         {
@@ -174,8 +174,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.VitSkill2);
             VitSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.VitSkill3);
-            VitSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+         //   VitSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.VitSkill4);
         }
         else if (stat >= 20)
         {
@@ -185,8 +185,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.VitSkill2);
             VitSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.VitSkill3);
-            VitSkill4.Active();
-            uiSkill.SetSkillActive(uiSkill.VitSkill4);
+         //   VitSkill4.Active();
+         //   uiSkill.SetSkillActive(uiSkill.VitSkill4);
         }
         else
         {
@@ -196,8 +196,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.VitSkill2);
             VitSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.VitSkill3);
-            VitSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.VitSkill4);
+         //   VitSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.VitSkill4);
         }
     }
 
@@ -212,8 +212,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.AgiSkill2);
             AgiSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.AgiSkill3);
-            AgiSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+         //   AgiSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
         }
         else if (stat >= 10 && stat < 15)
         {
@@ -223,8 +223,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.AgiSkill2);
             AgiSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.AgiSkill3);
-            AgiSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+         //   AgiSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
         }
         else if (stat >= 15 && stat < 20)
         {
@@ -234,8 +234,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.AgiSkill2);
             AgiSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.AgiSkill3);
-            AgiSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+         //   AgiSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
         }
         else if (stat >= 20)
         {
@@ -245,8 +245,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.AgiSkill2);
             AgiSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.AgiSkill3);
-            AgiSkill4.Active();
-            uiSkill.SetSkillActive(uiSkill.AgiSkill4);
+         //   AgiSkill4.Active();
+         //   uiSkill.SetSkillActive(uiSkill.AgiSkill4);
         }
         else
         {
@@ -256,8 +256,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.AgiSkill2);
             AgiSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.AgiSkill3);
-            AgiSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
+          //  AgiSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.AgiSkill4);
         }
     }
 
@@ -272,8 +272,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.DexSkill2);
             DexSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.DexSkill3);
-            DexSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+          //  DexSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.DexSkill4);
         }
         else if (stat >= 10 && stat < 15)
         {
@@ -283,8 +283,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.DexSkill2);
             DexSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.DexSkill3);
-            DexSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+          //  DexSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.DexSkill4);
         }
         else if (stat >= 15 && stat < 20)
         {
@@ -294,8 +294,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.DexSkill2);
             DexSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.DexSkill3);
-            DexSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+         //   DexSkill4.InActive();
+         //   uiSkill.SetSkillInActive(uiSkill.DexSkill4);
         }
         else if (stat >= 20)
         {
@@ -305,8 +305,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.DexSkill2);
             DexSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.DexSkill3);
-            DexSkill4.Active();
-            uiSkill.SetSkillActive(uiSkill.DexSkill4);
+          //  DexSkill4.Active();
+          //  uiSkill.SetSkillActive(uiSkill.DexSkill4);
         }
         else
         {
@@ -316,8 +316,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.DexSkill2);
             DexSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.DexSkill3);
-            DexSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.DexSkill4);
+           // DexSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.DexSkill4);
         }
     }
 
@@ -332,8 +332,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.LukSkill2);
             LukSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.LukSkill3);
-            LukSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+         //   LukSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.LukSkill4);
         }
         else if (stat >= 10 && stat < 15)
         {
@@ -343,8 +343,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.LukSkill2);
             LukSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.LukSkill3);
-            LukSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+          //  LukSkill4.InActive();
+          //  uiSkill.SetSkillInActive(uiSkill.LukSkill4);
         }
         else if (stat >= 15 && stat < 20)
         {
@@ -354,8 +354,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.LukSkill2);
             LukSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.LukSkill3);
-            LukSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+            //LukSkill4.InActive();
+           // uiSkill.SetSkillInActive(uiSkill.LukSkill4);
         }
         else if (stat >= 20)
         {
@@ -365,8 +365,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillActive(uiSkill.LukSkill2);
             LukSkill3.Active();
             uiSkill.SetSkillActive(uiSkill.LukSkill3);
-            LukSkill4.Active();
-            uiSkill.SetSkillActive(uiSkill.LukSkill4);
+            //LukSkill4.Active();
+            //uiSkill.SetSkillActive(uiSkill.LukSkill4);
         }
         else
         {
@@ -376,8 +376,8 @@ public class SkillManager : MonoBehaviour
             uiSkill.SetSkillInActive(uiSkill.LukSkill2);
             LukSkill3.InActive();
             uiSkill.SetSkillInActive(uiSkill.LukSkill3);
-            LukSkill4.InActive();
-            uiSkill.SetSkillInActive(uiSkill.LukSkill4);
+            //LukSkill4.InActive();
+           // uiSkill.SetSkillInActive(uiSkill.LukSkill4);
         }
     }
 }

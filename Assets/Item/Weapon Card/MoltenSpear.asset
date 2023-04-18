@@ -19,7 +19,7 @@ MonoBehaviour:
   animationWeapon: {fileID: 7400000, guid: 3bd4b00ae6c599543bbcf92e1dc84f28, type: 2}
   equipSlot: 0
   forceWeapon: {x: 0, y: 0}
-  hitboxWeapon: {x: 1.7, y: 1}
+  hitboxWeapon: {x: 3, y: 1}
   attack_Modifier: 8
   critRate_Modifier: 0
   critDamage_Modifier: 0

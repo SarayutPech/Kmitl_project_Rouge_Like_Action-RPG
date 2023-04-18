@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject extraAttackskillObj;
+    [SerializeField] Transform skillSpawnPosition;
     public bool attacking = false;
     public Vector2 playerHitbox;
     public Vector2 playerForceAttack;
@@ -112,11 +113,11 @@ public class PlayerAttack : MonoBehaviour
             if (attackTimes >= 5 && extraAttackisActive)
             {
                 attackTimes = 0;
-                Vector3 playerTrans = GameObject.FindGameObjectWithTag("Player").transform.position;
-                Vector3 pos = new Vector3(1.0f, 0.0f, 0.0f);
-                Vector3 skillpos = (playerTrans + pos);
-                Instantiate(extraAttackskillObj, playerTrans, Quaternion.identity);
-
+                //Vector3 playerTrans = GameObject.FindGameObjectWithTag("Player").transform.position;
+                //Vector3 pos = new Vector3(((transform.position.x+0.3f)/1.4f)*ScaleX(), transform.position.y+0.32f, transform.position.z+0f);
+                //Vector3 skillpos = (playerTrans + pos);
+                Instantiate(extraAttackskillObj, skillSpawnPosition.position, Quaternion.identity);
+                //Debug.Log(pos);
                 //skillAnimator.SetTrigger("ExtraAttack");
                 Debug.Log("Skill Extra Attack Activate !");
             }else if(!extraAttackisActive)

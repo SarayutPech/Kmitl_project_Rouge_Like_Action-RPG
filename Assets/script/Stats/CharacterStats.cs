@@ -7,7 +7,7 @@ public class CharacterStats : MonoBehaviour
 
 
     #region Singleton
-    public static CharacterStats instance;
+    public static CharacterStats instance { get; private set; }
 
     #endregion
 

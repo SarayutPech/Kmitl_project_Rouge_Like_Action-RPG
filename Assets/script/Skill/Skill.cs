@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Skill", menuName = "Skill/Skill")]
-public class Skill : ScriptableObject
+public abstract class Skill : ScriptableObject
 {
     public string skillname = "New Skill";
     public string skillDescription = "Description Skill";
@@ -10,17 +10,11 @@ public class Skill : ScriptableObject
     public Sprite skillicon = null;
     public StatusType skillType;
 
-    public bool isSkillActive; 
+    public bool isSkillActive;
 
 
-    public virtual void Active()
-    {
-        // skill Active
-        Debug.Log("Skill " + name + " Active");
-    }
-    public virtual void InActive()
-    {
-        // skill inActive
-        //Debug.Log("Skill " + name + " InActive");
-    }
+    public abstract void Active();
+   
+    public abstract void InActive();
+    
 }

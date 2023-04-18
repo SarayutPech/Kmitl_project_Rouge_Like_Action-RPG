@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     #region Singleton
-    public static Inventory instance;
+    public static Inventory instance { get; private set; }
     private void Awake()
     {
         if(instance != null)
@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
     #endregion
+
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangeCallback;
