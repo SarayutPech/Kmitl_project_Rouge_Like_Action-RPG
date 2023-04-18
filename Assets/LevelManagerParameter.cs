@@ -19,7 +19,12 @@ public class LevelManagerParameter : MonoBehaviour
     public bool keys = false;
     public Color haveKey;
     public Color dontHaveKey;
-    
+
+    private void Start()
+    {
+        
+    }
+
     public void givekeys()
     {
         keys = true;

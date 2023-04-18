@@ -23,7 +23,7 @@ public class warpDoor : Interactable
 
     private void goToBossRoom()
     {
-        int rand = Random.Range(1, 2);
+        int rand = Random.Range(0, 2);
         switch (rand)
         {
             case 0:

@@ -40,6 +40,6 @@ public class DestroyEnemy : MonoBehaviour
 
     public void SpawnWarpDoorToStage()
     {
-        GameObject warp = (GameObject)Instantiate(warpDoor, new Vector3(0, -3.6f, -5f), transform.rotation * Quaternion.Euler(0, 0, 0));
+        GameObject warp = (GameObject)Instantiate(warpDoor, new Vector3(0, -3.6f, -4f), transform.rotation * Quaternion.Euler(0, 0, 0));
     }
 }
