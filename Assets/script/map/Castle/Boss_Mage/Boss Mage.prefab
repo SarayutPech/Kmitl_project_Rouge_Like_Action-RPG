@@ -194,9 +194,9 @@ GameObject:
   - component: {fileID: 7779984016636384810}
   - component: {fileID: 5690458231480363173}
   - component: {fileID: 8153678760968332281}
-  - component: {fileID: 2424298299619113159}
   - component: {fileID: 5106051190078561084}
   - component: {fileID: 3891070986637183243}
+  - component: {fileID: 1346116900210305968}
   m_Layer: 3
   m_Name: Enemy GFX
   m_TagString: Untagged
@@ -286,30 +286,6 @@ MonoBehaviour:
   dropTable:
     list: []
   positionDrop: {x: 0, y: 0.2, z: 0}
---- !u!114 &2424298299619113159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729243069685691731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f47c30f4cc9f4443a65bdad9d212c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 0}
-  enchantAttack: 0
-  knockbackY: 5
-  knockbackX: 5
-  knockbackTimenormalAttack: 0.3
-  dmg: 10
-  rootOb: {fileID: 5891414041441006067}
-  slashPos: {fileID: 5145978442558693745}
-  EncAtt1Pos: {fileID: 6469203781501530509}
-  EncSlash: {fileID: 5254506448069008446, guid: 4eeb5aaf0594e664b97147310c335e45, type: 3}
-  EncAtt3: {fileID: 7788229048852298227, guid: 947b3c278d4835f4da1fcc4a6a88ff70, type: 3}
-  EncAtt1: {fileID: 7788229048852298227, guid: 9c81713860351e14caa4f24be35f0d7a, type: 3}
 --- !u!114 &5106051190078561084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +319,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1346116900210305968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729243069685691731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bb739bb9680b14ca1a0d7f151923be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mage: {fileID: 559369577994791863}
+  dmg: 10
+  fireBall: {fileID: 6337392129413462012, guid: 4b3142532a7aee54483cc115796404d6, type: 3}
 --- !u!1 &5004514816889914170
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +465,7 @@ Transform:
   m_GameObject: {fileID: 5891414041441006067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.74, y: -1.48, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7779984016636384810}
@@ -545,9 +536,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  activateDistance: 10
+  activateDistance: 9.88
   pathUpdateSeconds: 0.5
-  speed: 700
+  speed: 200
   nextWaypointDistance: 0.5
   JumpNodeHeightRequirement: 0.8
   jumpforce: 8
@@ -619,8 +610,8 @@ MonoBehaviour:
   stage: 
   rand: 0
   shouldAttackBox: {fileID: 8459182730112416467}
-  HitboxX: 14
-  HitboxY: 8
+  HitboxX: 6
+  HitboxY: 5
   player:
     serializedVersion: 2
     m_Bits: 512

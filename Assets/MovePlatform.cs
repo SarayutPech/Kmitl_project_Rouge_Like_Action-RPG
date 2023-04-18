@@ -31,6 +31,8 @@ public class MovePlatform : MonoBehaviour
                     transform.position += new Vector3(0.5f, -0.5f, 0);
                     break;
             }
+
+            AstarPath.active.Scan();
         }
 
         Collider2D DestroyMe = Physics2D.OverlapBox(transform.position + pos, Col, 0f, DestroyLayer);

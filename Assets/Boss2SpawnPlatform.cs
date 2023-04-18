@@ -27,7 +27,5 @@ public class Boss2SpawnPlatform : MonoBehaviour
             Platform.name = "Platform";
             platformCount++;
         }
-
-        Debug.Log(GameObject.FindGameObjectsWithTag("PCG_OB").Length);
     }
 }

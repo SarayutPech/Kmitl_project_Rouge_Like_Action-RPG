@@ -53,5 +53,9 @@ public class BossMagePattern : EnemyPattern
         animator.SetTrigger("attack3");
     }
 
+    public void warp()
+    {
+        animator.SetTrigger("warp");
+    }
 
 }
