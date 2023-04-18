@@ -10,6 +10,11 @@ public class BirdPattern : EnemyPattern
     [Header("Stat")]
     public Vector2 knockbackforce;
     public int dmg;
+    [SerializeField] private float attDelayBase = 3;
+    [SerializeField] private float attDelayCount = 3;
+    [Header("Color")]
+    public Color baseColor;
+    public Color attColor;
 
     private LevelManagerParameter levelManagerParameter;
 
@@ -56,22 +61,47 @@ public class BirdPattern : EnemyPattern
     
     public void attack()
     {
-        Collider2D playerCol = Physics2D.OverlapBox(shouldAttackBox.position, new Vector2(HitboxX, HitboxX), 0f, player);
-        if (playerCol)
+        if (attDelayCount <= 0)
         {
-            playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
-            //นกเด้งออก
-            rb.AddForce(new Vector2(-knockbackforce.x * ScaleX() * 10, knockbackforce.y));
-            // HP -
-            playerCol.GetComponent<CharacterStats>().TakeDamage(dmg + levelManagerParameter.DmgBuffer);
-            //Knockback
-            playerCol.GetComponent<CharacterStats>().Knockback(new Vector2(knockbackforce.x * ScaleX(), knockbackforce.y));
-            
+            GameObject sprite = GetChildWithName(gameObject, "Enemy GFX");
+            sprite.GetComponent<SpriteRenderer>().color = attColor;
+            Collider2D playerCol = Physics2D.OverlapBox(shouldAttackBox.position, new Vector2(HitboxX, HitboxX), 0f, player);
+            if (playerCol)
+            {
+                playerCol.GetComponent<player_movement>().knockbackTime = knockbackTimenormalAttack;
+                //นกเด้งออก
+                rb.AddForce(new Vector2(-knockbackforce.x * ScaleX() * 10, knockbackforce.y));
+                // HP -
+                playerCol.GetComponent<CharacterStats>().TakeDamage(dmg + levelManagerParameter.DmgBuffer);
+                //Knockback
+                playerCol.GetComponent<CharacterStats>().Knockback(new Vector2(knockbackforce.x * ScaleX(), knockbackforce.y));
+                attDelayCount = attDelayBase;
+            }
+        }
+        else
+        {
+            attDelayCount -= Time.deltaTime;
+            GameObject sprite = GetChildWithName(gameObject, "Enemy GFX");
+            sprite.GetComponent<SpriteRenderer>().color = baseColor;
         }
     }
 
     public float ScaleX()
     {
         return transform.root.gameObject.transform.localScale.x;
+    }
+
+    GameObject GetChildWithName(GameObject obj, string name)
+    {
+        Transform trans = obj.transform;
+        Transform childTrans = trans.Find(name);
+        if (childTrans != null)
+        {
+            return childTrans.gameObject;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

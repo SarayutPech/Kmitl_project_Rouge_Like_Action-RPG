@@ -63,13 +63,20 @@ public class GameState : MonoBehaviour
             }
 
             // เปิดปิดประตูไม่ให้เปลี่ยนด่านตอนเล่น
-            if (GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear)
+            try
             {
-                setGate(false);
+                if (GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear)
+                {
+                    setGate(false);
+                }
+                else
+                {
+                    setGate(true);
+                }
             }
-            else
+            catch
             {
-                setGate(true);
+                
             }
 
             posPortalLeft = transform.position + new Vector3(-posx, posy, 0);

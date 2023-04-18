@@ -741,6 +741,10 @@ MonoBehaviour:
   knockbackX: 2
   knockbackTimenormalAttack: 0.1
   dmg: 10
+  attDelayBase: 3
+  attDelayCount: 3
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  attColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &-1824054460776287033
 MonoBehaviour:
   m_ObjectHideFlags: 0

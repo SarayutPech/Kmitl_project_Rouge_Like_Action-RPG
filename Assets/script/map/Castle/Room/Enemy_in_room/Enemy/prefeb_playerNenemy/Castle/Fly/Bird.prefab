@@ -528,7 +528,6 @@ MonoBehaviour:
   diractionLookEnable: 1
   canFly: 1
   animator: {fileID: 7526202931026111161}
-  timeToDestoryThis: 5
   LockRotate: 1
 --- !u!114 &6900897445631050515
 MonoBehaviour:
@@ -608,6 +607,10 @@ MonoBehaviour:
   stop_chase_at: 4
   knockbackforce: {x: 1, y: 0.3}
   dmg: 7
+  attDelayBase: 3
+  attDelayCount: 3
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  attColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &3539631051148787112
 MonoBehaviour:
   m_ObjectHideFlags: 0
