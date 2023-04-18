@@ -22,7 +22,14 @@ public class LevelManagerParameter : MonoBehaviour
 
     private void Start()
     {
-        
+        // agentMoveStep ให้ Agent สร้างกี่ห้อง
+        agentMoveStep = 3 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5;
+        // enemyPerWave;
+        enemyPerWave = 2 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear);
+        // DmgBuffer;
+        DmgBuffer = -5 + ((GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear) );
+        // HpBuffer;
+        HpBuffer = -10 + ((GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear));
     }
 
     public void givekeys()

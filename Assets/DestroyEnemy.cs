@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyEnemy : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class DestroyEnemy : MonoBehaviour
         {
 
         }
-        
 
-        AddEnemyDefeated();
+        if (SceneManager.GetActiveScene().name == "rework_genmap")
+            AddEnemyDefeated();
+        else
+            AddBossDefeated();
     }
 
     public void ItemDrop()
@@ -36,6 +39,12 @@ public class DestroyEnemy : MonoBehaviour
     {
         ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
         result.Increase_Enemy_Defeated();
+    }
+
+    private void AddBossDefeated()
+    {
+        ResultScreen result = GameObject.Find("GameManager").GetComponent<ResultScreen>();
+        result.Increase_Boss_Defeated();
     }
 
     public void SpawnWarpDoorToStage()
