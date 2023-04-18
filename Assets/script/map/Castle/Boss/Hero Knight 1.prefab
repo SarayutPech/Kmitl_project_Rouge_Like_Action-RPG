@@ -306,6 +306,7 @@ MonoBehaviour:
   dropTable:
     list: []
   positionDrop: {x: 0, y: 0.2, z: 0}
+  warpDoor: {fileID: 5459055723713305013, guid: f0256bf4cbf316b4e83b7ee71a2497cb, type: 3}
 --- !u!114 &2424298299619113159
 MonoBehaviour:
   m_ObjectHideFlags: 0

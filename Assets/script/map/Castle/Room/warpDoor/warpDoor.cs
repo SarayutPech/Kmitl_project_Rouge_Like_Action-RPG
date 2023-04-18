@@ -53,12 +53,18 @@ public class warpDoor : Interactable
                 result.Increase_Floor_Reach();
 
             }
-            else // อยู่บนยอดแล้ว 
+            else if(SceneManager.GetActiveScene().name == "rework_genmap") // อยู่บนยอดแล้ว 
             {
                 // ส่งไปซีนต่อไป
                 goToBossRoom();
             }
+            
             levelManagerParameter.usekeys();
+        }
+        else if(SceneManager.GetActiveScene().name != "rework_genmap")
+        {
+            SceneManager.LoadScene("rework_genmap");
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7, -1, -5);
         }
     }
 

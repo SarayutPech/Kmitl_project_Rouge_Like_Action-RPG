@@ -26,7 +26,7 @@ public class BossMagePattern : EnemyPattern
     {
 
         if (thinkingTime_remaining <= 0)
-            rand = Random.Range(0, 4);
+            rand = Random.Range(0, 7);
 
         if (rand == 0)
             attack1();
@@ -34,8 +34,10 @@ public class BossMagePattern : EnemyPattern
             attack2();
         else if (rand == 2)
             attack3();
+        else
+            warp();
 
-        Debug.Log(rand);
+            Debug.Log(rand);
     }
 
     public void attack1()
@@ -55,6 +57,7 @@ public class BossMagePattern : EnemyPattern
 
     public void warp()
     {
+        rand = Random.Range(0, 7);
         animator.SetTrigger("warp");
     }
 

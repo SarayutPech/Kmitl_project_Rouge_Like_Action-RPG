@@ -55,4 +55,6 @@ public class MageAttack : MonoBehaviour
         int rand = Random.Range(0, warpPoint.Count);
         transform.root.position = warpPoint[rand].transform.position + new Vector3(0,1,0);
     }
+
+
 }

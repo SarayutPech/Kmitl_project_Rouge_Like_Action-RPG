@@ -9,6 +9,19 @@ public class Fireball : MonoBehaviour
     public float lifeTime;
     public Vector3 dir;
 
+    private LevelManagerParameter levelManagerParameter;
+    public Transform pos;
+    public float HitboxX, HitboxY;
+    public LayerMask player;
+    public Animator anim;
+
+    public bool canHit = true;
+
+    private void Start()
+    {
+        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -19,10 +32,30 @@ public class Fireball : MonoBehaviour
         }
         else
             Destroy(gameObject);
+
+        if (canHit)
+        {
+            Collider2D playerCol = Physics2D.OverlapBox(pos.position, new Vector2(HitboxX, HitboxX), 0f, player);
+            if (playerCol)
+            {
+                canHit = false;
+                playerCol.GetComponent<CharacterStats>().TakeDamage(dmg + levelManagerParameter.DmgBuffer);
+                anim.SetTrigger("Explosions");
+
+                //Knockback
+            }
+        }
+        
     }
 
     public void move(Vector3 dir)
     {
-        transform.position = transform.position + dir * Time.deltaTime;
+        transform.position = transform.position + dir *speed *  Time.deltaTime;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(pos.position, new Vector2(HitboxX, HitboxY));
     }
 }
