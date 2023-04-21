@@ -16,9 +16,16 @@ public class warpDoor : Interactable
     private LevelManagerParameter levelManagerParameter;
     private void Awake()
     {
-        gameState = GameObject.Find("level manager").GetComponent<GameState>();
-        ps = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Status>();
-        levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+        try
+        {
+            gameState = GameObject.Find("level manager").GetComponent<GameState>();
+            ps = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Status>();
+            levelManagerParameter = GameObject.Find("level manager").GetComponent<LevelManagerParameter>();
+        }
+        catch
+        {
+            Debug.Log("can't find GameState.");
+        }
     }
 
     private void goToBossRoom()
