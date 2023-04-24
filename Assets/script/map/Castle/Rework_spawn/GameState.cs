@@ -63,6 +63,7 @@ public class GameState : MonoBehaviour
             }
 
             // เปิดปิดประตูไม่ให้เปลี่ยนด่านตอนเล่น
+            /*
             try
             {
                 if (GameObject.Find(ps.wherePlayeris).GetComponent<RoomStatus>().isclear)
@@ -78,6 +79,7 @@ public class GameState : MonoBehaviour
             {
                 
             }
+            */
 
             posPortalLeft = transform.position + new Vector3(-posx, posy, 0);
             posPortalRight = transform.position + new Vector3(posx, posy, 0);
