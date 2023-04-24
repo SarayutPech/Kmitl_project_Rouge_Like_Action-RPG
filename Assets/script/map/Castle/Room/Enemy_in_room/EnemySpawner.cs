@@ -198,7 +198,7 @@ public class EnemySpawner : MonoBehaviour
     
     
     public void OnDrawGizmos()
-    {
+    {/*
         for (float y = 0; y < stepY; y += scale)
         {
             y += space;
@@ -216,7 +216,8 @@ public class EnemySpawner : MonoBehaviour
                 
                 Gizmos.DrawWireCube(transform.position + pos, new Vector2(scale, scale));
             }
-        }
+        }*/
+
     }
     
 

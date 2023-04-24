@@ -1304,9 +1304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 1
+  agentMoveStep: 3
   enemyPerWave: 2
-  DmgBuffer: 0
+  DmgBuffer: -5
   HpBuffer: 0
   keys: 0
   haveKey: {r: 1, g: 1, b: 1, a: 1}

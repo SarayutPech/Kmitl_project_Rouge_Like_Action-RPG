@@ -35,8 +35,16 @@ public class CameraFollowPlayer : MonoBehaviour
     {
         if(foundPlayer == false)
         {
-            followTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            foundPlayer = true;
+            try
+            {
+                followTransform = GameObject.FindGameObjectWithTag("Player").transform;
+                foundPlayer = true;
+            }
+            catch
+            {
+                Debug.Log("No player in Scene.");
+            }
+
         }
 
         camMove();

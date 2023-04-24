@@ -311,6 +311,7 @@ MonoBehaviour:
     - item: {fileID: 3337587488865035475, guid: d324906b72b34bf4db0d9b63ea193ed3, type: 3}
       weight: 2
   positionDrop: {x: 1, y: 0.2, z: 0}
+  warpDoor: {fileID: 0}
 --- !u!95 &1570677775636189220
 Animator:
   serializedVersion: 4
@@ -347,7 +348,7 @@ MonoBehaviour:
   knockbackY: 3
   knockbackX: 3
   knockbackTimenormalAttack: 0.1
-  dmg: 20
+  dmg: 12
 --- !u!114 &5633053642830653975
 MonoBehaviour:
   m_ObjectHideFlags: 0

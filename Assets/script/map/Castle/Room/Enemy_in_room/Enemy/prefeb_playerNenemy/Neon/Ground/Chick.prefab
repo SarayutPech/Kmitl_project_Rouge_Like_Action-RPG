@@ -309,6 +309,7 @@ MonoBehaviour:
     - item: {fileID: 3337587488865035475, guid: d324906b72b34bf4db0d9b63ea193ed3, type: 3}
       weight: 2
   positionDrop: {x: 1, y: 0.2, z: 0}
+  warpDoor: {fileID: 0}
 --- !u!95 &1570677775636189220
 Animator:
   serializedVersion: 4
@@ -740,7 +741,7 @@ MonoBehaviour:
   knockbackY: 2
   knockbackX: 2
   knockbackTimenormalAttack: 0.1
-  dmg: 10
+  dmg: 7
   attDelayBase: 3
   attDelayCount: 3
   baseColor: {r: 1, g: 1, b: 1, a: 1}
