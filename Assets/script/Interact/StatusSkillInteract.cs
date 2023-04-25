@@ -37,4 +37,15 @@ public class StatusSkillInteract : Interactable
     {
         
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            GetComponent<InteractScript>().CloseInteractIcon();
+            statSkillWindows.SetActive(false);
+            tooltipUI.SetActive(false);
+            isActive = false;
+        }
+    }
 }
