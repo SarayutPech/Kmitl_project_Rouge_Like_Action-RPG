@@ -109,14 +109,14 @@ public class EquipmentManager : MonoBehaviour
         }
         onEquipCallback.Invoke();
     }
-
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
             UnequipAll();
         }
-    }
+    }*/
 
     private int CheckSlotIndex(Equipment[] equipmentSlot)
     {

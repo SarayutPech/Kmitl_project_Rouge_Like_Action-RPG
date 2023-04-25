@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isclear: 0
   isplayed: 0
-  col: {fileID: 0}
+  col: {fileID: 5137242083530471626}
   enemy:
     serializedVersion: 2
     m_Bits: 8

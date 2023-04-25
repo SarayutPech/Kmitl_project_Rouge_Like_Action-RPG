@@ -24,7 +24,7 @@ public class Fill_empty_room : MonoBehaviour
             //Debug.Log("Null");
             // Crate Room Here.
             GameObject roomName = (GameObject)Instantiate(room, transform.position + checkRoomPos, Quaternion.identity);
-            roomName.name = "Room_R_Filled";
+            roomName.name = "Room_R_Filled_id" + Random.Range(0,9999);
             roomName.transform.parent = GameObject.Find("rooms").transform;
         }
         else if(SideIsNotNull() && sp.stop_Gen)
