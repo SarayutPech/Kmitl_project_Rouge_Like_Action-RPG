@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawn_room : MonoBehaviour
 {
@@ -66,6 +67,9 @@ public class Spawn_room : MonoBehaviour
 
     private void Update()
     {
+
+        CheckErrorMap();
+
         if (!fast_Gen)
         {
             if (timeBtwRoom <= 0 && stop_Gen == false)
@@ -86,9 +90,54 @@ public class Spawn_room : MonoBehaviour
                 timeBtwRoom = startTimeBtwRoom;
             }
         }
+
+        
     }
 
-    
+    private void CheckErrorMap()
+    {
+        
+        GameObject[] warpDoor = GameObject.FindGameObjectsWithTag("Warp");
+        for (int i=0; i < warpDoor.Length - 1; i++)
+        {
+            Debug.Log("I -> " + i);
+            int wDoorPos1 = (int)warpDoor[i].transform.position.y;
+
+            for (int j = i+1; j < warpDoor.Length; j++)
+            {
+                int wDoorPos2 = (int)warpDoor[j].transform.position.y;
+                if (wDoorPos1 == wDoorPos2)
+                {
+
+                    SceneManager.LoadScene("rework_genmap");
+                    GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7, -1, -5);
+
+                    Debug.Log("Map Error");
+                }
+            }     
+        }
+
+        GameObject[] RewardChests = GameObject.FindGameObjectsWithTag("RewardChest");
+        for (int i = 0; i < RewardChests.Length - 1; i++)
+        {
+            Debug.Log("I -> " + i);
+            int RewardChestPos1 = (int)warpDoor[i].transform.position.y;
+
+            for (int j = i + 1; j < RewardChests.Length; j++)
+            {
+                int RewardChestPos2 = (int)warpDoor[j].transform.position.y;
+                if (RewardChestPos1 == RewardChestPos2)
+                {
+
+                    SceneManager.LoadScene("rework_genmap");
+                    GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7, -1, -5);
+
+                    Debug.Log("Map Error");
+                }
+            }
+        }
+
+    }
 
     private void Move()
     {

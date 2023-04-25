@@ -11,7 +11,7 @@ public class EnemyScaner : MonoBehaviour
     private void Update()
     {
         Collider2D enemyCol = Physics2D.OverlapBox(transform.position, size, 0f, Enemy);
-        Debug.Log(enemyCol);
+        //Debug.Log(enemyCol);
         if (enemyCol != null)
             setGate(true);
         else

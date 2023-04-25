@@ -18,6 +18,7 @@ TagManager:
   - EXP_Bar
   - SaveData
   - PCG_OB
+  - RewardChest
   layers:
   - Default
   - TransparentFX
