@@ -19,18 +19,21 @@ public class RewardChest : Interactable
 
     private void giveReward()
     {
-        // give key
-        anim.SetTrigger("Open");
-        levelManagerParameter.givekeys();
-        // give Item
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<CharacterStats>().Heal(50);
+        if (notOpen)
+        {
+            // give key
+            anim.SetTrigger("Open");
+            levelManagerParameter.givekeys();
+            // give Item
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<CharacterStats>().Heal(50);
+            notOpen = false;
+        }
     }
 
     
     public override void Interact()
     {
-        notOpen = false;
         // Do something
         giveReward();
         
