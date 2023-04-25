@@ -89,6 +89,7 @@ public class Spawn_platform : MonoBehaviour
 
     private void Update()
     {
+
         if (sp.stop_Gen && !start_Gen) {
             resetTransform();
             transform.position = new Vector2(sp.moveX, 0);

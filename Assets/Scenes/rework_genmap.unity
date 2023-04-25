@@ -1116,6 +1116,7 @@ MonoBehaviour:
   stop_Gen: 0
   fast_Gen: 1
   spawnPlayer: 0
+  sp: {fileID: 1731683132}
 --- !u!4 &1731683131
 Transform:
   m_ObjectHideFlags: 0

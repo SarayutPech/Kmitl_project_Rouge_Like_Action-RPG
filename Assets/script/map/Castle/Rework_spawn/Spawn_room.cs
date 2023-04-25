@@ -40,12 +40,13 @@ public class Spawn_room : MonoBehaviour
     [SerializeField]
     bool spawnPlayer;
 
-
+    public Spawn_platform sp;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        sp.enabled = false;
         //Instantiate(room[1], transform.position, Quaternion.identity); // room R
         //GameObject roomName = (GameObject)Instantiate(room[1], transform.position, Quaternion.identity);
         //roomName.name = "Started_Room";
@@ -169,6 +170,9 @@ public class Spawn_room : MonoBehaviour
         //Debug.Log("Last room spawn.");
         maxX += moveX;
         minX -= moveX;
+        sp.enabled = true;
+
+
     }
 
     public void check_Edge()
