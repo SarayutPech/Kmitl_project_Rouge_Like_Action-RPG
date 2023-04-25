@@ -38,7 +38,7 @@ public class InventorySlot : MonoBehaviour
         }
         if (item.moveSpeed_Modifier > 0)
         {
-            detailItem.Append($"Speed +{item.attack_Modifier}\n");
+            detailItem.Append($"Speed +{item.moveSpeed_Modifier}\n");
         }
         if (item.dropRate_Modifier > 0)
         {
