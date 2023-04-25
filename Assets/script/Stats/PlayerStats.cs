@@ -41,10 +41,10 @@ public class PlayerStats : CharacterStats
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        /*if (Input.GetKeyDown(KeyCode.T))
         {
             expManager.AddEXP(200);
-        }
+        }*/
 
         statPoint = expManager.statPoint;
         currentPlayerLevel = expManager.level;
@@ -186,7 +186,7 @@ public class PlayerStats : CharacterStats
     public void CalculateBaseStat()
     {
         maxHealth = 100 + (vit.GetValue() * 10) + skillHPBonus;
-        attack.SetBaseValue(str.GetValue() * 3 + skillAtkBonus) ;
+        attack.SetBaseValue(str.GetValue() * 1 + skillAtkBonus);
         moveSpeed.SetBaseValue(agi.GetValue() * 2 + skillMovespeedBonus);
         critRate.SetBaseValue((dex.GetValue() * 1)+(luk.GetValue()*2) + skillCriRateBonus);
         critDamage.SetBaseValue(dex.GetValue() * 2 +skillCriDamageBonus);

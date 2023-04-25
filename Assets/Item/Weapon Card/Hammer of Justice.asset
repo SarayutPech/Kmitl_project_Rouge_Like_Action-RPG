@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e553f1b5cd8346955b51a4e150594, type: 3}
   m_Name: Hammer of Justice
   m_EditorClassIdentifier: 
-  name: Hammer of Justice
+  name: Hammer
   icon: {fileID: 21300000, guid: 31e6b16b7efb8df4891fefc7cea14d25, type: 3}
   isDefaultItem: 0
   itemType: 0
   animationWeapon: {fileID: 7400000, guid: 1550e8f2e4166fe4db38e64c00f253cf, type: 2}
-  equipSlot: 0
-  forceWeapon: {x: 5, y: 0.1}
-  hitboxWeapon: {x: 2.5, y: 1}
   attack_Modifier: 8
   critRate_Modifier: 0
   critDamage_Modifier: 0
   moveSpeed_Modifier: 0
   dropRate_Modifier: 0
   health_Modifier: 0
+  equipSlot: 0
+  forceWeapon: {x: 2, y: 0.1}
+  hitboxWeapon: {x: 2.2, y: 1}

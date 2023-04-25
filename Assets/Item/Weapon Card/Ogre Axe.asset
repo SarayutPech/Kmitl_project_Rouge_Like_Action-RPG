@@ -17,12 +17,12 @@ MonoBehaviour:
   isDefaultItem: 0
   itemType: 0
   animationWeapon: {fileID: 7400000, guid: 5070038c9a4b5f843acaf20bbfb050ee, type: 2}
-  equipSlot: 0
-  forceWeapon: {x: 3, y: 2}
-  hitboxWeapon: {x: 2, y: 1}
   attack_Modifier: 7
-  critRate_Modifier: 4
+  critRate_Modifier: 3
   critDamage_Modifier: 0
   moveSpeed_Modifier: 0
   dropRate_Modifier: 0
   health_Modifier: 0
+  equipSlot: 0
+  forceWeapon: {x: 1, y: 2}
+  hitboxWeapon: {x: 2, y: 1}

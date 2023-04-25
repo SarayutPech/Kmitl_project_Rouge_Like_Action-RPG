@@ -45,10 +45,10 @@ public class ResultScreen : MonoBehaviour
 
     public int Calculate_EXP_Gain()
     {
-        int exp_item = item_pickup * 2;
-        int exp_enemy = enemy_defeated * 5;
-        int exp_boss = boss_defeated * 50;
-        int exp_floor = floor_clear * 10 ;
+        int exp_item = item_pickup * 10;
+        int exp_enemy = enemy_defeated * 20;
+        int exp_boss = boss_defeated * 100;
+        int exp_floor = floor_clear * 30 ;
 
         exp_gain = exp_item + exp_enemy + exp_boss + exp_floor;
 

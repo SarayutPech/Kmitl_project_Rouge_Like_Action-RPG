@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e553f1b5cd8346955b51a4e150594, type: 3}
   m_Name: Cyclone Staff
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Cyclone Staff
   icon: {fileID: 21300000, guid: 878261dd3ebcf57438d09304621a93c0, type: 3}
   isDefaultItem: 0
   itemType: 0
   animationWeapon: {fileID: 7400000, guid: 5f14ed042acf7714f9f15477a2593efd, type: 2}
-  equipSlot: 0
-  forceWeapon: {x: 1, y: 3}
-  hitboxWeapon: {x: 2, y: 1.5}
   attack_Modifier: 5
   critRate_Modifier: 0
   critDamage_Modifier: 0
-  moveSpeed_Modifier: 0
+  moveSpeed_Modifier: 5
   dropRate_Modifier: 0
   health_Modifier: 0
+  equipSlot: 0
+  forceWeapon: {x: 1, y: 3}
+  hitboxWeapon: {x: 2, y: 1.5}

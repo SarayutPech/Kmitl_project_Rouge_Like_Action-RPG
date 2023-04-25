@@ -5,16 +5,19 @@ using UnityEngine;
 public class StatusSkillInteract : Interactable
 {
     public GameObject statSkillWindows;
+    public GameObject tooltipUI;
     private bool isActive;
     public override void Interact()
     {
         if(isActive == false)
         {
             statSkillWindows.SetActive(true);
+            tooltipUI.SetActive(true);
         }
         else 
         {
             statSkillWindows.SetActive(false);
+            tooltipUI.SetActive(false);
         }
 
         isActive = !isActive;
@@ -23,6 +26,7 @@ public class StatusSkillInteract : Interactable
     // Start is called before the first frame update
     void Start()
     {
+        tooltipUI = GameObject.Find("TooltipCanvas");
         statSkillWindows = GameObject.Find("StatusUI");
         statSkillWindows.SetActive(false);
         isActive = false;

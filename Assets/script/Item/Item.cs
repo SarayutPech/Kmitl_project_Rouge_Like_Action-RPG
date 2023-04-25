@@ -8,8 +8,13 @@ public class Item : ScriptableObject
     public enum ItemType { WeaponCard, Accessory }
     public ItemType itemType;
     public AnimationClip animationWeapon;
-    
 
+    public int attack_Modifier;
+    public int critRate_Modifier;
+    public int critDamage_Modifier;
+    public int moveSpeed_Modifier;
+    public int dropRate_Modifier;
+    public int health_Modifier;
 
     public virtual void Use()
     {

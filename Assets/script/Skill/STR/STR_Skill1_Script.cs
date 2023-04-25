@@ -13,7 +13,7 @@ public class STR_Skill1_Script : Skill
 
         if (playerStats.str.GetValue() == 5 && !this.isSkillActive)
         {
-            playerStats.attack.AddModifier(20);
+            playerStats.attack.AddModifier(10);
             this.isSkillActive = !this.isSkillActive;
         }
 
@@ -26,7 +26,7 @@ public class STR_Skill1_Script : Skill
 
         if (playerStats.str.GetValue() < 5 && this.isSkillActive)
         {
-            playerStats.attack.RemoveModifier(20);
+            playerStats.attack.RemoveModifier(10);
             this.isSkillActive = !this.isSkillActive;
         }
     }

@@ -10,6 +10,7 @@ public class UI_Status : MonoBehaviour
     public PlayerStats charaStat;
     public GameObject statusUI;
     public GameObject upstatusUI;
+    public GameObject tooltipUI;
 
     public TextMeshProUGUI remainPoint;
     //------Status-----
@@ -30,6 +31,7 @@ public class UI_Status : MonoBehaviour
         //charaStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         statusUI.SetActive(false);
         upstatusUI.SetActive(false);
+        tooltipUI.SetActive(false);
 
     }
 
@@ -88,19 +90,20 @@ public class UI_Status : MonoBehaviour
 
     public void Update()
     {
-        
-       // Debug.Log("Update Parameter UI");
 
+        // Debug.Log("Update Parameter UI");
+        
         if (Input.GetButtonDown("Inventory"))
         {
            // Debug.Log("Inventory Active");
             statusUI.SetActive(!statusUI.activeSelf);
+            tooltipUI.SetActive(!tooltipUI.activeSelf);
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
 
             upstatusUI.SetActive(!upstatusUI.activeSelf);
-        }
+        }*/
 
         if(statusUI.activeSelf)
         {

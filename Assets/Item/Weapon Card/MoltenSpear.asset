@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e553f1b5cd8346955b51a4e150594, type: 3}
   m_Name: MoltenSpear
   m_EditorClassIdentifier: 
-  name: Pickaxe
+  name: Molten Spear
   icon: {fileID: 21300000, guid: 99832b2203ce3bf4d8236bd4ed6f58e3, type: 3}
   isDefaultItem: 0
   itemType: 0
   animationWeapon: {fileID: 7400000, guid: 3bd4b00ae6c599543bbcf92e1dc84f28, type: 2}
-  equipSlot: 0
-  forceWeapon: {x: 0, y: 0}
-  hitboxWeapon: {x: 3, y: 1}
   attack_Modifier: 8
   critRate_Modifier: 0
   critDamage_Modifier: 0
   moveSpeed_Modifier: 0
   dropRate_Modifier: 0
   health_Modifier: 0
+  equipSlot: 0
+  forceWeapon: {x: 0, y: 0}
+  hitboxWeapon: {x: 3, y: 1}

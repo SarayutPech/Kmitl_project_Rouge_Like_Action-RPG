@@ -108,10 +108,10 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+       /* if (Input.GetKeyDown(KeyCode.T))
         {
             TakeDamage(10);
-        }
+        }*/
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
     }

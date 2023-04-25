@@ -145,15 +145,30 @@ MonoBehaviour:
       weight: 2
     - item: {fileID: 212264404161909247, guid: 44cf0bf7de8caf84eb63b9ef3a1a5601, type: 3}
       weight: 2
-    - item: {fileID: 3337587488865035475, guid: d324906b72b34bf4db0d9b63ea193ed3, type: 3}
-      weight: 2
-    - item: {fileID: 854427016055824965, guid: 8c5ca0c66ef5a5141a9899f7ce3c6fb1, type: 3}
+    - item: {fileID: 8640743432068675186, guid: 2bf6c9cf43f708348b49b33b382911af, type: 3}
       weight: 2
     - item: {fileID: 6826930817304664332, guid: da8a943bf3bb41a48a0a09967382b757, type: 3}
       weight: 2
-    - item: {fileID: 8640743432068675186, guid: 2bf6c9cf43f708348b49b33b382911af, type: 3}
+    - item: {fileID: 854427016055824965, guid: 8c5ca0c66ef5a5141a9899f7ce3c6fb1, type: 3}
       weight: 2
+    - item: {fileID: 3337587488865035475, guid: d324906b72b34bf4db0d9b63ea193ed3, type: 3}
+      weight: 2
+    - item: {fileID: 127192391949651943, guid: c142f955e99be0642bdf7a4fbe168edd, type: 3}
+      weight: 1
+    - item: {fileID: 9146130822887798743, guid: f43bff1871e11aa45a5f605ed5300289, type: 3}
+      weight: 2
+    - item: {fileID: 5999244497200387775, guid: b4c17d1971a256449a024ecd10e4a41a, type: 3}
+      weight: 2
+    - item: {fileID: 6805220153672870458, guid: 15a773d3d6365f146a97480e329d65d4, type: 3}
+      weight: 2
+    - item: {fileID: 206724948484937306, guid: 27ac790c78f553d4ea2f8a10fc2a629d, type: 3}
+      weight: 2
+    - item: {fileID: 1387713791465664759, guid: 8c5f7d158bd38004ab0aec74cbefc90d, type: 3}
+      weight: 2
+    - item: {fileID: 7050985882937593110, guid: fbce1a1d7591b584aa824a4552174a2c, type: 3}
+      weight: 1
   positionDrop: {x: 1, y: 0.2, z: 0}
+  warpDoor: {fileID: 0}
 --- !u!114 &9195646789769253137
 MonoBehaviour:
   m_ObjectHideFlags: 0
