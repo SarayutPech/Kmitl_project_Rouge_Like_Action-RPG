@@ -24,13 +24,13 @@ public class LevelManagerParameter : MonoBehaviour
     {
         try {
             // agentMoveStep ให้ Agent สร้างกี่ห้อง
-            agentMoveStep = 3 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5;
+            agentMoveStep = agentMoveStep + (GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 2;
             // enemyPerWave;
-            enemyPerWave = 2 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear);
+            enemyPerWave = enemyPerWave + GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated;
             // DmgBuffer;
-            DmgBuffer = -5 + ((GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear));
+            DmgBuffer = DmgBuffer + ((GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear));
             // HpBuffer;
-            HpBuffer = -10 + ((GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear));
+            HpBuffer = HpBuffer + ((GameObject.Find("GameManager").GetComponent<ResultScreen>().boss_defeated) * 5 + (GameObject.Find("GameManager").GetComponent<ResultScreen>().floor_clear));
         }
         catch
         {

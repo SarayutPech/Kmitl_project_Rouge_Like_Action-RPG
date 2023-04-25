@@ -1013,8 +1013,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentMoveStep: 40
   enemyPerWave: 2
-  DmgBuffer: 0
-  HpBuffer: 0
+  DmgBuffer: -5
+  HpBuffer: -10
   keys: 0
   haveKey: {r: 1, g: 1, b: 1, a: 1}
   dontHaveKey: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}

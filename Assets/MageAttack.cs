@@ -10,7 +10,7 @@ public class MageAttack : MonoBehaviour
 
 
     public void attack1() {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 7; i++)
         {
             GameObject fb = (GameObject)Instantiate(fireBall, new Vector3(Random.Range(-8.2f, 8.2f), 6, -6.6f), transform.rotation * Quaternion.Euler(0, 0, -90));
             fb.GetComponent<Fireball>().dir = new Vector3(0, -1, 0);
@@ -19,7 +19,7 @@ public class MageAttack : MonoBehaviour
     }
     public void attack2() {
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 7; i++)
         {
             switch (Random.Range(0, 1))
             {
@@ -38,7 +38,7 @@ public class MageAttack : MonoBehaviour
         
     }
     public void attack3() {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 7; i++)
         {
             GameObject fb = (GameObject)Instantiate(fireBall, new Vector3(Random.Range(-8.2f, 8.2f), -6, -6.6f), transform.rotation * Quaternion.Euler(0, 0, 90));
             fb.GetComponent<Fireball>().dir = new Vector3(0, 1, 0);

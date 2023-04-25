@@ -95,7 +95,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.625
+  - time: 0.375
     functionName: endFreezePosition
     data: 
     objectReferenceParameter: {fileID: 0}

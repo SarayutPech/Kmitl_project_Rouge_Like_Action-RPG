@@ -1355,10 +1355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2608ba20bc654a8feca4e46e0d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentMoveStep: 3
+  agentMoveStep: 7
   enemyPerWave: 2
   DmgBuffer: -5
-  HpBuffer: 0
+  HpBuffer: -10
   keys: 0
   haveKey: {r: 1, g: 1, b: 1, a: 1}
   dontHaveKey: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
