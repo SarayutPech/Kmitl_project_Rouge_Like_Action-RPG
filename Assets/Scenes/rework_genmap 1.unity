@@ -1112,9 +1112,9 @@ MonoBehaviour:
   maxX: 0
   minX: 0
   maxY: 0
-  startTimeBtwRoom: 0.5
+  startTimeBtwRoom: 1
   stop_Gen: 0
-  fast_Gen: 1
+  fast_Gen: 0
   spawnPlayer: 0
   sp: {fileID: 1731683132}
 --- !u!4 &1731683131
